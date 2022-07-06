@@ -59,7 +59,9 @@
                                     <h1 class="gl-h1">MASUK</h1>
 
                                     <span class="gl-text u-s-m-b-30">Jika Anda memiliki akun dengan kami, silakan masuk.</span>
-                                    <form class="l-f-o__form">
+                                    <form class="l-f-o__form" action="{{ route('login') }}" method="POST">
+                                        @csrf
+
                                         <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
                                                 <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i
@@ -68,38 +70,28 @@
                                             </div>
                                         </div>
                                         <div class="u-s-m-b-30">
-
                                             <label class="gl-label" for="login-email">E-MAIL *</label>
-
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                id="login-email" placeholder="Masukkan E-mail">
+                                            <input class="input-text input-text--primary-style" type="email"
+                                                id="login-email" placeholder="Masukkan E-mail" name="email">
                                         </div>
                                         <div class="u-s-m-b-30">
-
                                             <label class="gl-label" for="login-password">PASSWORD *</label>
-
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                id="login-password" placeholder="Masukkan Password">
+                                            <input class="input-text input-text--primary-style" type="password"
+                                                id="login-password" placeholder="Masukkan Password" name="password">
                                         </div>
                                         <div class="gl-inline">
                                             <div class="u-s-m-b-30">
-
-                                                <button class="btn btn--e-transparent-brand-b-2"
-                                                    type="submit">MASUK</button>
+                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">MASUK</button>
                                             </div>
                                             <div class="u-s-m-b-30">
-
                                                 <a class="gl-link" href="lost-password.html">Lupa Password ?</a>
                                             </div>
                                         </div>
                                         <div class="u-s-m-b-30">
-
                                             <!--====== Check Box ======-->
                                             <div class="check-box">
-
                                                 <input type="checkbox" id="remember-me">
                                                 <div class="check-box__state check-box__state--primary">
-
                                                     <label class="check-box__label" for="remember-me">Ingatkan Saya</label>
                                                 </div>
                                             </div>

@@ -13,6 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('users.pages.cart');
+    return view('users.pages.dashboard');
 });
+
+Route::get('/dashboard', function () {
+    return view('users.pages.dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+
+// Users Route
+Route::middleware(['auth'])->group(function () {
+
+});
+
+// Admin Route

@@ -17,11 +17,9 @@
                         <div class="breadcrumb__wrap">
                             <ul class="breadcrumb__list">
                                 <li class="has-separator">
-
                                     <a href="index.html">Home</a>
                                 </li>
                                 <li class="is-marked">
-
                                     <a href="signup.html">Daftar</a>
                                 </li>
                             </ul>
@@ -50,7 +48,6 @@
             </div>
             <!--====== End - Section Intro ======-->
 
-
             <!--====== Section Content ======-->
             <div class="section__content">
                 <div class="container">
@@ -59,34 +56,33 @@
                             <div class="l-f-o">
                                 <div class="l-f-o__pad-box">
                                     <h1 class="gl-h1">INFORMASI PRIBADI</h1>
-                                    <form class="l-f-o__form">
-                                        <div class="u-s-m-b-30">
+                                    <form class="l-f-o__form" action="{{ route('register') }}" method="POST">
+                                        @csrf
 
+                                        <div class="u-s-m-b-30">
                                             <label class="gl-label" for="reg-fname">NAMA LENGKAP *</label>
-
                                             <input class="input-text input-text--primary-style" type="text"
-                                                id="reg-fname" placeholder="First Name">
+                                                id="reg-fname" placeholder="First Name" name="name" required>
                                         </div>
                                         <div class="u-s-m-b-30">
-
                                             <label class="gl-label" for="reg-email">E-MAIL *</label>
-
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                id="reg-email" placeholder="Enter E-mail">
+                                            <input class="input-text input-text--primary-style" type="email"
+                                                id="reg-email" placeholder="Enter E-mail" name="email" required>
                                         </div>
                                         <div class="u-s-m-b-30">
-
                                             <label class="gl-label" for="reg-password">PASSWORD *</label>
-
-                                            <input class="input-text input-text--primary-style" type="text"
-                                                id="reg-password" placeholder="Enter Password">
+                                            <input class="input-text input-text--primary-style" type="password"
+                                                id="reg-password" placeholder="Enter Password" name="password" required>
+                                        </div>
+                                        <div class="u-s-m-b-30">
+                                            <label class="gl-label" for="reg-password">KONFIRMASI PASSWORD *</label>
+                                            <input class="input-text input-text--primary-style" type="password"
+                                                id="reg-password" placeholder="Enter Password" name="password_confirmation" required>
                                         </div>
                                         <div class="u-s-m-b-15">
-
                                             <button class="btn btn--e-transparent-brand-b-2" type="submit">DAFTAR</button>
                                         </div>
-
-                                        <a class="gl-link" href="#">Sudah punya akun ? Masuk    </a>
+                                        <a class="gl-link" href="{{ route('login') }}">Sudah punya akun ? Masuk    </a>
                                     </form>
                                 </div>
                             </div>

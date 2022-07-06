@@ -43,38 +43,32 @@
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
                                 title="Account">
-
                                 <a><i class="far fa-user-circle"></i></a>
-
                                 <!--====== Dropdown ======-->
-
+                                @if (Route::has('login'))
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:120px">
+                                    @auth
                                     <li>
-
                                         <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
-
-                                            <span>Account</span></a>
+                                        <span>Account</span></a>
                                     </li>
                                     <li>
-
-                                        <a href="signup.html"><i class="fas fa-user-plus u-s-m-r-6"></i>
-
-                                            <span>Signup</span></a>
+                                        <a href="{{ Auth::logout() }}"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                        <span>Keluar</span></a>
+                                    </li>
+                                    @else
+                                    <li>
+                                        <a href="{{ route('register') }}"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                        <span>Daftar</span></a>
                                     </li>
                                     <li>
-
-                                        <a href="signin.html"><i class="fas fa-lock u-s-m-r-6"></i>
-
-                                            <span>Signin</span></a>
+                                        <a href="{{ route('login') }}"><i class="fas fa-lock u-s-m-r-6"></i>
+                                        <span>Masuk</span></a>
                                     </li>
-                                    <li>
-
-                                        <a href="signup.html"><i class="fas fa-lock-open u-s-m-r-6"></i>
-
-                                            <span>Signout</span></a>
-                                    </li>
+                                    @endauth
                                 </ul>
+                                @endif
                                 <!--====== End - Dropdown ======-->
                             </li>
                             <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
@@ -323,7 +317,7 @@
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li>
-                                <a href="index.html"><i class="fas fa-home u-c-brand"></i></a>
+                                <a href="{{ route('dashboard') }}"><i class="fas fa-home u-c-brand"></i></a>
                             </li>
                             <li>
                                 <a href="wishlist.html"><i class="far fa-heart"></i></a>
