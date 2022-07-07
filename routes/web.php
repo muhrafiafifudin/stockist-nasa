@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
-    return view('users.pages.dashboard');
+    return view('admin.pages.auth.register');
 });
+
+// Route::get('/', function () {
+//     return view('users.pages.dashboard');
+// });
 
 Route::get('/dashboard', function () {
     return view('users.pages.dashboard');
@@ -34,3 +34,10 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Admin Route
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::namespace('Auth')->group(function () {
+        // Login Route
+        Route::get('login', 'AuthenticatedSessionController@create')->name('login');
+        Route::post('login', 'AuthenticatedSessionController@store')->name('adminlogin');
+    });
+});
