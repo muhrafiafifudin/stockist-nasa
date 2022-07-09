@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = [
-            'name' => 'User',
-            'email' => 'user@example.com',
-            'password' => bcrypt('12345678')
-        ];
-
-        User::create($user);
+        DB::table('users')->insert(array(
+            array(
+                'name' => 'User',
+                'email' => 'user@example.com',
+                'password' => bcrypt('12345678')
+            )
+        ));
     }
 }

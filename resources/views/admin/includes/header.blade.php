@@ -167,8 +167,8 @@
                             <div class="avatar-lg"><img src="{{ asset('admin/img/profile.jpg') }}" alt="image profile"
                                     class="avatar-img rounded"></div>
                             <div class="u-text">
-                                <h4>Hizrian</h4>
-                                <p class="text-muted">hello@example.com</p><a href="profile.html"
+                                <h4>{{ Auth::guard('admin')->user()->name }}</h4>
+                                <p class="text-muted">{{ Auth::guard('admin')->user()->email }}</p><a href="profile.html"
                                     class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                             </div>
                         </div>
