@@ -183,7 +183,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="admin/img/flags/id.png" alt="indonesia">
+                                                                <img src="{{ asset('admin/img/flags/id.png') }}" alt="indonesia">
                                                             </div>
                                                         </td>
                                                         <td>Indonesia</td>
@@ -197,7 +197,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="admin/img/flags/us.png" alt="united states">
+                                                                <img src="{{ asset('admin/img/flags/us.png') }}" alt="united states">
                                                             </div>
                                                         </td>
                                                         <td>USA</td>
@@ -211,7 +211,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="admin/img/flags/au.png" alt="australia">
+                                                                <img src="{{ asset('admin/img/flags/au.png') }}" alt="australia">
                                                             </div>
                                                         </td>
                                                         <td>Australia</td>
@@ -225,7 +225,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="admin/img/flags/ru.png" alt="russia">
+                                                                <img src="{{ asset('admin/img/flags/ru.png') }}" alt="russia">
                                                             </div>
                                                         </td>
                                                         <td>Russia</td>
@@ -239,7 +239,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="admin/img/flags/cn.png" alt="china">
+                                                                <img src="{{ asset('admin/img/flags/cn.png') }}" alt="china">
                                                             </div>
                                                         </td>
                                                         <td>China</td>
@@ -253,7 +253,7 @@
                                                     <tr>
                                                         <td>
                                                             <div class="flag">
-                                                                <img src="admin/img/flags/br.png" alt="brazil">
+                                                                <img src="{{ asset('admin/img/flags/br.png') }}" alt="brazil">
                                                             </div>
                                                         </td>
                                                         <td>Brasil</td>
@@ -287,7 +287,7 @@
                             <div class="card-body pb-0">
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="admin/img/logoproduct.svg" alt="..."
+                                        <img src="{{ asset('admin/img/logoproduct.svg') }}" alt="..."
                                             class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
@@ -301,7 +301,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="admin/img/logoproduct2.svg" alt="..."
+                                        <img src="{{ asset('admin/img/logoproduct2.svg') }}" alt="..."
                                             class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
@@ -315,7 +315,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar">
-                                        <img src="admin/img/logoproduct3.svg" alt="..."
+                                        <img src="{{ asset('admin/img/logoproduct3.svg') }}" alt="..."
                                             class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
@@ -340,7 +340,7 @@
                                 <div class="card-list">
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="admin/img/jm_denis.jpg" alt="..."
+                                            <img src="{{ asset('admin/img/jm_denis.jpg') }}" alt="..."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -353,7 +353,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="admin/img/chadengle.jpg" alt="..."
+                                            <img src="{{ asset('admin/img/chadengle.jpg') }}" alt="..."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -366,7 +366,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="admin/img/talha.jpg" alt="..."
+                                            <img src="{{ asset('admin/img/talha.jpg') }}" alt="..."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -379,7 +379,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="admin/img/mlane.jpg" alt="..."
+                                            <img src="{{ asset('admin/img/mlane.jpg') }}" alt="..."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -392,7 +392,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="admin/img/talha.jpg" alt="..."
+                                            <img src="{{ asset('admin/img/talha.jpg') }}" alt="..."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
@@ -405,7 +405,7 @@
                                     </div>
                                     <div class="item-list">
                                         <div class="avatar">
-                                            <img src="admin/img/jm_denis.jpg" alt="..."
+                                            <img src="{{ asset('admin/img/jm_denis.jpg') }}" alt="..."
                                                 class="avatar-img rounded-circle">
                                         </div>
                                         <div class="info-user ml-3">
