@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.pages.product.category', compact('categories'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.product.form-category');
     }
 
     /**
@@ -35,7 +38,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Category::create($data);
+
+        return redirect()->route('admin.kategori.index');
     }
 
     /**
@@ -57,7 +63,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::findOrFail($id);
+
+        return view('admin.pages.product.edit-category', compact('categories'));
     }
 
     /**
@@ -69,7 +77,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $categories = Category::findOrFail($id);
+        $categories->update($data);
+
+        return redirect()->route('admin.kategori.index');
     }
 
     /**
@@ -80,6 +93,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Category::findOrFail($id);
+        $categories->delete();
+
+        return redirect()->route('admin.kategori.index');
     }
 }

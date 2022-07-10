@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\SubCategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
@@ -14,7 +16,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $sub_categories = SubCategory::all();
+
+        return view('admin.pages.product.sub-category', compact('sub_categories'));
     }
 
     /**
@@ -24,7 +28,9 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.pages.product.form-sub-category', compact('categories'));
     }
 
     /**
@@ -35,7 +41,10 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        SubCategory::create($data);
+
+        return redirect()->route('admin.sub-kategori.index');
     }
 
     /**
@@ -57,7 +66,10 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.pages.product.edit-sub-category', [
+            'categories' => Category::all(),
+            'sub_categories' => SubCategory::findOrFail($id)
+        ]);
     }
 
     /**
@@ -69,7 +81,12 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $sub_categories = SubCategory::findOrFail($id);
+        $sub_categories->update($data);
+
+        return redirect()->route('admin.sub-kategori.index');
     }
 
     /**
@@ -80,6 +97,9 @@ class SubCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sub_categories = SubCategory::findOrFail($id);
+        $sub_categories->delete();
+
+        return redirect()->route('admin.sub-kategori.index');
     }
 }

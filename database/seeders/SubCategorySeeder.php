@@ -1,0 +1,35 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class SubCategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('sub_categories')->insert(array(
+            array(
+                'categories_id' => 1,
+                'sub_category' => 'Pertanian',
+                'total_product' => 1
+            ),
+            array(
+                'categories_id' => 1,
+                'sub_category' => 'Peternakan',
+                'total_product' => 1
+            ),
+            array(
+                'categories_id' => 1,
+                'sub_category' => 'Perikanan',
+                'total_product' => 1
+            )
+        ));
+    }
+}

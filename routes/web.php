@@ -46,7 +46,15 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::middleware('admin')->group(function () {
         // Dashboard
         Route::get('dashboard','DashboardController@index')->name('dashboard');
+        // Category
+        Route::resource('kategori', 'CategoryController');
+        // Sub Category
+        Route::resource('sub-kategori', 'SubCategoryController');
+        // Product
+        Route::resource('produk', 'ProductController');
     });
+
+
 
 
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');

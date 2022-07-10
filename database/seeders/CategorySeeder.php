@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert(array(
             array(
                 'category' => 'Agrokompleks',
-                'total_product' => 1
+                'total_product' => 3
             ),
             array(
                 'category' => 'Body Care',

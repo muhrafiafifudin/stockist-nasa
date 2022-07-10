@@ -11,5 +11,12 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $guarded = [];
+    protected $fillable = [
+        'category'
+    ];
+
+    public function sub_categories()
+    {
+        return $this->hasMany(SubCategory::class, 'categories_id');
+    }
 }
