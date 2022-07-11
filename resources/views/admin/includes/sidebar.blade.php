@@ -38,7 +38,7 @@
                 </div>
             </div>
             <ul class="nav">
-                <li class="nav-item active">
+                <li class="nav-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">
                     <a href="index.html">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
@@ -69,20 +69,20 @@
                     </span>
                     <h4 class="text-section">Produk</h4>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ request()->is('admin/kategori', 'admin/sub-kategori') ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#forms">
                         <i class="fas fa-pen-square"></i>
                         <p>Kategori</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="forms">
+                    <div class="collapse {{ request()->is('admin/kategori', 'admin/sub-kategori') ? 'show' : '' }}" id="forms">
                         <ul class="nav nav-collapse">
-                            <li>
+                            <li class="{{ request()->is('admin/kategori') ? 'active' : '' }}">
                                 <a href="{{ route('admin.kategori.index') }}">
                                     <span class="sub-item">Kategori</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="{{ request()->is('admin/sub-kategori') ? 'active' : '' }}">
                                 <a href="{{ route('admin.sub-kategori.index') }}">
                                     <span class="sub-item">Sub Kategori</span>
                                 </a>
@@ -90,7 +90,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ request()->is('admin/produk') ? 'active' : '' }}">
                     <a href="{{ route('admin.produk.index') }}">
                         <i class="fas fa-pen-square"></i>
                         <p>Produk</p>

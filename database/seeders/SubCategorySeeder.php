@@ -18,16 +18,19 @@ class SubCategorySeeder extends Seeder
             array(
                 'categories_id' => 1,
                 'sub_category' => 'Pertanian',
+                'slug' => 'pertanian',
                 'total_product' => 1
             ),
             array(
                 'categories_id' => 1,
                 'sub_category' => 'Peternakan',
+                'slug' => 'peternakan',
                 'total_product' => 1
             ),
             array(
                 'categories_id' => 1,
                 'sub_category' => 'Perikanan',
+                'slug' => 'perikanan',
                 'total_product' => 1
             )
         ));

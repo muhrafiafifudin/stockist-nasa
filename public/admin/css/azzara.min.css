@@ -1417,6 +1417,12 @@ body {
 .main-header[data-background-color="red"] .navbar-header {
     background: #f3545d !important;
 }
+.main-header[data-background-color="white"] {
+    background: #ffffff !important;
+}
+.main-header[data-background-color="white"] .navbar-header {
+    background: #ffffff !important;
+}
 .avatar {
     position: relative;
     display: inline-block;

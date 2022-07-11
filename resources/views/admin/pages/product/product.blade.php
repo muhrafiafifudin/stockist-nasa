@@ -28,42 +28,61 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-title">Hoverable Table</div>
+                                <div class="card-head-row">
+                                    <div class="card-title">
+                                        Daftar Produk
+
+                                        <div class="card-category">
+                                            Menampilkan semua data produk yang tersedia.
+                                        </div>
+                                    </div>
+                                    <div class="card-tools">
+                                        <a href="{{ route('admin.produk.create') }}" class="btn btn-secondary">
+											<span class="btn-label" style="margin-right:0.5rem">
+												<i class="fa fa-plus"></i>
+											</span>
+											Tambah Produk
+										</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>
-                                            <th scope="col">Nama Kategori</th>
-                                            <th scope="col">Jumlah Produk</th>
+                                            <th scope="col">Gambar</th>
+                                            <th scope="col">Nama Produk</th>
+                                            <th scope="col">Harga Produk</th>
+                                            <th scope="col">Stok Produk</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                        @php $no = 1 @endphp
+                                        @foreach ($products as $product)
+                                            <tr>
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{ $product->images }}</td>
+                                                <td>{{ $product->name }}</td>
+                                                <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
+                                                <td>{{ $product->qty }}</td>
+                                                <td>
+                                                    <form action="{{ route('admin.produk.destroy', $product->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+
+                                                        <a href="{{ route('admin.produk.edit', $product->id) }}" class="btn btn-warning">Edit</a>
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

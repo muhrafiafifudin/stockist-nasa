@@ -28,6 +28,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
+Route::get('produk', 'ProductController@product');
+Route::get('produk/{categorySlug}/{productSlug}', 'ProductController@productDetail');
 
 // Users Route
 Route::middleware(['auth'])->group(function () {
@@ -53,9 +55,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         // Product
         Route::resource('produk', 'ProductController');
     });
-
-
-
 
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 });

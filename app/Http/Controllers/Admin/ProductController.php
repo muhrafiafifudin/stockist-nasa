@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.product.product');
+        $products = Product::all();
+
+        return view('admin.pages.product.product', compact('products'));
     }
 
     /**
@@ -24,7 +28,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.pages.product.form-product', compact('categories'));
     }
 
     /**
@@ -80,6 +86,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $products = Product::findOrFail($id);
+        $products->delete();
+
+        return redirect()->route('admin.produk.index');
     }
 }

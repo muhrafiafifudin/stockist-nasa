@@ -17,26 +17,32 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert(array(
             array(
                 'category' => 'Agrokompleks',
+                'slug' => 'agrokompleks',
                 'total_product' => 3
             ),
             array(
                 'category' => 'Body Care',
+                'slug' => 'body-care',
                 'total_product' => 1
             ),
             array(
                 'category' => 'Home Care',
+                'slug' => 'home-care',
                 'total_product' => 1
             ),
             array(
                 'category' => 'Kesehatan',
+                'slug' => 'kesehatan',
                 'total_product' => 1
             ),
             array(
                 'category' => 'Kosmetik',
+                'slug' => 'kosmetik',
                 'total_product' => 1
             ),
             array(
                 'category' => 'Skin Care',
+                'slug' => 'skin-care',
                 'total_product' => 1
             )
         ));

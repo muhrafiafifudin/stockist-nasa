@@ -15,7 +15,7 @@
         <!--
    Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
   -->
-        <div class="main-header" data-background-color="purple">
+        <div class="main-header" data-background-color="dark">
             <!-- Logo Header -->
             @include('admin.includes.header-logo')
             <!-- End Logo Header -->

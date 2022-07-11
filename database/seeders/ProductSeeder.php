@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert(array(
             array(
                 'name' => 'Pupuk Organik Granule Organindo',
-                'photos' => 'pupuk-organik-granule-organindo.jpg',
+                'images' => 'pupuk-organik-granule-organindo.jpg',
                 'categories_id' => 1,
                 'price' => 250000,
                 'weight' => 10000.00,
@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
             ),
             array(
                 'name' => 'SHANAS Premium Touch Shampoo',
-                'photos' => 'shanas-premium-touch-shampoo.jpg',
+                'images' => 'shanas-premium-touch-shampoo.jpg',
                 'categories_id' => 2,
                 'price' => 45000,
                 'weight' => 150.00,
@@ -37,7 +37,7 @@ class ProductSeeder extends Seeder
             ),
             array(
                 'name' => 'SmarThink Sabun Cuci Piring',
-                'photos' => 'smarthink-sabun-cuci-piring.jpg',
+                'images' => 'smarthink-sabun-cuci-piring.jpg',
                 'categories_id' => 3,
                 'price' => 39000,
                 'weight' => 900.00,

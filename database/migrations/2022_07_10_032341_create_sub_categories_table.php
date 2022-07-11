@@ -17,6 +17,7 @@ class CreateSubCategoriesTable extends Migration
             $table->id();
             $table->string('categories_id');
             $table->string('sub_category');
+            $table->string('slug');
             $table->tinyInteger('total_product')->default(0);
             $table->timestamps();
         });
