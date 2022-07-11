@@ -6,3 +6,5 @@
 
 <!--====== App ======-->
 <script src="{{ asset('users/js/app.js') }}"></script>
+
+<script src="{{ asset('users/js/add-cart.js') }}"></script>

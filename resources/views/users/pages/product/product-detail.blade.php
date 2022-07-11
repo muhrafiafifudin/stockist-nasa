@@ -38,7 +38,7 @@
 
         <!--====== Section 2 ======-->
         <div class="container">
-            <div class="row">
+            <div class="row product-data">
                 <div class="col-lg-5">
 
                     <!--====== Product Detail Zoom ======-->
@@ -101,22 +101,18 @@
                             <form class="pd-detail__form">
                                 <div class="pd-detail-inline-2">
                                     <div class="u-s-m-b-15">
-
                                         <!--====== Input Counter ======-->
+                                        <input type="hidden" value="{{ $products->id }}" class="product-id">
                                         <div class="input-counter">
-
                                             <span class="input-counter__minus fas fa-minus"></span>
-
                                             <input class="input-counter__text input-counter--text-primary-style"
                                                 type="text" value="1" data-min="1" data-max="1000">
-
                                             <span class="input-counter__plus fas fa-plus"></span>
                                         </div>
                                         <!--====== End - Input Counter ======-->
                                     </div>
                                     <div class="u-s-m-b-15">
-
-                                        <button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button>
+                                        <button class="btn btn--e-brand-b-2 addToCartBtn" type="submit">Add to Cart</button>
                                     </div>
                                 </div>
                             </form>
