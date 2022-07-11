@@ -243,7 +243,7 @@
                                 <!--====== End - Dropdown ======-->
                             </li>
                             <li class="has-dropdown">
-                                <a>PRODUK<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+                                <a href="{{ url('produk') }}">PRODUK<i class="fas fa-angle-down u-s-m-l-6"></i></a>
                                 <!--====== Dropdown ======-->
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">

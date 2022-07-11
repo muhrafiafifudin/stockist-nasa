@@ -6455,7 +6455,7 @@ input::-ms-clear {
     color: #a0a0a0;
 }
 .is-grid-active .product-m__content {
-    padding: 4px 16px 6px;
+    padding: 16px 16px;
 }
 .is-grid-active .product-m__category {
     margin-bottom: 2px;
@@ -6533,7 +6533,7 @@ input::-ms-clear {
 }
 
 .is-grid-active .product-m:hover {
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 20px rgb(0 0 0 / 5%);
 }
 .is-grid-active .product-m:hover .product-m__add-cart {
     opacity: 1;

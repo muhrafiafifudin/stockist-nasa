@@ -8,137 +8,132 @@
     <div class="app-content">
 
         <!--====== Section 1 ======-->
-        <div class="u-s-p-t-90">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
+        <div class="u-s-p-y-60">
 
-                        <!--====== Product Breadcrumb ======-->
-                        <div class="pd-breadcrumb u-s-m-b-30">
-                            <ul class="pd-breadcrumb__list">
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <div class="breadcrumb__wrap">
+                            <ul class="breadcrumb__list">
                                 <li class="has-separator">
-
-                                    <a href="index.hml">Home</a>
+                                    <a href="index.html">Home</a>
                                 </li>
                                 <li class="has-separator">
-
-                                    <a href="shop-side-version-2.html">Produk</a>
+                                    <a href="{{ url('produk') }}">Produk</a>
                                 </li>
                                 <li class="has-separator">
-
-                                    <a href="shop-side-version-2.html">DSLR Cameras</a>
+                                    <a href="">{{ $products->categories->category }}</a>
                                 </li>
                                 <li class="is-marked">
-
-                                    <a href="shop-side-version-2.html">Nikon Cameras</a>
+                                    <a href="{{ url('produk/' . $products->categories->slug . '/' . $products->slug) }}">{{ $products->name }}</a>
                                 </li>
                             </ul>
                         </div>
-                        <!--====== End - Product Breadcrumb ======-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section 1 ======-->
 
+        <!--====== Section 2 ======-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
 
-                        <!--====== Product Detail Zoom ======-->
-                        <div class="pd u-s-m-b-30">
-                            <div class="slider-fouc pd-wrap">
-                                <div id="pd-o-initiate">
-                                    <div class="pd-o-img-wrap" data-src="https://images.unsplash.com/photo-1657079921585-8dd9809abe52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
-                                        <img class="u-img-fluid" src="https://images.unsplash.com/photo-1657079921585-8dd9809abe52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                                            alt="">
-                                    </div>
+                    <!--====== Product Detail Zoom ======-->
+                    <div class="pd u-s-m-b-30">
+                        <div class="slider-fouc pd-wrap">
+                            <div id="pd-o-initiate">
+                                <div class="pd-o-img-wrap" data-src="{{ asset('admin/img/product/' . $products->images) }}">
+                                    <img class="u-img-fluid" src="{{ asset('admin/img/product/' . $products->images) }}"
+                                        alt="">
                                 </div>
                             </div>
-                            <div class="u-s-m-t-15">
-                                <div class="slider-fouc">
-                                    <div id="pd-o-thumbnail">
-                                        <div>
-                                            <img class="u-img-fluid" src="images/product/product-d-1.jpg" alt="">
-                                        </div>
+                        </div>
+                        <div class="u-s-m-t-15">
+                            <div class="slider-fouc">
+                                <div id="pd-o-thumbnail">
+                                    <div>
+                                        <img class="u-img-fluid" src="{{ asset('admin/img/product/' . $products->images) }}" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--====== End - Product Detail Zoom ======-->
                     </div>
-                    <div class="col-lg-7">
+                    <!--====== End - Product Detail Zoom ======-->
+                </div>
+                <div class="col-lg-7">
 
-                        <!--====== Product Right Side Details ======-->
-                        <div class="pd-detail">
-                            <div>
-
-                                <span class="pd-detail__name">Nikon Camera 4k Lens Zoom Pro</span>
-                            </div>
-                            <div>
-                                <div class="pd-detail__inline">
-
-                                    <span class="pd-detail__price">$6.99</span>
-
-                                    <span class="pd-detail__discount">(76% OFF)</span><del
-                                        class="pd-detail__del">$28.97</del>
-                                </div>
-                            </div>
-                            <div class="u-s-m-b-15">
-                                <div class="pd-detail__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star-half-alt"></i>
-                                    <span class="pd-detail__review u-s-m-l-4">
-                                        <a data-click-scroll="#view-review">23 Reviews</a></span>
-                                </div>
-                            </div>
-                            <div class="u-s-m-b-15">
-                                <div class="pd-detail__inline">
-                                    <span class="pd-detail__stock">200 in stock</span>
-                                </div>
-                            </div>
-                            <div class="u-s-m-b-15">
-                                <span class="pd-detail__preview-desc">Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
-                                    the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book.</span>
-                            </div>
-                            <div class="u-s-m-b-15">
-                                <div class="pd-detail__inline">
-                                    <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
-                                        <a href="signin.html">Add to Wishlist</a>
-                                </div>
-                            </div>
-                            <div class="u-s-m-b-15">
-                                <form class="pd-detail__form">
-                                    <div class="pd-detail-inline-2">
-                                        <div class="u-s-m-b-15">
-
-                                            <!--====== Input Counter ======-->
-                                            <div class="input-counter">
-
-                                                <span class="input-counter__minus fas fa-minus"></span>
-
-                                                <input class="input-counter__text input-counter--text-primary-style"
-                                                    type="text" value="1" data-min="1" data-max="1000">
-
-                                                <span class="input-counter__plus fas fa-plus"></span>
-                                            </div>
-                                            <!--====== End - Input Counter ======-->
-                                        </div>
-                                        <div class="u-s-m-b-15">
-
-                                            <button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="u-s-m-b-15">
-                                <span class="pd-detail__label u-s-m-b-8">Kepuasan Anda Adalah Kebahagiaan Kami :</span>
-                                <ul class="pd-detail__policy-list">
-                                    <li><i class="fas fa-check u-s-m-r-8"></i>
-                                        <span>Jaminan akan barang rusak atau tidak sampai.</span>
-                                    </li>
-                                    <li><i class="fas fa-check u-s-m-r-8"></i>
-                                        <span>Pembayaran masuk sebelum jam 15.00 akan diproses hari ini.</span>
-                                    </li>
-                                </ul>
+                    <!--====== Product Right Side Details ======-->
+                    <div class="pd-detail">
+                        <div>
+                            <span class="pd-detail__name">{{ $products->name }}</span>
+                        </div>
+                        <div>
+                            <div class="pd-detail__inline">
+                                <span class="pd-detail__price">Rp. {{ number_format($products->price, 2, ',', '.') }}</span>
                             </div>
                         </div>
-                        <!--====== End - Product Right Side Details ======-->
+                        <div class="u-s-m-b-15">
+                            <div class="pd-detail__rating gl-rating-style"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star-half-alt"></i>
+                                <span class="pd-detail__review u-s-m-l-4">
+                                    <a data-click-scroll="#view-review">23 Reviews</a></span>
+                            </div>
+                        </div>
+                        <div class="u-s-m-b-15">
+                            <div class="pd-detail__inline">
+                                <span class="pd-detail__stock">{{ $products->qty }} in stock</span>
+                            </div>
+                        </div>
+                        <div class="u-s-m-b-15">
+                            <span class="pd-detail__preview-desc">{{ $products->description }}</span>
+                        </div>
+                        <div class="u-s-m-b-15">
+                            <div class="pd-detail__inline">
+                                <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
+                                    <a href="signin.html">Add to Wishlist</a>
+                            </div>
+                        </div>
+                        <div class="u-s-m-b-15">
+                            <form class="pd-detail__form">
+                                <div class="pd-detail-inline-2">
+                                    <div class="u-s-m-b-15">
+
+                                        <!--====== Input Counter ======-->
+                                        <div class="input-counter">
+
+                                            <span class="input-counter__minus fas fa-minus"></span>
+
+                                            <input class="input-counter__text input-counter--text-primary-style"
+                                                type="text" value="1" data-min="1" data-max="1000">
+
+                                            <span class="input-counter__plus fas fa-plus"></span>
+                                        </div>
+                                        <!--====== End - Input Counter ======-->
+                                    </div>
+                                    <div class="u-s-m-b-15">
+
+                                        <button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="u-s-m-b-15">
+                            <span class="pd-detail__label u-s-m-b-8">Kepuasan Anda Adalah Kebahagiaan Kami :</span>
+                            <ul class="pd-detail__policy-list">
+                                <li><i class="fas fa-check u-s-m-r-8"></i>
+                                    <span>Jaminan akan barang rusak atau tidak sampai.</span>
+                                </li>
+                                <li><i class="fas fa-check u-s-m-r-8"></i>
+                                    <span>Pembayaran masuk sebelum jam 15.00 akan diproses hari ini.</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    <!--====== End - Product Right Side Details ======-->
                 </div>
             </div>
         </div>
@@ -1008,6 +1003,6 @@
             </div>
             <!--====== End - Section Content ======-->
         </div>
-        <!--====== End - Section 1 ======-->
+        <!--====== End - Section 2 ======-->
     </div>
 @endsection
