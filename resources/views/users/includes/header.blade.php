@@ -54,9 +54,13 @@
                                         <span>Account</span></a>
                                     </li>
                                     <li>
-                                        <a href="{{ Auth::logout() }}"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-lock-open u-s-m-r-6"></i>
                                         <span>Keluar</span></a>
                                     </li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                     @else
                                     <li>
                                         <a href="{{ route('register') }}"><i class="fas fa-user-plus u-s-m-r-6"></i>
@@ -231,7 +235,7 @@
                                         <!--====== End - Dropdown ======-->
                                     </li>
                                     <li>
-                                        <a href="blog-masonry.html">Keranjang Belanja</a>
+                                        <a href="{{ url('keranjang') }}">Keranjang Belanja</a>
                                     </li>
                                     <li>
                                         <a href="blog-detail.html">Konfirmasi Pembayaran</a>
@@ -285,7 +289,7 @@
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">
                                     <li>
-                                        <a href="blog-left-sidebar.html">Peluang Usaha</a>
+                                        <a href="{{ url('kemitraan/peluang-usaha') }}">Peluang Usaha</a>
                                     </li>
                                     <li>
                                         <a href="blog-right-sidebar.html">Form Pendaftaran</a>
@@ -317,13 +321,13 @@
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li>
-                                <a href="{{ route('dashboard') }}"><i class="fas fa-home u-c-brand"></i></a>
+                                <a href="{{ url('dashboard') }}"><i class="fas fa-home {{ request()->is('dashboard') ? 'u-c-brand' : ''}}"></i></a>
                             </li>
                             <li>
                                 <a href="wishlist.html"><i class="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="wishlist.html"><i class="fas fa-shopping-bag"></i></a>
+                                <a href="{{ url('keranjang') }}"><i class="fas fa-shopping-bag {{ request()->is('keranjang') ? 'u-c-brand' : ''}}"></i></a>
                             </li>
                         </ul>
                         <!--====== End - List ======-->

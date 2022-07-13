@@ -59,191 +59,63 @@
                             <div class="table-responsive">
                                 <table class="table-p">
                                     <tbody>
+                                        @foreach ($cartItems as $cartItem)
+                                            <!--====== Row ======-->
+                                            <tr class="product-data">
+                                                <td>
+                                                    <div class="table-p__box">
+                                                        <div class="table-p__img-wrap">
 
-                                        <!--====== Row ======-->
-                                        <tr>
-                                            <td>
-                                                <div class="table-p__box">
-                                                    <div class="table-p__img-wrap">
+                                                            <img class="u-img-fluid"
+                                                                src="{{ asset('admin/img/product/' . $cartItem->products->images) }}" alt="">
+                                                        </div>
+                                                        <div class="table-p__info">
 
-                                                        <img class="u-img-fluid"
-                                                            src="images/product/electronic/product3.jpg" alt="">
+                                                            <span class="table-p__name">
+
+                                                                <a href="{{ url('produk/' . $cartItem->products->categories->slug . '/' . $cartItem->products->slug) }}">{{ $cartItem->products->name }}</a></span>
+
+                                                            <span class="table-p__category">
+
+                                                                <a href="shop-side-version-2.html">{{ $cartItem->products->categories->category }}</a></span>
+                                                            <ul class="table-p__variant-list">
+                                                                <li>
+                                                                    <span>Berat : {{ $cartItem->products->weight }} gram</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span>Jumlah : {{ $cartItem->products_qty }}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                    <div class="table-p__info">
-
-                                                        <span class="table-p__name">
-
-                                                            <a href="product-detail.html">Yellow Wireless
-                                                                Headphone</a></span>
-
-                                                        <span class="table-p__category">
-
-                                                            <a href="shop-side-version-2.html">Electronics</a></span>
-                                                        <ul class="table-p__variant-list">
-                                                            <li>
-
-                                                                <span>Size: 22</span>
-                                                            </li>
-                                                            <li>
-
-                                                                <span>Color: Red</span>
-                                                            </li>
-                                                        </ul>
+                                                </td>
+                                                <td>
+                                                    <span class="table-p__price">Rp. {{ number_format($cartItem->products->price, 2, ',', '.') }}</span>
+                                                </td>
+                                                <td>
+                                                    <input type="hidden" class="product-id" value="{{ $cartItem->products_id }}">
+                                                    <div class="table-p__input-counter-wrap">
+                                                        <!--====== Input Counter ======-->
+                                                        <div class="input-counter">
+                                                            <span class="input-counter__minus fas fa-minus"></span>
+                                                            <input class="input-counter__text input-counter--text-primary-style"
+                                                                type="text" value="1" data-min="1" data-max="1000">
+                                                            <span class="input-counter__plus fas fa-plus"></span>
+                                                        </div>
+                                                        <!--====== End - Input Counter ======-->
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-
-                                                <span class="table-p__price">$125.00</span>
-                                            </td>
-                                            <td>
-                                                <div class="table-p__input-counter-wrap">
-
-                                                    <!--====== Input Counter ======-->
-                                                    <div class="input-counter">
-
-                                                        <span class="input-counter__minus fas fa-minus"></span>
-
-                                                        <input class="input-counter__text input-counter--text-primary-style"
-                                                            type="text" value="1" data-min="1" data-max="1000">
-
-                                                        <span class="input-counter__plus fas fa-plus"></span>
+                                                </td>
+                                                <td>
+                                                    <span class="table-p__price">$125.00</span>
+                                                </td>
+                                                <td>
+                                                    <div class="table-p__del-wrap">
+                                                        <a class="far fa-trash-alt table-p__delete-link delete-cart-item"></a>
                                                     </div>
-                                                    <!--====== End - Input Counter ======-->
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-p__del-wrap">
-
-                                                    <a class="far fa-trash-alt table-p__delete-link" href="#"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!--====== End - Row ======-->
-
-
-                                        <!--====== Row ======-->
-                                        <tr>
-                                            <td>
-                                                <div class="table-p__box">
-                                                    <div class="table-p__img-wrap">
-
-                                                        <img class="u-img-fluid" src="images/product/women/product8.jpg"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="table-p__info">
-
-                                                        <span class="table-p__name">
-
-                                                            <a href="product-detail.html">New Dress D Nice
-                                                                Elegant</a></span>
-
-                                                        <span class="table-p__category">
-
-                                                            <a href="shop-side-version-2.html">Women Clothing</a></span>
-                                                        <ul class="table-p__variant-list">
-                                                            <li>
-
-                                                                <span>Size: 22</span>
-                                                            </li>
-                                                            <li>
-
-                                                                <span>Color: Red</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-
-                                                <span class="table-p__price">$125.00</span>
-                                            </td>
-                                            <td>
-                                                <div class="table-p__input-counter-wrap">
-
-                                                    <!--====== Input Counter ======-->
-                                                    <div class="input-counter">
-
-                                                        <span class="input-counter__minus fas fa-minus"></span>
-
-                                                        <input class="input-counter__text input-counter--text-primary-style"
-                                                            type="text" value="1" data-min="1" data-max="1000">
-
-                                                        <span class="input-counter__plus fas fa-plus"></span>
-                                                    </div>
-                                                    <!--====== End - Input Counter ======-->
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-p__del-wrap">
-
-                                                    <a class="far fa-trash-alt table-p__delete-link" href="#"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!--====== End - Row ======-->
-
-
-                                        <!--====== Row ======-->
-                                        <tr>
-                                            <td>
-                                                <div class="table-p__box">
-                                                    <div class="table-p__img-wrap">
-
-                                                        <img class="u-img-fluid" src="images/product/men/product8.jpg"
-                                                            alt="">
-                                                    </div>
-                                                    <div class="table-p__info">
-
-                                                        <span class="table-p__name">
-
-                                                            <a href="product-detail.html">New Fashion D Nice
-                                                                Elegant</a></span>
-
-                                                        <span class="table-p__category">
-
-                                                            <a href="shop-side-version-2.html">Men Clothing</a></span>
-                                                        <ul class="table-p__variant-list">
-                                                            <li>
-
-                                                                <span>Size: 22</span>
-                                                            </li>
-                                                            <li>
-
-                                                                <span>Color: Red</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-
-                                                <span class="table-p__price">$125.00</span>
-                                            </td>
-                                            <td>
-                                                <div class="table-p__input-counter-wrap">
-
-                                                    <!--====== Input Counter ======-->
-                                                    <div class="input-counter">
-
-                                                        <span class="input-counter__minus fas fa-minus"></span>
-
-                                                        <input class="input-counter__text input-counter--text-primary-style"
-                                                            type="text" value="1" data-min="1" data-max="1000">
-
-                                                        <span class="input-counter__plus fas fa-plus"></span>
-                                                    </div>
-                                                    <!--====== End - Input Counter ======-->
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="table-p__del-wrap">
-
-                                                    <a class="far fa-trash-alt table-p__delete-link" href="#"></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!--====== End - Row ======-->
+                                                </td>
+                                            </tr>
+                                            <!--====== End - Row ======-->
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

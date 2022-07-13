@@ -5061,7 +5061,7 @@ input::-ms-clear {
 }
 
 .detail-post {
-    max-width: 740px;
+    max-width: 1140px;
     padding: 0 15px;
     width: 100%;
     margin: 0 auto;
@@ -8021,4 +8021,12 @@ Additional CSS
 li.nav-item {
     margin-left: 1rem;
     margin-right: 2rem;
+}
+
+.shop-p__collection {
+    margin-top: 0.5rem;
+}
+
+.bp-detail__info-wrap {
+    padding: 1.125rem;
 }

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('admin.pages.dashboard');
+//     return view('welcome');
 // });
 
 Route::get('/', function () {
@@ -35,10 +35,12 @@ Route::post('add-to-cart', 'CartController@addCart');
 Route::post('update-cart', 'CartController@updateCart');
 Route::post('delete-cart-item', 'CartController@deleteCart');
 
+Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
+
 // Users Route
 Route::middleware(['auth'])->group(function () {
     // Cart
-    Route::get('cart', 'CartController@index');
+    Route::get('keranjang', 'CartController@index');
 });
 
 // Admin Route

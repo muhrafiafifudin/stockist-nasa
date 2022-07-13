@@ -25,5 +25,30 @@ $(document).ready(function() {
                 });
             }
         })
-    })
+    });
+
+    $('.delete-cart-item').click(function(e) {
+        e.preventDefault();
+
+        var products_id = $(this).closest('.product-data').find('.product-id').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "delete-cart-item",
+            data: {
+                'products_id': products_id,
+            },
+            success: function(response) {
+                swal("", response.status, "success").then(function() {
+                    location.reload();
+                });
+            }
+        })
+    });
 })

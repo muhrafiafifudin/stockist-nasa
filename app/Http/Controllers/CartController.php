@@ -26,7 +26,7 @@ class CartController extends Controller
             if ($products_check) {
 
                 if (Cart::where('products_id', $products_id)->where('users_id', Auth::id())->exists()) {
-                    return response()->json(['status' => $products_check->name . " Already Added to Cart"]);
+                    return response()->json(['status' => $products_check->name . " Sudah Ditambahkan ke Keranjang"]);
                 } else {
                     $cartItems = new Cart();
                     $cartItems->users_id = Auth::id();
@@ -34,13 +34,13 @@ class CartController extends Controller
                     $cartItems->products_qty = $products_qty;
                     $cartItems->save();
 
-                    return response()->json(['status' => $products_check->name . " Added to Cart"]);
+                    return response()->json(['status' => $products_check->name . " Ditambahkan ke Keranjang"]);
                 }
 
             }
 
         } else {
-            return response()->json(['status' => "Login to Continue"]);
+            return response()->json(['status' => "Silahkan Login Terlebih Dahulu"]);
         }
     }
 
@@ -49,8 +49,20 @@ class CartController extends Controller
 
     }
 
-    public function deleteCart()
+    public function deleteCart(Request $request)
     {
+        if (Auth::check()) {
+            $products_id = $request->input('products_id');
 
+            if (Cart::where('products_id', $products_id)->where('users_id', Auth::id())->exists()) {
+                $cartItems = Cart::where('products_id', $products_id)->where('users_id', Auth::id())->first();
+                $cartItems->delete();
+
+                return response()->json(['status' => 'Produk Berhasil Dihapus !!']);
+            }
+
+        } else {
+            return response()->json(['status' => "Silahkan Login Terlebih Dahulu"]);
+        }
     }
 }
