@@ -36,11 +36,18 @@ Route::post('update-cart', 'CartController@updateCart');
 Route::post('delete-cart-item', 'CartController@deleteCart');
 
 Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
+Route::get('kemitraan/form-pendaftaran', 'PartnershipController@registrationForm');
 
 // Users Route
 Route::middleware(['auth'])->group(function () {
     // Cart
     Route::get('keranjang', 'CartController@index');
+    // Get region and shipping cost Rajaongkir
+    Route::post('get-province', 'CartController@getProvince');
+    Route::post('get-city/{id}', 'CartController@getCity');
+    Route::post('get-courier', 'CartController@getCourier');
+    Route::post('get-package', 'CartController@getPackage');
+    Route::post('get-estimate', 'CartController@getEstimate');
 });
 
 // Admin Route

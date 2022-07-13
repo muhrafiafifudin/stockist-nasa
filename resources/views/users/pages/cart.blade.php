@@ -59,6 +59,7 @@
                             <div class="table-responsive">
                                 <table class="table-p">
                                     <tbody>
+                                        @php $total = 0; $totalItems = 0; $weight = 0; $totalWeight = 0; @endphp
                                         @foreach ($cartItems as $cartItem)
                                             <!--====== Row ======-->
                                             <tr class="product-data">
@@ -80,7 +81,7 @@
                                                                 <a href="shop-side-version-2.html">{{ $cartItem->products->categories->category }}</a></span>
                                                             <ul class="table-p__variant-list">
                                                                 <li>
-                                                                    <span>Berat : {{ $cartItem->products->weight }} gram</span>
+                                                                    <span>Berat : {{ number_format($cartItem->products->weight, 0, ',', '.') }} gram</span>
                                                                 </li>
                                                                 <li>
                                                                     <span>Jumlah : {{ $cartItem->products_qty }}</span>
@@ -97,16 +98,24 @@
                                                     <div class="table-p__input-counter-wrap">
                                                         <!--====== Input Counter ======-->
                                                         <div class="input-counter">
-                                                            <span class="input-counter__minus fas fa-minus"></span>
-                                                            <input class="input-counter__text input-counter--text-primary-style"
-                                                                type="text" value="1" data-min="1" data-max="1000">
-                                                            <span class="input-counter__plus fas fa-plus"></span>
+                                                            <span class="input-counter__minus fas fa-minus changeQuantity"></span>
+                                                            <input class="input-counter__text input-counter--text-primary-style qty-input"
+                                                                type="text" value="{{ $cartItem->products_qty }}" data-min="1" data-max="15">
+                                                            <span class="input-counter__plus fas fa-plus changeQuantity"></span>
                                                         </div>
                                                         <!--====== End - Input Counter ======-->
                                                     </div>
+
+                                                    @php
+                                                        $totalItem = $cartItem->products->price * $cartItem->products_qty;
+                                                        $total += $cartItem->products->price * $cartItem->products_qty;
+
+                                                        $weight = $cartItem->products->weight * $cartItem->products_qty;
+                                                        $totalWeight += $weight;
+                                                    @endphp
                                                 </td>
                                                 <td>
-                                                    <span class="table-p__price">$125.00</span>
+                                                    <span class="table-p__price">Rp. {{ number_format($totalItem, 2, ',', '.') }}</span>
                                                 </td>
                                                 <td>
                                                     <div class="table-p__del-wrap">
@@ -123,7 +132,7 @@
                         <div class="col-lg-12">
                             <div class="route-box">
                                 <div class="route-box__g1">
-                                    <a class="route-box__link" href="shop-side-version-2.html"><i
+                                    <a class="route-box__link" href="{{ url('produk') }}"><i
                                             class="fas fa-long-arrow-alt-left"></i>
                                         <span>LANJUT BELANJA</span></a>
                                 </div>
@@ -158,45 +167,46 @@
                                             <span class="gl-text u-s-m-b-30">Masukkan alamat pengiriman dan kurir sesuai pilihan anda.</span>
                                             <div class="u-s-m-b-30">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="shipping-country">PRIVINSI *</label><select
-                                                    class="select-box select-box--primary-style" id="shipping-country">
+                                                <label class="gl-label" for="province">PROVINSI *</label><select
+                                                    class="select-box select-box--primary-style" id="province">
                                                     <option selected value="">Pilih Provinsi</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="shipping-state">KOTA / KABUPATEN
+                                                <label class="gl-label" for="regency">KOTA / KABUPATEN
                                                     *</label><select class="select-box select-box--primary-style"
-                                                    id="shipping-state">
+                                                    id="regency">
                                                     <option selected value="">Pilih Kota / Kabupaten</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="shipping-state">KURIR
+                                                <label class="gl-label" for="courier">KURIR
                                                     *</label><select class="select-box select-box--primary-style"
-                                                    id="shipping-state">
+                                                    id="courier">
                                                     <option selected value="">Pilih Kurir</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
+                                                <input type="hidden" value="{{ $totalWeight }}" id="weight">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="shipping-state">PAKET PENGIRIMAN
+                                                <label class="gl-label" for="package">PAKET PENGIRIMAN
                                                     *</label><select class="select-box select-box--primary-style"
-                                                    id="shipping-state">
+                                                    id="package">
                                                     <option selected value="">Pilih Paket Pengiriman</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
 
-                                                <label class="gl-label" for="shipping-zip">ESTIMASI PENGIRIMAN *</label>
+                                                <label class="gl-label" for="estimate">ESTIMASI PENGIRIMAN *</label>
 
                                                 <input class="input-text input-text--primary-style" type="text"
-                                                    id="shipping-zip" placeholder="Zip/Postal Code" disabled>
+                                                    id="estimate" placeholder="Zip/Postal Code" name="estimate" disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -210,11 +220,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>SUBTOTAL</td>
-                                                            <td>$379.00</td>
+                                                            <td>Rp. {{ number_format($total, 2, ',', '.') }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>BERAT BARANG</td>
-                                                            <td>$4.00</td>
+                                                            <td>{{ number_format($totalWeight, 0, ',', '.') }} gram</td>
                                                         </tr>
                                                         <tr>
                                                             <td>BIAYA PENGIRIMAN</td>
@@ -222,7 +232,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>PAJAK</td>
-                                                            <td>$0.00</td>
+                                                            <td>Rp. 0,00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>TOTAL</td>
