@@ -2,6 +2,9 @@
  * This is main script file that contains JS code.
  */
 (function ($) {
+
+    $('div.checkbox-group.required :checkbox:checked').length > 0
+
     // Main Object
     var RESHOP = {};
 

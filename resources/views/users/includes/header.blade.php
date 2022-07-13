@@ -229,7 +229,7 @@
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
                                             <li>
-                                                <a href="index-2.html">Body Care</a>
+                                                <a href="index-2.html">Cara Order Mitra NASA</a>
                                             </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
@@ -292,7 +292,7 @@
                                         <a href="{{ url('kemitraan/peluang-usaha') }}">Peluang Usaha</a>
                                     </li>
                                     <li>
-                                        <a href="blog-right-sidebar.html">Form Pendaftaran</a>
+                                        <a href="{{ url('kemitraan/form-pendaftaran') }}">Form Pendaftaran</a>
                                     </li>
                                     <li>
                                         <a href="blog-sidebar-none.html">Ruang Member</a>

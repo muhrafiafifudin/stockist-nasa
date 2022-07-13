@@ -96,22 +96,22 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 46px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 32px;
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 30px;
 }
 
 h5 {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 30px;
 }
 
@@ -312,7 +312,7 @@ Box Module
  * Basic typography style for copy text
  */
 body {
-    color: #7f7f7f;
+    color: #333333;
     font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -8029,4 +8029,21 @@ li.nav-item {
 
 .bp-detail__info-wrap {
     padding: 1.125rem;
+}
+
+.btn-main {
+    border: 1px solid #ff4500;
+    box-shadow: 1px 2px 8px 0 rgb(36 37 38 / 8%);
+    background-color: #ff4500;
+    color: #ffffff;
+    transition: background-color 0.3s linear, border-color 0.3s linear;
+    font-weight: 600;
+    padding: 12px 46px;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+.regist__form li {
+    font-size: 14px;
+    line-height: 1.5rem;
 }
