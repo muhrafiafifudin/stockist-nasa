@@ -28,15 +28,22 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
+// Catalog
+Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
+Route::get('katalog/cara-belanja', 'CatalogController@howToShop');
+
+// Product
 Route::get('produk', 'ProductController@product');
 Route::get('produk/{categorySlug}/{productSlug}', 'ProductController@productDetail');
+
+// Partnership
+Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
+Route::get('kemitraan/form-pendaftaran', 'PartnershipController@registrationForm');
+
 
 Route::post('add-to-cart', 'CartController@addCart');
 Route::post('update-cart', 'CartController@updateCart');
 Route::post('delete-cart-item', 'CartController@deleteCart');
-
-Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
-Route::get('kemitraan/form-pendaftaran', 'PartnershipController@registrationForm');
 
 // Users Route
 Route::middleware(['auth'])->group(function () {

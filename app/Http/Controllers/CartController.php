@@ -153,6 +153,7 @@ class CartController extends Controller
     public function getCourier(Request $request)
     {
         if ($request) {
+            echo "<option>Pilih Kurir</option>";
             echo '<option value="jne" name="JNE">JNE</option>';
             echo '<option value="tiki" name="TIKI">TIKI</option>';
             echo '<option value="pos" name="POS Indonesia">POS Indonesia</option>';
@@ -195,6 +196,8 @@ class CartController extends Controller
         } else {
             $arrayResponse = json_decode($response, true);
             $packages = $arrayResponse['rajaongkir']['results'][0]['costs'];
+
+            echo "<option>Pilih Paket Pengiriman</option>";
 
             foreach ($packages as $package) {
                 echo "<option value='" . $package['service'] . "' ongkir='" . $package['cost'][0]['value'] . "' estimasi='" . $package['cost'][0]['etd'] . "'>";

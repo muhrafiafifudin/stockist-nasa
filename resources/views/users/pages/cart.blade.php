@@ -228,7 +228,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BIAYA PENGIRIMAN</td>
-                                                            <td>$4.00</td>
+                                                            <td id="shipping_price"></td>
                                                         </tr>
                                                         <tr>
                                                             <td>PAJAK</td>
@@ -236,7 +236,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>TOTAL</td>
-                                                            <td>$379.00</td>
+                                                            <td id="total">Rp. 0,00</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

@@ -238,10 +238,7 @@
                                         <a href="{{ url('keranjang') }}">Keranjang Belanja</a>
                                     </li>
                                     <li>
-                                        <a href="blog-detail.html">Konfirmasi Pembayaran</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail.html">Lacak Paket</a>
+                                        <a href="{{ url('katalog/lacak-paket') }}">Lacak Paket</a>
                                     </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
