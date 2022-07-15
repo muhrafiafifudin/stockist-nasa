@@ -229,7 +229,7 @@
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
                                             <li>
-                                                <a href="index-2.html">Cara Order Mitra NASA</a>
+                                                <a href="{{ url('katalog/cara-belanja/cara-order-mitra-nasa') }}">Cara Order Mitra NASA</a>
                                             </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->

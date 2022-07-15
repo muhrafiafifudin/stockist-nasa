@@ -30,7 +30,7 @@ require __DIR__ . '/auth.php';
 
 // Catalog
 Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
-Route::get('katalog/cara-belanja', 'CatalogController@howToShop');
+Route::get('katalog/cara-belanja/cara-order-mitra-nasa', 'CatalogController@howOrderNasa');
 
 // Product
 Route::get('produk', 'ProductController@product');

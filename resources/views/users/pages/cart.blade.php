@@ -220,7 +220,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>SUBTOTAL</td>
-                                                            <td>Rp. {{ number_format($total, 2, ',', '.') }}</td>
+                                                            <td id="subtotal" subtotal="{{ $total }}">Rp. {{ number_format($total, 2, ',', '.') }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>BERAT BARANG</td>
@@ -228,7 +228,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BIAYA PENGIRIMAN</td>
-                                                            <td id="shipping_price"></td>
+                                                            <td id="shipping">Rp. 0,00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>PAJAK</td>

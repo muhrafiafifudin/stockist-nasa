@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function howToShop()
+    public function howOrderNasa()
     {
-        return view('users.pages.catalog.how-to-shop');
+        return view('users.pages.catalog.how-order-nasa');
     }
 
     public function trackPackage()

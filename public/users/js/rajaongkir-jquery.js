@@ -77,22 +77,40 @@ $(function() {
             }
         })
     })
-
+    let subtotal = $('#subtotal', this).attr('subtotal');
     $('#package').on('change', function() {
         let estimate = $('option:selected', this).attr('estimasi') + " Hari";
         let shipping = $('option:selected', this).attr('ongkir');
+
+
+        // Change format rupiah
+        let reverse_shipping = shipping.toString().split('').reverse().join(''),
+            format_shipping = reverse_shipping.match(/\d{1,3}/g);
+            format_shipping = format_shipping.join('.').split('').reverse().join('');
+
+        let total = Number(shipping) + Number(subtotal);
+        console.log(total);
+
+        let reverse_total = total.toString().split('').reverse().join(''),
+            format_total = reverse_total.match(/\d{1,3}/g);
+            format_total = format_total.join('.').split('').reverse().join('');
 
         $.ajax({
             type: 'POST',
             url: "/get-estimate",
             data: {
                 'estimate': estimate,
-                'shipping': shipping
+                'shipping': format_shipping,
+                'total' : format_total
             },
             cache: false,
             success: function(msg) {
                 $('#estimate').html(msg);
                 $('input[name=estimate]').val(estimate);
+
+                $('#shipping').html("Rp. " + format_shipping + ",00");
+
+                $('#total').html("Rp. " + format_total + ",00");
             },
             error: function(data) {
                 console.log(data);
