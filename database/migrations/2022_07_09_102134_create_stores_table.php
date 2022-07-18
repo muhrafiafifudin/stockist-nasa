@@ -22,7 +22,7 @@ class CreateStoresTable extends Migration
             $table->integer('cities_id')->nullable();
             $table->string('address');
             $table->string('postcode');
-            $table->string('maps')->comment('With maps embed');
+            $table->text('maps')->comment('With maps embed');
             $table->timestamps();
         });
     }

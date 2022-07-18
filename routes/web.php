@@ -40,7 +40,7 @@ Route::get('produk/{categorySlug}/{productSlug}', 'ProductController@productDeta
 Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
 Route::get('kemitraan/form-pendaftaran', 'PartnershipController@registrationForm');
 
-
+// Add, Update, Delete Cart
 Route::post('add-to-cart', 'CartController@addCart');
 Route::post('update-cart', 'CartController@updateCart');
 Route::post('delete-cart-item', 'CartController@deleteCart');
@@ -49,6 +49,13 @@ Route::post('delete-cart-item', 'CartController@deleteCart');
 Route::middleware(['auth'])->group(function () {
     // Cart
     Route::get('keranjang', 'CartController@index');
+    Route::post('keranjang', 'CartController@addPost')->name('keranjang');
+    // Checkout
+    Route::get('checkout', 'CheckoutController@index')->name('checkout.index');
+    // Order
+    Route::post('order', 'CheckoutController@placeorder')->name('checkout.placeorder');
+    // Invoice
+    Route::get('invoice', 'CheckoutController@invoice')->name('checkout.invoice');
     // Get region and shipping cost Rajaongkir
     Route::post('get-province', 'CartController@getProvince');
     Route::post('get-city/{id}', 'CartController@getCity');

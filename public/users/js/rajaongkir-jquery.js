@@ -1,4 +1,7 @@
 $(function() {
+
+    let subtotal = $('#subtotal', this).attr('subtotal');
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -77,11 +80,10 @@ $(function() {
             }
         })
     })
-    let subtotal = $('#subtotal', this).attr('subtotal');
+
     $('#package').on('change', function() {
         let estimate = $('option:selected', this).attr('estimasi') + " Hari";
         let shipping = $('option:selected', this).attr('ongkir');
-
 
         // Change format rupiah
         let reverse_shipping = shipping.toString().split('').reverse().join(''),
@@ -109,8 +111,10 @@ $(function() {
                 $('input[name=estimate]').val(estimate);
 
                 $('#shipping').html("Rp. " + format_shipping + ",00");
+                $('input[name=shipping]').val(Number(shipping));
 
                 $('#total').html("Rp. " + format_total + ",00");
+                $('input[name=total]').val(total);
             },
             error: function(data) {
                 console.log(data);

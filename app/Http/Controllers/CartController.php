@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use App\Models\Product;
+use Illuminate\Support\Facades\Redirect;
+use Session;
 
 class CartController extends Controller
 {
@@ -210,5 +212,22 @@ class CartController extends Controller
     public function getEstimate(Request $request)
     {
         echo $request;
+    }
+
+    public function addPost(Request $request)
+    {
+        Session::put([
+            'province' => $request->province,
+            'regency' => $request->regency,
+            'courier' => $request->courier,
+            'package' => $request->package,
+            'estimate' => $request->estimate,
+            'shipping' => $request->shipping,
+            'weight' => $request->weight,
+            'subtotal' => $request->subtotal,
+            'total' => $request->total,
+        ]);
+
+        return redirect()->route('checkout.index');
     }
 }

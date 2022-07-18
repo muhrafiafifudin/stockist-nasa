@@ -112,7 +112,7 @@
                                         <!--====== End - Input Counter ======-->
                                     </div>
                                     <div class="u-s-m-b-15">
-                                        <button class="btn btn--e-brand-b-2 addToCartBtn" type="submit">Add to Cart</button>
+                                        <button class="btn btn--e-brand-b-2 addToCartBtn" type="submit">Tambah ke Keranjang</button>
                                     </div>
                                 </div>
                             </form>

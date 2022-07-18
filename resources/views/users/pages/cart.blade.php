@@ -59,7 +59,7 @@
                             <div class="table-responsive">
                                 <table class="table-p">
                                     <tbody>
-                                        @php $total = 0; $totalItems = 0; $weight = 0; $totalWeight = 0; @endphp
+                                        @php $subTotal = 0; $totalItems = 0; $weight = 0; $totalWeight = 0; @endphp
                                         @foreach ($cartItems as $cartItem)
                                             <!--====== Row ======-->
                                             <tr class="product-data">
@@ -108,7 +108,7 @@
 
                                                     @php
                                                         $totalItem = $cartItem->products->price * $cartItem->products_qty;
-                                                        $total += $cartItem->products->price * $cartItem->products_qty;
+                                                        $subTotal += $cartItem->products->price * $cartItem->products_qty;
 
                                                         $weight = $cartItem->products->weight * $cartItem->products_qty;
                                                         $totalWeight += $weight;
@@ -158,7 +158,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 u-s-m-b-30">
-                            <form class="f-cart">
+                            <form action="{{ route('keranjang') }}" class="f-cart" method="POST">
+                                @csrf
+                                @method('POST')
+
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 u-s-m-b-30">
                                         <div class="f-cart__pad-box">
@@ -167,46 +170,41 @@
                                             <span class="gl-text u-s-m-b-30">Masukkan alamat pengiriman dan kurir sesuai pilihan anda.</span>
                                             <div class="u-s-m-b-30">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="province">PROVINSI *</label><select
-                                                    class="select-box select-box--primary-style" id="province">
-                                                    <option selected value="">Pilih Provinsi</option>
+                                                <label class="gl-label" for="province">PROVINSI *</label>
+                                                <select class="select-box select-box--primary-style" name="province" id="province">
+                                                    <option selected="selected">Pilih Provinsi</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="regency">KOTA / KABUPATEN
-                                                    *</label><select class="select-box select-box--primary-style"
-                                                    id="regency">
-                                                    <option selected value="">Pilih Kota / Kabupaten</option>
+                                                <label class="gl-label" for="regency">KOTA / KABUPATEN *</label>
+                                                <select class="select-box select-box--primary-style" name="regency" id="regency">
+                                                    <option selected="selected">Pilih Kota / Kabupaten</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="courier">KURIR
-                                                    *</label><select class="select-box select-box--primary-style"
-                                                    id="courier">
-                                                    <option selected value="">Pilih Kurir</option>
+                                                <label class="gl-label" for="courier">KURIR *</label>
+                                                <select class="select-box select-box--primary-style" name="courier" id="courier">
+                                                    <option selected="selected">Pilih Kurir</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
                                                 <input type="hidden" value="{{ $totalWeight }}" id="weight">
                                                 <!--====== Select Box ======-->
-                                                <label class="gl-label" for="package">PAKET PENGIRIMAN
-                                                    *</label><select class="select-box select-box--primary-style"
-                                                    id="package">
-                                                    <option selected value="">Pilih Paket Pengiriman</option>
+                                                <label class="gl-label" for="package">PAKET PENGIRIMAN *</label>
+                                                <select class="select-box select-box--primary-style" name="package" id="package">
+                                                    <option selected="selected">Pilih Paket Pengiriman</option>
                                                 </select>
                                                 <!--====== End - Select Box ======-->
                                             </div>
                                             <div class="u-s-m-b-30">
-
                                                 <label class="gl-label" for="estimate">ESTIMASI PENGIRIMAN *</label>
-
-                                                <input class="input-text input-text--primary-style" type="text"
-                                                    id="estimate" placeholder="Zip/Postal Code" name="estimate" disabled>
+                                                <input class="input-text read-only--primary-style" type="text" name="estimate"
+                                                    id="estimate" placeholder="Zip/Postal Code" name="estimate" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -220,7 +218,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>SUBTOTAL</td>
-                                                            <td id="subtotal" subtotal="{{ $total }}">Rp. {{ number_format($total, 2, ',', '.') }}</td>
+                                                            <td id="subtotal" subtotal="{{ $subTotal }}">Rp. {{ number_format($subTotal, 2, ',', '.') }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>BERAT BARANG</td>
@@ -242,13 +240,17 @@
                                                 </table>
                                             </div>
                                             <div>
-
-                                                <button class="btn btn--e-brand-b-2" type="submit"> PROCEED TO
-                                                    CHECKOUT</button>
+                                                <button class="btn btn--e-brand-b-2" type="submit">PROSES CHECKOUT</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <input type="hidden" name="shipping" />
+                                <input type="hidden" name="subtotal" value="<?php echo $subTotal; ?>"/>
+                                <input type="hidden" name="total" />
+                                <input type="hidden" name="weight" value="<?php echo $totalWeight; ?>"/>
+
                             </form>
                         </div>
                     </div>
