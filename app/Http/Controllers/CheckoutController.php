@@ -53,8 +53,8 @@ class CheckoutController extends Controller
             $gross_amount += $data->products->price * $data->products_qty;
         }
 
-        $transaction->gross_amount = $gross_amount;
-        $transaction->order_number = rand();
+        $transaction->total = $gross_amount + $request->input('shipping');
+        $transaction->order_number = $request->input('order_number');
         $transaction->save();
 
         $cartItems = Cart::where('users_id', Auth::id())->get();
@@ -75,7 +75,7 @@ class CheckoutController extends Controller
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->provinces_id = $request->input('province');
-            $user->cities_id = $request->input('city');
+            $user->cities_id = $request->input('regency');
             $user->address = $request->input('address');
             $user->postcode = $request->input('postcode');
             $user->phone_number = $request->input('phone_number');
@@ -85,11 +85,14 @@ class CheckoutController extends Controller
         $cartItems = Cart::where('users_id', Auth::id())->get();
         Cart::destroy($cartItems);
 
-        return redirect('/')->with('success', 'Order Placed Successfully');
+        return redirect('invoice/' . $request->input('order_number'))->with('success', 'Order Placed Successfully');
     }
 
-    public function invoice()
+    public function invoice($order_number)
     {
-        return view('users.pages.invoice');
+        $transactions = Transaction::where('order_number', $order_number)->where('users_id', Auth::id())->first();
+        $addresses = RajaOngkir::kota()->dariProvinsi($transactions->provinces_id)->find($transactions->cities_id);
+
+        return view('users.pages.invoice', compact('transactions', 'addresses'));
     }
 }

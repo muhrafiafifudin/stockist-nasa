@@ -226,6 +226,7 @@ class CartController extends Controller
             'weight' => $request->weight,
             'subtotal' => $request->subtotal,
             'total' => $request->total,
+            'order' => rand()
         ]);
 
         return redirect()->route('checkout.index');

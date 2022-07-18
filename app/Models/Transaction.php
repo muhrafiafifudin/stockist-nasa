@@ -12,4 +12,14 @@ class Transaction extends Model
     protected $table = 'transactions';
 
     protected $guarded = [];
+
+    public function transactionDetails()
+    {
+        return $this->hasMany(TransactionDetail::class, 'transactions_id', 'id');
+    }
+
+    public function payments()
+    {
+        return $this->hasOne(Payment::class, 'transactions_id', 'id');
+    }
 }

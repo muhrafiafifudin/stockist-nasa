@@ -44,6 +44,8 @@
                             @csrf
                             @method('POST')
 
+                            <input type="hidden" name="order_number" value="{{ $checkout['order'] }}">
+
                             <div class="row">
                                 <div class="col-lg-6">
                                     <h1 class="checkout-f__h1">INFORMASI PENGIRIMAN</h1>
@@ -87,14 +89,14 @@
                                         <!--====== Street Address ======-->
                                         <div class="u-s-m-b-15">
                                             <label class="gl-label" for="address">ALAMAT PENGIRIMAN *</label>
-                                            <input class="input-text input-text--primary-style" type="text" name="address" id="address" placeholder="Masukkan nama jalan, kelurahan, kecamatan anda ..." required>
+                                            <input class="input-text input-text--primary-style" type="text" value="{{ Auth::user()->address }}" name="address" id="address" placeholder="Masukkan nama jalan, kelurahan, kecamatan anda ..." required>
                                         </div>
                                         <!--====== End - Street Address ======-->
 
                                         <!--====== ZIP/POSTAL ======-->
                                         <div class="u-s-m-b-15">
                                             <label class="gl-label" for="postcode">KODE POS *</label>
-                                            <input class="input-text input-text--primary-style" type="text" name="postcode" id="postcode" placeholder="Masukkan kodepos anda ..." required>
+                                            <input class="input-text input-text--primary-style" type="text" value="{{ Auth::user()->postcode }}" name="postcode" id="postcode" placeholder="Masukkan kodepos anda ..." required>
                                         </div>
                                         <!--====== End - ZIP/POSTAL ======-->
 
@@ -148,22 +150,26 @@
                                             <div class="o-summary__box">
                                                 <table class="o-summary__table">
                                                     <tbody>
-                                                            <tr>
-                                                                <td>BIAYA PENGIRIMAN</td>
-                                                                <td>Rp. {{ number_format($checkout['shipping'], 2, ',', '.') }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>PAJAK</td>
-                                                                <td>Rp. 0,00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>SUBTOTAL</td>
-                                                                <td>Rp. {{ number_format($checkout['subtotal'], 2, ',', '.') }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>TOTAL</td>
-                                                                <td>Rp. {{ number_format($checkout['total'], 2, ',', '.') }}</td>
-                                                            </tr>
+                                                        <tr>
+                                                            <td>SUBTOTAL</td>
+                                                            <td>Rp. {{ number_format($checkout['subtotal'], 2, ',', '.') }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BERAT BARANG</td>
+                                                            <td>{{ number_format($checkout['weight'], 0, ',', '.') }} gram</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BIAYA PENGIRIMAN</td>
+                                                            <td>Rp. {{ number_format($checkout['shipping'], 2, ',', '.') }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PAJAK</td>
+                                                            <td>Rp. 0,00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>TOTAL</td>
+                                                            <td>Rp. {{ number_format($checkout['total'], 2, ',', '.') }}</td>
+                                                        </tr>
                                                     </tbody>
                                                 </table>
                                                 <div class="u-s-m-t-30">

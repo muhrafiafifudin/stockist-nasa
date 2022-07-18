@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
     // Order
     Route::post('order', 'CheckoutController@placeorder')->name('checkout.placeorder');
     // Invoice
-    Route::get('invoice', 'CheckoutController@invoice')->name('checkout.invoice');
+    Route::get('invoice/{id}', 'CheckoutController@invoice')->name('checkout.invoice');
     // Get region and shipping cost Rajaongkir
     Route::post('get-province', 'CartController@getProvince');
     Route::post('get-city/{id}', 'CartController@getCity');
