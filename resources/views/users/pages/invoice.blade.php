@@ -43,6 +43,12 @@
                         <div class="row">
                             <div class="col-lg-6">
 
+                                <form action="{{ url('invoice/' . $transactions->order_number) }}" id="submit_form" method="POST">
+                                    @csrf
+
+                                    <input type="hidden" name="json" id="json_callback">
+                                </form>
+
                                 <h1 class="checkout-f__h1">KONFIRMASI PEMBAYARAN</h1>
 
                                 <!--====== Order Summary ======-->
@@ -138,7 +144,7 @@
                                             </table>
 
                                             <div>
-                                                <button class="btn btn--e-brand-b-2" type="submit">PEMBAYARAN</button>
+                                                <button class="btn btn--e-brand-b-2" id="pay-button">PEMBAYARAN</button>
                                             </div>
                                         </div>
                                     </div>
@@ -157,3 +163,40 @@
 
     </div>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript">
+        // For example trigger on button clicked, or any time you need
+        var payButton = document.getElementById('pay-button');
+        payButton.addEventListener('click', function () {
+            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+            window.snap.pay('{{ $snapToken }}', {
+                onSuccess: function(result){
+                    /* You may add your own implementation here */
+                    alert("payment success!"); console.log(result);
+                    send_response_to_form(result);
+                },
+                onPending: function(result){
+                    /* You may add your own implementation here */
+                    alert("wating your payment!"); console.log(result);
+                    send_response_to_form(result);
+                },
+                onError: function(result){
+                    /* You may add your own implementation here */
+                    alert("payment failed!"); console.log(result);
+                    send_response_to_form(result);
+                },
+                onClose: function(){
+                    /* You may add your own implementation here */
+                    alert('you closed the popup without finishing the payment');
+                }
+            })
+        });
+
+        function send_response_to_form(result)
+        {
+            document.getElementById('json_callback').value = JSON.stringify(result);
+            $('#submit_form').submit();
+        }
+    </script>
+@endpush
