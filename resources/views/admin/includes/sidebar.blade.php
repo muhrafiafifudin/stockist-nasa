@@ -39,7 +39,7 @@
             </div>
             <ul class="nav">
                 <li class="nav-item {{ request()->is('admin/dashboard') ? 'active' : '' }}">
-                    <a href="index.html">
+                    <a href="{{ route('admin.dashboard') }}">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                         <span class="badge badge-count">5</span>
@@ -51,14 +51,14 @@
                     </span>
                     <h4 class="text-section">Pengguna & Toko</h4>
                 </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#">
+                <li class="nav-item {{ request()->is('admin/pengguna') ? 'active' : '' }}">
+                    <a href="{{ route('admin.pengguna.index') }}">
                         <i class="fas fa-pen-square"></i>
                         <p>Pengguna</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#">
+                <li class="nav-item {{ request()->is('admin/profil-toko') ? 'active' : '' }}">
+                    <a href="{{ route('admin.profil-toko.index') }}">
                         <i class="fas fa-pen-square"></i>
                         <p>Profil Toko</p>
                     </a>

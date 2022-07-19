@@ -45,6 +45,13 @@ Route::post('add-to-cart', 'CartController@addCart');
 Route::post('update-cart', 'CartController@updateCart');
 Route::post('delete-cart-item', 'CartController@deleteCart');
 
+// Get region and shipping cost Rajaongkir
+Route::post('get-province', 'CartController@getProvince');
+Route::post('get-city/{id}', 'CartController@getCity');
+Route::post('get-courier', 'CartController@getCourier');
+Route::post('get-package', 'CartController@getPackage');
+Route::post('get-estimate', 'CartController@getEstimate');
+
 // Users Route
 Route::middleware(['auth'])->group(function () {
     // Cart
@@ -57,12 +64,6 @@ Route::middleware(['auth'])->group(function () {
     // Invoice & Midtrans
     Route::get('invoice/{id}', 'CheckoutController@invoice');
     Route::post('invoice/{id}', 'CheckoutController@paymentPost');
-    // Get region and shipping cost Rajaongkir
-    Route::post('get-province', 'CartController@getProvince');
-    Route::post('get-city/{id}', 'CartController@getCity');
-    Route::post('get-courier', 'CartController@getCourier');
-    Route::post('get-package', 'CartController@getPackage');
-    Route::post('get-estimate', 'CartController@getEstimate');
 });
 
 // Admin Route
@@ -77,6 +78,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::middleware('admin')->group(function () {
         // Dashboard
         Route::get('dashboard','DashboardController@index')->name('dashboard');
+        // Store
+        Route::resource('profil-toko', 'StoreController');
+        // Customer
+        Route::resource('pengguna', 'CustomerController');
         // Category
         Route::resource('kategori', 'CategoryController');
         // Sub Category
