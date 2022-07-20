@@ -64,6 +64,8 @@ Route::middleware(['auth'])->group(function () {
     // Invoice & Midtrans
     Route::get('invoice/{id}', 'CheckoutController@invoice');
     Route::post('invoice/{id}', 'CheckoutController@paymentPost');
+    // Rating & Review Product
+    Route::post('tambah-review', 'ReviewController@addReview');
 });
 
 // Admin Route

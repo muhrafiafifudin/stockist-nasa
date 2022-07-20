@@ -660,30 +660,63 @@
     });
 
 
-        RESHOP.initScrollUp();
-        RESHOP.initTooltip();
-        RESHOP.initModal();
-        RESHOP.defaultAddressCheckbox();
-        RESHOP.initScrollSpy();
-        RESHOP.onClickScroll();
-        RESHOP.reshopNavigation();
-        RESHOP.primarySlider();
-        RESHOP.productSlider();
-        RESHOP.tabSlider();
-        RESHOP.onTabActiveRefreshSlider();
-        RESHOP.brandSlider();
-        RESHOP.testimonialSlider();
-        RESHOP.appConfiguration();
-        RESHOP.isotopeFilter();
-        RESHOP.timerCountDown();
-        RESHOP.initInputCounter();
-        RESHOP.blogPostGallery();
-        RESHOP.blogPostVideo();
-        RESHOP.blogPostEmbedVideo();
-        RESHOP.blogPostMasonry();
-        RESHOP.productDetailInit();
-        RESHOP.modalProductDetailInit();
-        RESHOP.shopCategoryToggle();
-        RESHOP.shopPerspectiveChange();
-        RESHOP.shopSideFilter();
+    RESHOP.initScrollUp();
+    RESHOP.initTooltip();
+    RESHOP.initModal();
+    RESHOP.defaultAddressCheckbox();
+    RESHOP.initScrollSpy();
+    RESHOP.onClickScroll();
+    RESHOP.reshopNavigation();
+    RESHOP.primarySlider();
+    RESHOP.productSlider();
+    RESHOP.tabSlider();
+    RESHOP.onTabActiveRefreshSlider();
+    RESHOP.brandSlider();
+    RESHOP.testimonialSlider();
+    RESHOP.appConfiguration();
+    RESHOP.isotopeFilter();
+    RESHOP.timerCountDown();
+    RESHOP.initInputCounter();
+    RESHOP.blogPostGallery();
+    RESHOP.blogPostVideo();
+    RESHOP.blogPostEmbedVideo();
+    RESHOP.blogPostMasonry();
+    RESHOP.productDetailInit();
+    RESHOP.modalProductDetailInit();
+    RESHOP.shopCategoryToggle();
+    RESHOP.shopPerspectiveChange();
+    RESHOP.shopSideFilter();
+
+
+    $('#review-btn').click(function(e) {
+        e.preventDefault();
+
+        let users_id = $('#users_id').val();
+        let products_id = $('#products_id').val();
+        let users_review = $('#users_review').val();
+        let stars_rated = $('#stars_rated').val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "/tambah-review",
+            data: {
+                'users_id': users_id,
+                'products_id': products_id,
+                'users_review': users_review,
+                'stars_rated': stars_rated
+            },
+            success: function(response) {
+                swal(response.status).then(function() {
+                    location.reload();
+                });
+            }
+        })
+    });
+
 })(jQuery);

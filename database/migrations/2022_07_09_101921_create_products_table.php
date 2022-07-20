@@ -20,9 +20,12 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('categories_id');
             $table->bigInteger('price');
             $table->decimal('weight', 10, 2);
+            $table->text('small_description');
             $table->longText('description');
             $table->string('slug');
             $table->integer('qty');
+            $table->tinyInteger('status')->comment('0 for View, 1 for Hidden');
+            $table->tinyInteger('trending')->comment('0 for NOT Trending, 1 for Trending');
             $table->timestamps();
         });
     }
