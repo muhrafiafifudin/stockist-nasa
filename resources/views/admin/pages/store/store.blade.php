@@ -20,7 +20,7 @@
                             <i class="flaticon-right-arrow"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.profil-toko.index') }}">Kategori</a>
+                            <a href="{{ route('admin.profil-toko.index') }}">Profil Toko</a>
                         </li>
                     </ul>
                 </div>
