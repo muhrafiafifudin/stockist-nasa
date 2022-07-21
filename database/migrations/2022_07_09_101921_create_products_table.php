@@ -22,10 +22,12 @@ class CreateProductsTable extends Migration
             $table->decimal('weight', 10, 2);
             $table->text('small_description');
             $table->longText('description');
+            $table->longText('benefit')->nullable();
+            $table->longText('method')->nullable();
             $table->string('slug');
             $table->integer('qty');
-            $table->tinyInteger('status')->comment('0 for View, 1 for Hidden');
-            $table->tinyInteger('trending')->comment('0 for NOT Trending, 1 for Trending');
+            $table->tinyInteger('status')->comment('0 for View, 1 for Hidden')->nullable();
+            $table->tinyInteger('trending')->comment('0 for NOT Trending, 1 for Trending')->nullable();
             $table->timestamps();
         });
     }

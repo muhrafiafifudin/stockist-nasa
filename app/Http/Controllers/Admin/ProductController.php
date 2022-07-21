@@ -41,7 +41,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'images' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $data = $request->all();
+
+        if ($image = $request->file('photos')) {
+            $destinationPath = 'admin/img/product/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $data['photos'] = $profileImage;
+        }
+
+        Product::create($data);
+
+        return redirect()->route('admin.produk.index');
     }
 
     /**

@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="u-s-m-b-15">
-                            <span class="pd-detail__preview-desc">{{ $products->description }}</span>
+                            <span class="pd-detail__preview-desc">{{ $products->small_description }}</span>
                         </div>
                         <div class="u-s-m-b-15">
                             <div class="pd-detail__inline">
@@ -170,61 +170,9 @@
                                 <div class="tab-pane fade show active" id="pd-desc">
                                     <div class="pd-tab__desc">
                                         <div class="u-s-m-b-15">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                                make a type specimen book. It has survived not only five centuries, but also
-                                                the leap into electronic typesetting, remaining essentially unchanged. It
-                                                was popularised in the 1960s with the release of Letraset sheets containing
-                                                Lorem Ipsum passages, and more recently with desktop publishing software
-                                                like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                        </div>
-                                        <div class="u-s-m-b-15">
-                                            <h4>PRODUCT INFORMATION</h4>
-                                        </div>
-                                        <div class="u-s-m-b-15">
-                                            <div class="pd-table gl-scroll">
-                                                <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Main Material</td>
-                                                            <td>Cotton</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Color</td>
-                                                            <td>Green, Blue, Red</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Sleeves</td>
-                                                            <td>Long Sleeve</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Top Fit</td>
-                                                            <td>Regular</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Print</td>
-                                                            <td>Not Printed</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Neck</td>
-                                                            <td>Round Neck</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Pieces Count</td>
-                                                            <td>1 Piece</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Occasion</td>
-                                                            <td>Casual</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Shipping Weight (kg)</td>
-                                                            <td>0.5</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                            <p>
+                                                {!! $products->description !!}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +242,7 @@
                                                 <div class="rev-f1__review">
                                                     <div class="review-o u-s-m-b-15">
 
-                                                        @foreach ($users_rating as $data)
+                                                        @foreach ($reviews as $data)
                                                             <div class="review-o__info u-s-m-b-8">
                                                                 <span class="review-o__name">{{ $data->users->name }}</span>
                                                                 <span class="review-o__date">{{ date('d M Y H:i:s', strtotime($data->created_at)) }}</span>

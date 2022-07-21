@@ -41,18 +41,18 @@
                                     Menambahkan daftar produk sesuai yang tertera pada website.
                                 </div>
                             </div>
-                            <form action="{{ route('admin.kategori.store') }}" method="POST">
+                            <form action="{{ route('admin.produk.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('POST')
 
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="product">Nama Produk</label>
-                                        <input type="text" class="form-control" name="product" placeholder="Masukkan Nama Produk ...">
+                                        <label for="name">Nama Produk</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Produk ...">
                                         <small id="categoryText" class="form-text text-muted">Nama produk untuk identitas setiap item.</small>
                                     </div>
                                     <div class="form-group">
-                                        <label>Images</label>
+                                        <label>Gambar</label>
                                         <div></div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="images" />
@@ -60,11 +60,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleTextarea">Description</label>
-                                        <textarea class="form-control" name="description" rows="3"></textarea>
+                                        <label for="small_description">Deskripsi Singkat</label>
+                                        <textarea class="form-control" name="small_description" rows="3"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleSelect1">Category
+                                        <label for="description">Deskripsi</label>
+                                        <textarea class="form-control" name="description" rows="15" id="markdown-input"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="categories_id">Kategori
                                         <span class="text-danger">*</span></label>
                                         <select class="form-control" name="categories_id">
                                             @foreach ($categories as $category)
@@ -73,17 +77,22 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Price
+                                        <label for="price">Harga
                                         <span class="text-danger">*</span></label>
                                         <input type="number" name="price" class="form-control" placeholder="Enter email" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Stok
+                                        <label for="weight">Berat
+                                        <span class="text-danger">*</span></label>
+                                        <input type="number" name="weight" class="form-control" placeholder="Enter email" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="qty">Stok
                                         <span class="text-danger">*</span></label>
                                         <input type="number" name="qty" class="form-control" placeholder="Enter email" />
                                     </div>
                                     <div class="form-group">
-                                        <label>Slug
+                                        <label for="slug">Slug
                                         <span class="text-danger">*</span></label>
                                         <input type="text" name="slug" class="form-control" placeholder="Enter email" />
                                     </div>
@@ -100,3 +109,4 @@
         </div>
     </div>
 @endsection
+
