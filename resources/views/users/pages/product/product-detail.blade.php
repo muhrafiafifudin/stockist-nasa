@@ -150,16 +150,16 @@
                             <div class="u-s-m-b-30">
                                 <ul class="nav pd-tab__list">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#pd-desc">DESKRIPSI</a>
+                                        <a class="nav-link active" data-toggle="tab" href="#description">DESKRIPSI</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#pd-tag">MANFAAT</a>
+                                        <a class="nav-link" data-toggle="tab" href="#benefit">MANFAAT</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#pd-tag">CARA PEMAKAIAN</a>
+                                        <a class="nav-link" data-toggle="tab" href="#method">CARA PEMAKAIAN</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="view-review" data-toggle="tab" href="#pd-rev">REVIEWS
+                                        <a class="nav-link" id="view-review" data-toggle="tab" href="#review">REVIEWS
                                         <span>({{ $reviews->count() }})</span></a>
                                     </li>
                                 </ul>
@@ -167,42 +167,39 @@
                             <div class="tab-content">
 
                                 <!--====== Tab 1 ======-->
-                                <div class="tab-pane fade show active" id="pd-desc">
+                                <div class="tab-pane fade show active" id="description">
                                     <div class="pd-tab__desc">
                                         <div class="u-s-m-b-15">
-                                            <p>
                                                 {!! $products->description !!}
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <!--====== End - Tab 1 ======-->
 
-
                                 <!--====== Tab 2 ======-->
-                                <div class="tab-pane" id="pd-tag">
-                                    <div class="pd-tab__tag">
-                                        <h2 class="u-s-m-b-15">ADD YOUR TAGS</h2>
+                                <div class="tab-pane" id="benefit">
+                                    <div class="pd-tab__desc">
                                         <div class="u-s-m-b-15">
-                                            <form>
-
-                                                <input class="input-text input-text--primary-style" type="text">
-
-                                                <button class="btn btn--e-brand-b-2" type="submit">ADD TAGS</button>
-                                            </form>
+                                                {!! $products->benefit !!}
                                         </div>
-
-                                        <span class="gl-text">Use spaces to separate tags. Use single quotes (') for
-                                            phrases.</span>
                                     </div>
                                 </div>
                                 <!--====== End - Tab 2 ======-->
 
-
                                 <!--====== Tab 3 ======-->
-                                <div class="tab-pane" id="pd-rev">
+                                <div class="tab-pane" id="method">
+                                    <div class="pd-tab__desc">
+                                        <div class="u-s-m-b-15">
+                                                {!! $products->method !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--====== End - Tab 3 ======-->
+
+                                <!--====== Tab 4 ======-->
+                                <div class="tab-pane" id="review">
                                     <div class="pd-tab__rev">
-                                        <div class="u-s-m-b-30">
+                                        <div class="u-s-m-b-15">
                                             <div class="pd-tab__rev-score">
                                                 <div class="u-s-m-b-8">
                                                     <h2>{{ $reviews->count() }} Reviews - {{ $ratenum }} (Overall)</h2>
@@ -396,7 +393,7 @@
                                         @endif
                                     </div>
                                 </div>
-                                <!--====== End - Tab 3 ======-->
+                                <!--====== End - Tab 4 ======-->
                             </div>
                         </div>
                     </div>

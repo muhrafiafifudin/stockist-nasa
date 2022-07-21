@@ -263,22 +263,8 @@
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>
-                            <li class="has-dropdown">
-                                <a>ARTIKEL<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-                                <!--====== Dropdown ======-->
-                                <span class="js-menu-toggle"></span>
-                                <ul style="width:200px">
-                                    <li>
-                                        <a href="blog-left-sidebar.html">Info Nasa</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-right-sidebar.html">Teknik Budidaya</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-sidebar-none.html">Video</a>
-                                    </li>
-                                </ul>
-                                <!--====== End - Dropdown ======-->
+                            <li>
+                                <a href="#">ARTIKEL</a>
                             </li>
                             <li class="has-dropdown">
                                 <a>KEMITRAAN<i class="fas fa-angle-down u-s-m-l-6"></i></a>
