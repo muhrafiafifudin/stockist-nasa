@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('images');
             $table->tinyInteger('categories_id');
+            $table->tinyInteger('sub_categories_id')->nullable();
             $table->bigInteger('price');
             $table->decimal('weight', 10, 2);
             $table->text('small_description');

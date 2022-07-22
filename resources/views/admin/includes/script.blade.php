@@ -50,6 +50,8 @@
 <script src="{{ asset('admin/js/ready.js') }}"></script>
 <!-- Raja Ongkir Jquery -->
 <script src="{{ asset('admin/js/rajaongkir-jquery.js') }}"></script>
+<!-- Get Sub Category -->
+<script src="{{ asset('admin/js/app.js') }}"></script>
 <!-- TinyMCE5 -->
 <script src="{{ asset('vendor/tinyMCE5/jquery.tinymce.min.js') }}"></script>
 <script src="{{ asset('vendor/tinyMCE5/tinymce.min.js') }}"></script>
@@ -57,7 +59,7 @@
 <script>
     $(document).ready(function() {
         // Text Editor TinyMCE5
-        $("#markdown-input").tinymce({
+        $(".markdown-input").tinymce({
             relative_urls: false,
             language: "en",
             plugins: [

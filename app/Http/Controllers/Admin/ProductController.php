@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\SubCategory;
+use Mockery\Matcher\Subset;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
@@ -41,17 +43,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'images' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-
         $data = $request->all();
 
-        if ($image = $request->file('photos')) {
+        if ($image = $request->file('images')) {
             $destinationPath = 'admin/img/product/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-            $data['photos'] = $profileImage;
+            $data['images'] = $profileImage;
         }
 
         Product::create($data);
@@ -78,7 +76,11 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::findOrFail($id);
+        $categories = Category::all();
+        $sub_categories = SubCategory::where('categories_id', $products->categories_id)->get();
+
+        return view('admin.pages.product.edit-product', compact('products', 'categories', 'sub_categories'));
     }
 
     /**
@@ -90,7 +92,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        if ($image = $request->file('images')) {
+            $destinationPath = 'admin/assets/images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $data['images'] = $profileImage;
+        } else {
+            unset($data['images']);
+        }
+
+        $products = Product::findOrFail($id);
+        $products->update($data);
+
+        return redirect()->route('admin.produk.index');
     }
 
     /**
@@ -105,5 +121,22 @@ class ProductController extends Controller
         $products->delete();
 
         return redirect()->route('admin.produk.index');
+    }
+
+    // Function Get Sub Category
+    public function getSubCategory(Request $request)
+    {
+        if (SubCategory::where('categories_id', $request->categories_id)->exists()) {
+            $sub_categories = SubCategory::where('categories_id', $request->categories_id)->get();
+            echo "<option>Pilih Sub Category</option>";
+
+            foreach ($sub_categories as $sub_category) {
+                echo "<option value='" . $sub_category->id . "'>";
+                echo $sub_category->sub_category;
+                echo "</option>";
+            }
+        } else {
+            echo "<option>Sub Category Tidak Tersedia</option>";
+        }
     }
 }

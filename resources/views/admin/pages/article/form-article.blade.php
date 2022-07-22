@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="content">Deskripsi</label>
-                                        <textarea class="form-control" name="content" rows="15" id="markdown-input"></textarea>
+                                        <textarea class="form-control markdown-input" name="content" rows="15"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="slug">Slug / Url</label>

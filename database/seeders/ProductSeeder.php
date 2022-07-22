@@ -19,6 +19,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Pupuk Organik Granule Organindo',
                 'images' => 'pupuk-organik-granule-organindo.jpg',
                 'categories_id' => 1,
+                'sub_categories_id' => 1,
                 'price' => 250000,
                 'weight' => 10000.00,
                 'small_description' => 'Pupuk Organik Granule Organindo NASA, Revolusi pupuk organik berbentuk granule modern dengan kandungan lengkap, kualitas tinggi, praktis dan ekonomis.',

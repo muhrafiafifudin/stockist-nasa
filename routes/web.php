@@ -50,6 +50,8 @@ Route::post('get-city/{id}', 'CartController@getCity');
 Route::post('get-courier', 'CartController@getCourier');
 Route::post('get-package', 'CartController@getPackage');
 Route::post('get-estimate', 'CartController@getEstimate');
+// Get Sub Caegory Product
+Route::post('get-sub-category', 'Admin\ProductController@getSubCategory');
 
 // Users Route
 Route::middleware(['auth'])->group(function () {
