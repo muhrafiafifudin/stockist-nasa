@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.pages.product.category', compact('categories'));
+        return view('admin.pages.category.category', compact('categories'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.product.form-category');
+        return view('admin.pages.category.form-category');
     }
 
     /**
@@ -65,7 +65,7 @@ class CategoryController extends Controller
     {
         $categories = Category::findOrFail($id);
 
-        return view('admin.pages.product.edit-category', compact('categories'));
+        return view('admin.pages.category.edit-category', compact('categories'));
     }
 
     /**

@@ -18,7 +18,7 @@ class SubCategoryController extends Controller
     {
         $sub_categories = SubCategory::all();
 
-        return view('admin.pages.product.sub-category', compact('sub_categories'));
+        return view('admin.pages.sub-category.sub-category', compact('sub_categories'));
     }
 
     /**
@@ -30,7 +30,7 @@ class SubCategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.pages.product.form-sub-category', compact('categories'));
+        return view('admin.pages.sub-category.form-sub-category', compact('categories'));
     }
 
     /**
@@ -66,7 +66,7 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.pages.product.edit-sub-category', [
+        return view('admin.pages.sub-category.edit-sub-category', [
             'categories' => Category::all(),
             'sub_categories' => SubCategory::findOrFail($id)
         ]);
