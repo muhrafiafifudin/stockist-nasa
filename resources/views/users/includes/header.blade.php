@@ -41,42 +41,43 @@
 
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
-                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
-                                title="Account">
+                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Account">
                                 <a><i class="far fa-user-circle"></i></a>
                                 <!--====== Dropdown ======-->
                                 @if (Route::has('login'))
-                                <span class="js-menu-toggle"></span>
-                                <ul style="width:120px">
-                                    @auth
-                                    <li>
-                                        <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
-                                        <span>Account</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-lock-open u-s-m-r-6"></i>
-                                        <span>Keluar</span></a>
-                                    </li>
+                                    <span class="js-menu-toggle"></span>
+                                    <ul style="width:120px">
+                                        @auth
+                                            <li>
+                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                    <span>Account</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                                        class="fas fa-lock-open u-s-m-r-6"></i>
+                                                    <span>Keluar</span></a>
+                                            </li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                    @else
-                                    <li>
-                                        <a href="{{ route('register') }}"><i class="fas fa-user-plus u-s-m-r-6"></i>
-                                        <span>Daftar</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('login') }}"><i class="fas fa-lock u-s-m-r-6"></i>
-                                        <span>Masuk</span></a>
-                                    </li>
-                                    @endauth
-                                </ul>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        @else
+                                            <li>
+                                                <a href="{{ route('register') }}"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                                    <span>Daftar</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('login') }}"><i class="fas fa-lock u-s-m-r-6"></i>
+                                                    <span>Masuk</span></a>
+                                            </li>
+                                        @endauth
+                                    </ul>
                                 @endif
                                 <!--====== End - Dropdown ======-->
                             </li>
-                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left"
-                                title="Settings">
+                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Settings">
 
                                 <a><i class="fas fa-user-cog"></i></a>
 
@@ -181,12 +182,14 @@
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">
                                     <li class="has-dropdown has-dropdown--ul-left-100">
-                                        <a href="{{ url('produk') }}">Produk Nasa<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                        <a href="{{ url('produk') }}">Produk Nasa<i
+                                                class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
                                         <!--====== Dropdown ======-->
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
                                             <li class="has-dropdown has-dropdown--ul-left-100">
-                                                <a>Agrokompleks<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                <a>Agrokompleks<i
+                                                        class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
                                                 <!--====== Dropdown ======-->
                                                 <span class="js-menu-toggle"></span>
                                                 <ul style="width:200px">
@@ -229,7 +232,8 @@
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
                                             <li>
-                                                <a href="{{ url('katalog/cara-belanja/cara-order-mitra-nasa') }}">Cara Order Mitra NASA</a>
+                                                <a href="{{ url('katalog/cara-belanja/cara-order-mitra-nasa') }}">Cara
+                                                    Order Mitra NASA</a>
                                             </li>
                                         </ul>
                                         <!--====== End - Dropdown ======-->
@@ -264,7 +268,7 @@
                                 <!--====== End - Dropdown ======-->
                             </li>
                             <li>
-                                <a href="#">ARTIKEL</a>
+                                <a href="{{ url('artikel') }}">ARTIKEL</a>
                             </li>
                             <li class="has-dropdown">
                                 <a>KEMITRAAN<i class="fas fa-angle-down u-s-m-l-6"></i></a>
@@ -304,13 +308,15 @@
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li>
-                                <a href="{{ url('dashboard') }}"><i class="fas fa-home {{ request()->is('dashboard') ? 'u-c-brand' : ''}}"></i></a>
+                                <a href="{{ url('dashboard') }}"><i
+                                        class="fas fa-home {{ request()->is('dashboard') ? 'u-c-brand' : '' }}"></i></a>
                             </li>
                             <li>
                                 <a href="wishlist.html"><i class="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="{{ url('keranjang') }}"><i class="fas fa-shopping-bag {{ request()->is('keranjang') ? 'u-c-brand' : ''}}"></i></a>
+                                <a href="{{ url('keranjang') }}"><i
+                                        class="fas fa-shopping-bag {{ request()->is('keranjang') ? 'u-c-brand' : '' }}"></i></a>
                             </li>
                         </ul>
                         <!--====== End - List ======-->

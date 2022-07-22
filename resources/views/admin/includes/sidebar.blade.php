@@ -100,6 +100,18 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
+                    <h4 class="text-section">Artikel</h4>
+                </li>
+                <li class="nav-item {{ request()->is('admin/artikel') ? 'active' : '' }}">
+                    <a href="{{ route('admin.artikel.index') }}">
+                        <i class="fas fa-pen-square"></i>
+                        <p>Artikel</p>
+                    </a>
+                </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
                     <h4 class="text-section">Transaksi</h4>
                 </li>
                 <li class="nav-item">

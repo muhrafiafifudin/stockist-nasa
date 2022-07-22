@@ -15,7 +15,7 @@
                         <div class="breadcrumb__wrap">
                             <ul class="breadcrumb__list">
                                 <li class="has-separator">
-                                    <a href="index.html">Home</a>
+                                    <a href="{{ url('/') }}">Home</a>
                                 </li>
                                 <li class="has-separator">
                                     <a href="#">Katalog</a>
@@ -191,8 +191,9 @@
                     </div>
                 </div>
             </div>
+            <!--====== End - Detail Post ======-->
         </div>
-        <!--====== End - Detail Post ======-->
+
         <div class="u-s-p-y-60">
             <div class="d-meta">
                 <div class="container">

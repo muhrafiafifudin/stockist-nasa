@@ -31,20 +31,19 @@ require __DIR__ . '/auth.php';
 // Catalog
 Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
 Route::get('katalog/cara-belanja/cara-order-mitra-nasa', 'CatalogController@howOrderNasa');
-
 // Product
 Route::get('produk', 'ProductController@product');
 Route::get('produk/{categorySlug}/{productSlug}', 'ProductController@productDetail');
-
 // Partnership
 Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
 Route::get('kemitraan/form-pendaftaran', 'PartnershipController@registrationForm');
-
+// Article
+Route::get('artikel', 'ArticleController@article');
+Route::get('artikel/{slug}', 'ArticleController@articleDetail');
 // Add, Update, Delete Cart
 Route::post('add-to-cart', 'CartController@addCart');
 Route::post('update-cart', 'CartController@updateCart');
 Route::post('delete-cart-item', 'CartController@deleteCart');
-
 // Get region and shipping cost Rajaongkir
 Route::post('get-province', 'CartController@getProvince');
 Route::post('get-city/{id}', 'CartController@getCity');
@@ -79,7 +78,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware('admin')->group(function () {
         // Dashboard
-        Route::get('dashboard','DashboardController@index')->name('dashboard');
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
         // Store
         Route::resource('profil-toko', 'StoreController');
         // Customer
@@ -90,6 +89,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('sub-kategori', 'SubCategoryController');
         // Product
         Route::resource('produk', 'ProductController');
+        // Article
+        Route::resource('artikel', 'ArticleController');
     });
 
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
