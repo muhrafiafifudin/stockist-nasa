@@ -74,6 +74,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('akun/pesanan', 'MyAccountController@order');
     Route::get('akun/pesanan/{order_number}', 'MyAccountController@orderDetail');
     // Transaction Status
+    Route::put('transaction/update-finish/{id}', 'MyAccountController@updateFinish');
 });
 
 // Admin Route

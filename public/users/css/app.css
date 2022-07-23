@@ -875,6 +875,13 @@ body {
     background-color: #fa4400;
 }
 
+.btn--e-brand-b-disabled {
+    color: #ffffff;
+    background-color: grey;
+    border: 2px solid grey;
+    transition: background-color 0.5s ease-in, border-color 0.5s ease-in;
+}
+
 .btn--e-brand-b-2 {
     color: #ffffff;
     background-color: #ff4500;

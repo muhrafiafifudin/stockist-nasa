@@ -43,4 +43,13 @@ class MyAccountController extends Controller
 
         return view('users.pages.my-account.order.account-order-detail', compact('orders', 'order_details','address_shipping', 'address_billing'));
     }
+
+    public function updateFinish(Request $request, $id)
+    {
+        $transactions = Transaction::findOrFail($id);
+        $transactions->process = 3;
+        $transactions->update();
+
+        return redirect('akun/pesanan/' . $request->order_number);
+    }
 }

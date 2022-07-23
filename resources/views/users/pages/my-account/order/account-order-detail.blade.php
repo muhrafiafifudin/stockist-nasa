@@ -120,8 +120,8 @@
                                                     </div>
                                                     <div class="col-lg-4 u-s-m-b-30">
                                                         <div class="timeline-step">
-                                                            <div class="timeline-l-i">
-                                                                <span class="timeline-circle {{ $orders->process > 3 ? 'timeline-l-i--finish' : ''  }}"></span>
+                                                            <div class="timeline-l-i {{ $orders->process > 2 ? 'timeline-l-i--finish' : ''  }}">
+                                                                <span class="timeline-circle"></span>
                                                             </div>
                                                             <span class="timeline-text">Selesai</span>
                                                         </div>
@@ -196,12 +196,27 @@
                                                     <div class="manage-o__text-2 u-c-secondary">Pajak</div>
                                                     <div class="manage-o__text-2 u-c-secondary">Rp. 0,00</div>
                                                 </div>
-                                                <div class="dash-l-r u-s-m-b-8">
+                                                <div class="dash-l-r u-s-m-b-20">
                                                     <div class="manage-o__text-2 u-c-secondary">Total</div>
                                                     <div class="manage-o__text-2 u-c-secondary">Rp. {{ number_format($orders->total, 2, ',', '.') }}</div>
                                                 </div>
+                                                @if ($orders->process == 2)
+                                                    <div class="f-cart u-s-m-b-10">
+                                                        <form action="{{ url('transaction/update-finish/' . $orders->id) }}" method="POST">
+                                                            @csrf
+                                                            @method('PUT')
 
-                                                <span class="dash__text-2">Pembayaran menggunakan {{ strtoupper($orders->payments->payment_type) }}</span>
+                                                            <input type="hidden" name="order_number" value="{{ $orders->order_number }}" />
+
+                                                            <button class="btn btn--e-brand-b-2" type="submit">PAKET DITERIMA</button>
+                                                        </form>
+                                                    </div>
+                                                @else
+                                                    <div class="f-cart u-s-m-b-10">
+                                                        <button class="btn btn--e-brand-b-disabled">PAKET DITERIMA</button>
+                                                    </div>
+                                                @endif
+                                                <span class="dash__text-2 text-center">Pembayaran menggunakan {{ strtoupper($orders->payments->payment_type) }}</span>
                                             </div>
                                         </div>
                                     </div>
