@@ -27,7 +27,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.customer.form-customer');
     }
 
     /**
@@ -38,7 +38,11 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        User::create($data);
+
+        return redirect()->route('admin.pengguna.index');
     }
 
     /**
@@ -60,7 +64,9 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::findOrFail($id);
+
+        return view('admin.pages.customer.edit-customer', compact('users'));
     }
 
     /**
@@ -72,7 +78,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $users = User::findOrFail($id);
+        $users->update($data);
+
+        return redirect()->route('admin.pengguna.index');
     }
 
     /**
@@ -83,6 +94,9 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users->delete();
+
+        return redirect()->route('admin.pengguna.index');
     }
 }
