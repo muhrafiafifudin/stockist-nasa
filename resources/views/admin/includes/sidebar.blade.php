@@ -114,8 +114,8 @@
                     </span>
                     <h4 class="text-section">Transaksi</h4>
                 </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#">
+                <li class="nav-item {{ request()->is('admin/transaksi') ? 'active' : '' }}">
+                    <a href="{{ route('admin.transaksi.index') }}">
                         <i class="fas fa-pen-square"></i>
                         <p>Transaksi</p>
                     </a>

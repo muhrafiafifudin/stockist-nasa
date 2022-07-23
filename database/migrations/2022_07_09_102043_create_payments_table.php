@@ -15,7 +15,7 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('transactions_id')->comment('Transaction ID local');
+            $table->string('order_number')->comment('Connection to Transaction Table');
             $table->string('order_id');
             $table->string('transaction_id');
             $table->decimal('gross_amount', 15, 2);

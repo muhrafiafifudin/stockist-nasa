@@ -67,6 +67,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('invoice/{id}', 'CheckoutController@paymentPost');
     // Rating & Review Product
     Route::post('tambah-review', 'ReviewController@addReview');
+    // Transaction Status
 });
 
 // Admin Route
@@ -93,7 +94,13 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('produk', 'ProductController');
         // Article
         Route::resource('artikel', 'ArticleController');
+        // Transaction
+        Route::get('transaksi', 'TransactionController@index')->name('transaksi.index');
     });
+
+    // Update Transaction
+    Route::put('transaction/update-process/{id}', 'TransactionController@updateProcess');
+    Route::put('transaction/update-delivery/{id}', 'TransactionController@updateDelivery');
 
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 });
