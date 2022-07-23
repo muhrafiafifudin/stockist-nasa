@@ -4213,7 +4213,7 @@ input::-ms-clear {
     list-style: none;
 }
 .dash__f-list > li {
-    padding: 4px 0;
+    padding: 0.5rem 0;
 }
 .dash__f-list > li > a {
     font-size: 13px;
@@ -4651,7 +4651,7 @@ input::-ms-clear {
 
 .m-order__get {
     border: 1px solid #eee;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     background-color: #ffffff;
     padding: 24px;
 }
@@ -8063,4 +8063,8 @@ li.nav-item {
 .regist__form li {
     font-size: 14px;
     line-height: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
 }

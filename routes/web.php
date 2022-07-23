@@ -67,6 +67,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('invoice/{id}', 'CheckoutController@paymentPost');
     // Rating & Review Product
     Route::post('tambah-review', 'ReviewController@addReview');
+    // My Account
+    Route::get('akun/beranda', 'MyAccountController@dashboard')->name('account.dashboard');
+    Route::get('akun/profil', 'MyAccountController@myAccount');
+    Route::get('akun/alamat', 'MyAccountController@address');
+    Route::get('akun/pesanan', 'MyAccountController@order');
+    Route::get('akun/pesanan/{order_number}', 'MyAccountController@orderDetail');
     // Transaction Status
 });
 

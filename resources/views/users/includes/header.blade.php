@@ -41,17 +41,13 @@
 
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
-                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Account">
+                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Setting">
                                 <a><i class="far fa-user-circle"></i></a>
                                 <!--====== Dropdown ======-->
                                 @if (Route::has('login'))
                                     <span class="js-menu-toggle"></span>
                                     <ul style="width:120px">
                                         @auth
-                                            <li>
-                                                <a href="dashboard.html"><i class="fas fa-user-circle u-s-m-r-6"></i>
-                                                    <span>Account</span></a>
-                                            </li>
                                             <li>
                                                 <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
@@ -77,73 +73,13 @@
                                 @endif
                                 <!--====== End - Dropdown ======-->
                             </li>
-                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Settings">
-
-                                <a><i class="fas fa-user-cog"></i></a>
-
-                                <!--====== Dropdown ======-->
-
-                                <span class="js-menu-toggle"></span>
-                                <ul style="width:120px">
-                                    <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                        <a>Language<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:120px">
-                                            <li>
-
-                                                <a class="u-c-brand">ENGLISH</a>
-                                            </li>
-                                            <li>
-
-                                                <a>ARABIC</a>
-                                            </li>
-                                            <li>
-
-                                                <a>FRANCAIS</a>
-                                            </li>
-                                            <li>
-
-                                                <a>ESPANOL</a>
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                    <li class="has-dropdown has-dropdown--ul-right-100">
-
-                                        <a>Currency<i class="fas fa-angle-down u-s-m-l-6"></i></a>
-
-                                        <!--====== Dropdown ======-->
-
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:225px">
-                                            <li>
-
-                                                <a class="u-c-brand">$ - US DOLLAR</a>
-                                            </li>
-                                            <li>
-
-                                                <a>£ - BRITISH POUND STERLING</a>
-                                            </li>
-                                            <li>
-
-                                                <a>€ - EURO</a>
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
-                                    </li>
-                                </ul>
-                                <!--====== End - Dropdown ======-->
+                            <li class="has-dropdown" data-tooltip="tooltip" data-placement="left" title="Account">
+                                <a href="{{ route('account.dashboard') }}"><i class="fas fa-user-cog"></i></a>
                             </li>
                             <li data-tooltip="tooltip" data-placement="left" title="Contact">
-
                                 <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a>
                             </li>
                             <li data-tooltip="tooltip" data-placement="left" title="Mail">
-
                                 <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a>
                             </li>
                         </ul>

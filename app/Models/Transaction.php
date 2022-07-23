@@ -20,6 +20,11 @@ class Transaction extends Model
 
     public function payments()
     {
-        return $this->hasOne(Payment::class, 'transactions_id', 'id');
+        return $this->hasOne(Payment::class, 'order_number', 'order_number');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'users_id');
     }
 }
