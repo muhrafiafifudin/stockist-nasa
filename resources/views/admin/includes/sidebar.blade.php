@@ -53,13 +53,13 @@
                 </li>
                 <li class="nav-item {{ request()->is('admin/pengguna') ? 'active' : '' }}">
                     <a href="{{ route('admin.pengguna.index') }}">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="fas fa-user"></i>
                         <p>Pengguna</p>
                     </a>
                 </li>
                 <li class="nav-item {{ request()->is('admin/profil-toko') ? 'active' : '' }}">
                     <a href="{{ route('admin.profil-toko.index') }}">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="fas fa-store"></i>
                         <p>Profil Toko</p>
                     </a>
                 </li>
@@ -71,7 +71,7 @@
                 </li>
                 <li class="nav-item {{ request()->is('admin/kategori', 'admin/sub-kategori') ? 'active' : '' }}">
                     <a data-toggle="collapse" href="#forms">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="fas fa-cubes"></i>
                         <p>Kategori</p>
                         <span class="caret"></span>
                     </a>
@@ -92,7 +92,7 @@
                 </li>
                 <li class="nav-item {{ request()->is('admin/produk') ? 'active' : '' }}">
                     <a href="{{ route('admin.produk.index') }}">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="fas fa-cube"></i>
                         <p>Produk</p>
                     </a>
                 </li>
@@ -104,7 +104,7 @@
                 </li>
                 <li class="nav-item {{ request()->is('admin/artikel') ? 'active' : '' }}">
                     <a href="{{ route('admin.artikel.index') }}">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="fas fa-newspaper"></i>
                         <p>Artikel</p>
                     </a>
                 </li>
@@ -116,7 +116,7 @@
                 </li>
                 <li class="nav-item {{ request()->is('admin/transaksi') ? 'active' : '' }}">
                     <a href="{{ route('admin.transaksi.index') }}">
-                        <i class="fas fa-pen-square"></i>
+                        <i class="far fa-money-bill-alt"></i>
                         <p>Transaksi</p>
                     </a>
                 </li>

@@ -11,7 +11,7 @@
     @include('admin.includes.style')
 </head>
 
-<body>
+<body data-background-color="bg3">
     <div class="wrapper">
         <!--
    Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
