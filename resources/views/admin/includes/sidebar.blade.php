@@ -53,7 +53,7 @@
                 </li>
                 <li class="nav-item {{ request()->is('admin/pengguna') ? 'active' : '' }}">
                     <a href="{{ route('admin.pengguna.index') }}">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-users"></i>
                         <p>Pengguna</p>
                     </a>
                 </li>
