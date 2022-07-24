@@ -32,6 +32,8 @@ require __DIR__ . '/auth.php';
 Route::get('sign-in-google', 'Auth\AuthenticatedSessionController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\AuthenticatedSessionController@handleProviderCallback')->name('google.callback');
 
+// Contact Us
+Route::get('kontak-kami', 'ContactController@index')->name('kontak.index');
 // Catalog
 Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
 Route::get('katalog/cara-belanja/cara-order-mitra-nasa', 'CatalogController@howOrderNasa');

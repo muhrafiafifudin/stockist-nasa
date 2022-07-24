@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
@@ -23,7 +24,10 @@ class MyAccountController extends Controller
 
     public function address()
     {
-        return view('users.pages.my-account.address.account-address');
+        $address = User::where('id', Auth::id())->first();
+        $address = RajaOngkir::kota()->dariProvinsi($address->provinces_id)->find($address->cities_id);
+
+        return view('users.pages.my-account.address.account-address',compact('address'));
     }
 
     public function order()

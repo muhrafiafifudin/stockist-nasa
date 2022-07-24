@@ -77,15 +77,15 @@
                                         <div class="row">
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Nama Lengkap</h2>
-                                                <span class="dash__text">John Doe</span>
+                                                <span class="dash__text">{{ Auth::user()->name }}</span>
                                             </div>
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">E-mail</h2>
-                                                <span class="dash__text">johndoe@domain.com</span>
+                                                <span class="dash__text">{{ Auth::user()->email }}</span>
                                             </div>
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Nomor Telepon</h2>
-                                                <span class="dash__text">Please enter your mobile</span>
+                                                <span class="dash__text">{{ Auth::user()->phone_number }}</span>
                                             </div>
                                         </div>
                                         <div class="row u-s-m-t-30">

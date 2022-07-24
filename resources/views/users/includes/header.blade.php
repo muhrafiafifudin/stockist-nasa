@@ -77,10 +77,10 @@
                                 <a href="{{ route('account.dashboard') }}"><i class="fas fa-user-cog"></i></a>
                             </li>
                             <li data-tooltip="tooltip" data-placement="left" title="Contact">
-                                <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a>
+                                <a href="{{ route('kontak.index') }}"><i class="fas fa-phone-volume"></i></a>
                             </li>
                             <li data-tooltip="tooltip" data-placement="left" title="Mail">
-                                <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a>
+                                <a href="mailto:stokisnaturalnusantaraad3043@gmail.com"><i class="far fa-envelope"></i></a>
                             </li>
                         </ul>
                         <!--====== End - List ======-->
@@ -124,8 +124,7 @@
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
                                             <li class="has-dropdown has-dropdown--ul-left-100">
-                                                <a>Agrokompleks<i
-                                                        class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
+                                                <a>Agrokompleks<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
                                                 <!--====== Dropdown ======-->
                                                 <span class="js-menu-toggle"></span>
                                                 <ul style="width:200px">
@@ -189,9 +188,6 @@
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">
                                     <li>
-                                        <a href="blog-left-sidebar.html">Produk Unggulan</a>
-                                    </li>
-                                    <li>
                                         <a href="blog-right-sidebar.html">Produk Terbaru</a>
                                     </li>
                                     <li>
@@ -244,15 +240,13 @@
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
                             <li>
-                                <a href="{{ url('dashboard') }}"><i
-                                        class="fas fa-home {{ request()->is('dashboard') ? 'u-c-brand' : '' }}"></i></a>
+                                <a href="{{ url('/') }}"><i class="fas fa-home {{ request()->is('dashboard', '/') ? 'u-c-brand' : '' }}"></i></a>
                             </li>
                             <li>
-                                <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                                <a href="#"><i class="far fa-heart"></i></a>
                             </li>
                             <li>
-                                <a href="{{ url('keranjang') }}"><i
-                                        class="fas fa-shopping-bag {{ request()->is('keranjang') ? 'u-c-brand' : '' }}"></i></a>
+                                <a href="{{ url('keranjang') }}"><i class="fas fa-shopping-bag {{ request()->is('keranjang') ? 'u-c-brand' : '' }}"></i></a>
                             </li>
                         </ul>
                         <!--====== End - List ======-->
