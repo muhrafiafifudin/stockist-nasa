@@ -20,10 +20,7 @@
                                     <a href="index.html">Home</a>
                                 </li>
                                 <li class="has-separator">
-                                    <a href="{{ url('akun/pesanan') }}">Order</a>
-                                </li>
-                                <li class="is-marked">
-                                    <a href="#">Order Detail</a>
+                                    <a href="#">Order</a>
                                 </li>
                             </ul>
                         </div>
@@ -87,7 +84,7 @@
                                                             </div>
                                                             <div>
                                                                 <div class="dash__link dash__link--brand text-center">
-                                                                    <a href="{{ url('akun/pesanan/' . $order->order_number) }}">MANAGE</a>
+                                                                    <a href="{{ url('akun/pesanan/' . $order->order_number) }}">KELOLA</a>
                                                                 </div>
                                                                 <div>
                                                                     <span class="manage-o__text-2 u-c-silver">Total:
