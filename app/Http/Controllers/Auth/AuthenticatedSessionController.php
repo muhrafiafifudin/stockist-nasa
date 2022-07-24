@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
+use App\Http\Requests\Auth\LoginRequest;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -50,5 +52,41 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    // Login with Google Account
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleProviderCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+            $data = [
+                'name' => $user->getName(),
+                'email' => $user->getEmail(),
+                'avatar' => $user->getAvatar(),
+                'google_id' => $user->getId(),
+                'email_verified_at' => date('Y-m-d H:i:s', time()),
+                'password' => bcrypt('12345678'),
+            ];
+
+            $findUser = User::where('google_id', $data['google_id'])->first();
+
+            if ($findUser) {
+                Auth::login($findUser);
+
+                return redirect()->intended(RouteServiceProvider::HOME);
+            } else {
+                $newUser = User::create($data);
+                Auth::login($newUser);
+
+                return redirect()->intended(RouteServiceProvider::HOME);
+            }
+        } catch (\Throwable $th) {
+            // throw $th;
+        }
     }
 }

@@ -63,9 +63,10 @@
 
                                         <div class="gl-s-api">
                                             <div class="u-s-m-b-30">
-                                                <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i
-                                                        class="fab fa-google"></i>
-                                                    <span>Masuk dengan Google</span></button>
+                                                <a href="{{ url('sign-in-google') }}" class="gl-s-api__btn gl-s-api__btn--gplus">
+                                                    <i class="fab fa-google"></i>
+                                                    <span>Masuk dengan Google</span>
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="u-s-m-b-30">

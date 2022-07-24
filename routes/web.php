@@ -28,6 +28,10 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
+// Route Login Google Acoount use Socialite
+Route::get('sign-in-google', 'Auth\AuthenticatedSessionController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\AuthenticatedSessionController@handleProviderCallback')->name('google.callback');
+
 // Catalog
 Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
 Route::get('katalog/cara-belanja/cara-order-mitra-nasa', 'CatalogController@howOrderNasa');
