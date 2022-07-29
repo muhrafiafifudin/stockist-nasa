@@ -20,10 +20,10 @@
                                     <a href="index.html">Home</a>
                                 </li>
                                 <li class="has-separator">
-                                    <a href="{{ url('akun/profil') }}">Akun Profil</a>
+                                    <a href="{{ url('akun/alamat') }}">Akun Alamat</a>
                                 </li>
                                 <li class="is-marked">
-                                    <a href="#">Edit Akun Profil</a>
+                                    <a href="#">Edit Akun Alamat</a>
                                 </li>
                             </ul>
                         </div>
@@ -54,10 +54,10 @@
                                                 <a href="{{ url('akun/beranda') }}">Beranda</a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('akun/profil') }}" class="dash-active">Profil Saya</a>
+                                                <a href="{{ url('akun/profil') }}">Profil Saya</a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('akun/alamat') }}">Alamat</a>
+                                                <a href="{{ url('akun/alamat') }}" class="dash-active">Alamat</a>
                                             </li>
                                             <li>
                                                 <a href="{{ url('akun/pesanan') }}">Pesanan</a>
@@ -73,26 +73,37 @@
                             <div class="col-lg-9 col-md-12">
                                 <div class="dash__box dash__box--shadow dash__box--bg-white u-s-m-b-30">
                                     <div class="dash__pad-2">
-                                        <h1 class="dash__h1 u-s-m-b-14">Edit Profil</h1>
-                                        <span class="dash__text u-s-m-b-30">Ubah profil sesuai dengan kebutuhan anda.</span>
+                                        <h1 class="dash__h1 u-s-m-b-14">Edit Alamat</h1>
+                                        <span class="dash__text u-s-m-b-30">Ubah alamat sesuai dengan kebutuhan anda.</span>
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <form action="{{ route('account.update-profile', $users->id) }}" class="dash-edit-p" method="POST">
+                                                <form action="{{ route('account.update-address', $users->id) }}" class="dash-edit-p" method="POST">
                                                     @csrf
                                                     @method('PUT')
 
                                                     <div class="gl-inline">
                                                         <div class="u-s-m-b-30">
-                                                            <label class="gl-label" for="name">Nama Lengkap</label>
-                                                            <input class="input-text input-text--primary-style" name="name" type="text" id="name" value="{{ $users->name }}" placeholder="Masukkan nama lengkap ...">
+                                                            <label class="gl-label" for="province">Provinsi</label>
+                                                            <select class="select-box select-box--primary-style u-w-100" name="provinces_id" id="province">
+                                                                <option selected>Pilih Provinsi</option>
+                                                            </select>
                                                         </div>
                                                         <div class="u-s-m-b-30">
-                                                            <label class="gl-label" for="email">Email</label>
-                                                            <input class="input-text input-text--primary-style" name="email" type="text" id="email" value="{{ $users->email }}" placeholder="Masukkan email ...">
+                                                            <label class="gl-label" for="regency">Kota / Kabupaten</label>
+                                                            <select class="select-box select-box--primary-style u-w-100" name="cities_id" id="regency">
+                                                                <option selected>Pilih Kota / Kabupaten</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="gl-inline">
+                                                        <div class="u-s-m-b-30">
+                                                            <label class="gl-label" for="address">Alamat</label>
+                                                            <input class="input-text input-text--primary-style" name="address" type="text" id="address" value="{{ $users->address }}" placeholder="Masukkan alamat ...">
                                                         </div>
                                                         <div class="u-s-m-b-30">
-                                                            <label class="gl-label" for="phone_number">Nomor Telepon</label>
-                                                            <input class="input-text input-text--primary-style" name="phone_number" type="text" id="phone_number" value="{{ $users->phone_number }}" placeholder="Masukkan nomor telepon ...">
+                                                            <label class="gl-label" for="postcode">Kode Pos</label>
+                                                            <input class="input-text input-text--primary-style" name="postcode" type="text" id="postcode" value="{{ $users->postcode }}" placeholder="Masukkan kode pos ...">
                                                         </div>
                                                     </div>
 

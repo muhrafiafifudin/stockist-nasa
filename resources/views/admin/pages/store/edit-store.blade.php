@@ -66,7 +66,7 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="regency">Kota / Kab</label>
+                                            <label for="regency">Kota / Kabupaten</label>
                                             <select class="form-control" name="cities_id" id="regency">
                                                 <option selected="selected">{{ $addresses['city_name'] }}</option>
                                             </select>

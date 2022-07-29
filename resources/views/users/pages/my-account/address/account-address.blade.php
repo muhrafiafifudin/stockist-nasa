@@ -77,7 +77,7 @@
                                         <div class="row">
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Provinsi, Kota</h2>
-                                                <span class="dash__text"></span>
+                                                <span class="dash__text">{{ $addresses['city_name'] }}, {{ $addresses['province'] }}</span>
                                             </div>
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Alamat</h2>
@@ -91,7 +91,7 @@
                                         <div class="row u-s-m-t-30">
                                             <div class="col-lg-12">
                                                 <div class="u-s-m-b-16">
-                                                    <a class="dash__custom-link btn--e-transparent-brand-b-2" href="dash-edit-profile.html">Edit Profile</a>
+                                                    <a class="dash__custom-link btn--e-transparent-brand-b-2" href="{{ url('akun/edit-alamat/' . Auth::user()->id) }}">Edit Alamat</a>
                                                 </div>
                                             </div>
                                         </div>

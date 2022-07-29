@@ -91,7 +91,7 @@
                                         <div class="row u-s-m-t-30">
                                             <div class="col-lg-12">
                                                 <div class="u-s-m-b-16">
-                                                    <a class="dash__custom-link btn--e-transparent-brand-b-2" href="{{ url('akun/edit-profil/' . Auth::user()->id) }}">Edit Profile</a>
+                                                    <a class="dash__custom-link btn--e-transparent-brand-b-2" href="{{ url('akun/edit-profil/' . Auth::user()->id) }}">Edit Profil</a>
                                                 </div>
                                             </div>
                                         </div>

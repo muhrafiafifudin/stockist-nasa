@@ -47,9 +47,26 @@ class MyAccountController extends Controller
     public function address()
     {
         $address = User::where('id', Auth::id())->first();
-        $address = RajaOngkir::kota()->dariProvinsi($address->provinces_id)->find($address->cities_id);
+        $addresses = RajaOngkir::kota()->dariProvinsi($address->provinces_id)->find($address->cities_id);
 
-        return view('users.pages.my-account.address.account-address',compact('address'));
+        return view('users.pages.my-account.address.account-address',compact('address', 'addresses'));
+    }
+
+    public function editAddress($id)
+    {
+        $users = User::findOrFail($id);
+
+        return view('users.pages.my-account.address.edit-account-address', compact('users'));
+    }
+
+    public function updateAddress(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $users = User::findOrFail($id);
+        $users->update($data);
+
+        return redirect('akun/alamat');
     }
     // End My Account - Address
 

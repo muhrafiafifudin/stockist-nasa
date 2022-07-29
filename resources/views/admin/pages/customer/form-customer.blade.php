@@ -66,9 +66,9 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="regency">Kota / Kab</label>
+                                            <label for="regency">Kota / Kabupaten</label>
                                             <select class="form-control" name="cities_id" id="regency">
-                                                <option selected="selected">Pilih Kab / Kota</option>
+                                                <option selected="selected">Pilih Kota / Kabupaten</option>
                                             </select>
                                         </div>
                                     </div>
