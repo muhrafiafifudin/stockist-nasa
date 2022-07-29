@@ -17,11 +17,33 @@ class MyAccountController extends Controller
         return view('users.pages.my-account.account-dashboard');
     }
 
+
+    // Start My Account - User Profile
     public function myAccount()
     {
         return view('users.pages.my-account.profile.account-profile');
     }
 
+    public function editMyAccount($id)
+    {
+        $users = User::findOrFail($id);
+
+        return view('users.pages.my-account.profile.edit-account-profile', compact('users'));
+    }
+
+    public function updateMyAccount(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $users = User::findOrFail($id);
+        $users->update($data);
+
+        return redirect('akun/profil');
+    }
+    // End My Account - User Profile
+
+
+    // Start My Account - Address
     public function address()
     {
         $address = User::where('id', Auth::id())->first();
@@ -29,7 +51,10 @@ class MyAccountController extends Controller
 
         return view('users.pages.my-account.address.account-address',compact('address'));
     }
+    // End My Account - Address
 
+
+    // Start My Account - Order / Transaction
     public function order()
     {
         $orders = Transaction::where('users_id', Auth::id())->get();
@@ -57,4 +82,5 @@ class MyAccountController extends Controller
 
         return redirect('akun/pesanan/' . $request->order_number);
     }
+    // End My Account - Order / Transaction
 }

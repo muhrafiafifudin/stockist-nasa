@@ -14,24 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', function () {
-    return view('users.pages.dashboard');
-});
-
-Route::get('/dashboard', function () {
-    return view('users.pages.dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__ . '/auth.php';
 
 // Route Login Google Acoount use Socialite
 Route::get('sign-in-google', 'Auth\AuthenticatedSessionController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\AuthenticatedSessionController@handleProviderCallback')->name('google.callback');
 
+// Dashboard
+Route::get('/', 'DashboardController@index');
 // Contact Us
 Route::get('kontak-kami', 'ContactController@index')->name('kontak.index');
 // Catalog
@@ -61,6 +51,8 @@ Route::post('get-sub-category', 'Admin\ProductController@getSubCategory');
 
 // Users Route
 Route::middleware(['auth'])->group(function () {
+    // Dashboard
+    Route::get('dashboard', 'DashboardController@index');
     // Cart
     Route::get('keranjang', 'CartController@index');
     Route::post('keranjang', 'CartController@addPost')->name('keranjang');
@@ -76,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
     // My Account
     Route::get('akun/beranda', 'MyAccountController@dashboard')->name('account.dashboard');
     Route::get('akun/profil', 'MyAccountController@myAccount');
+    Route::get('akun/edit-profil/{id}', 'MyAccountController@editMyAccount');
+    Route::put('akun/edit-profil/{id}', 'MyAccountController@updateMyAccount')->name('account.update-profile');
     Route::get('akun/alamat', 'MyAccountController@address');
     Route::get('akun/pesanan', 'MyAccountController@order');
     Route::get('akun/pesanan/{order_number}', 'MyAccountController@orderDetail');
