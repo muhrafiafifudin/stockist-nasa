@@ -19,8 +19,17 @@
                                 <li class="has-separator">
                                     <a href="{{ url('/') }}">Home</a>
                                 </li>
+                                <li class="has-separator">
+                                    <a href="#">Katalog</a>
+                                </li>
+                                <li class="has-separator">
+                                    <a href="{{ url('katalog/produk-nasa') }}">Produk Nasa</a>
+                                </li>
+                                <li class="has-separator">
+                                    <a href="{{ url('katalog/produk-nasa/' . $productCategories->slug) }}">{{ $productCategories->category }}</a>
+                                </li>
                                 <li class="is-marked">
-                                    <a href="signin.html">Produk</a>
+                                    <a href="#">{{ $productSubCategories->sub_category }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -35,6 +44,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shop-p">
+                        <div class="shop-p__meta-wrap u-s-m-b-20 u-s-m-t-10">
+                            <span class="shop-p__meta-text-1">Menemukan {{ $productCategories->total_product }} Hasil</span>
+                            <div class="shop-p__meta-text-2 u-s-m-t-15">
+                                <span>Pencarian Terkait :</span>
+
+                                <a class="gl-tag btn--e-brand-shadow" href="#">{{ $productCategories->category }}</a>
+                                <a class="gl-tag btn--e-brand-shadow" href="#">{{ $productSubCategories->sub_category }}</a>
+                            </div>
+                        </div>
                         <div class="shop-p__tool-style">
                             <form>
                                 <div class="tool-style__form-wrap">

@@ -20,10 +20,10 @@
                                     <a href="{{ url('/') }}">Home</a>
                                 </li>
                                 <li class="has-separator">
-                                    <a href="{{ url('produk') }}">Produk</a>
+                                    <a href="#">Katalog</a>
                                 </li>
                                 <li class="has-separator">
-                                    <a href="">{{ $products->categories->category }}</a>
+                                    <a href="{{ url('katalog/produk-nasa') }}">Produk Nasa</a>
                                 </li>
                                 <li class="is-marked">
                                     <a href="{{ url('produk/' . $products->categories->slug . '/' . $products->slug) }}">{{ $products->name }}</a>

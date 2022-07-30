@@ -118,43 +118,30 @@
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">
                                     <li class="has-dropdown has-dropdown--ul-left-100">
-                                        <a href="{{ url('produk') }}">Produk Nasa<i
+                                        <a href="{{ url('katalog/produk-nasa') }}">Produk Nasa<i
                                                 class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
                                         <!--====== Dropdown ======-->
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
-                                            <li class="has-dropdown has-dropdown--ul-left-100">
-                                                <a>Agrokompleks<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
-                                                <!--====== Dropdown ======-->
-                                                <span class="js-menu-toggle"></span>
-                                                <ul style="width:200px">
-                                                    <li>
-                                                        <a href="dash-edit-profile.html">Pertanian</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="dash-address-book.html">Peternakan</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="dash-manage-order.html">Perikanan</a>
-                                                    </li>
-                                                </ul>
-                                                <!--====== End - Dropdown ======-->
-                                            </li>
-                                            <li>
-                                                <a href="index-2.html">Body Care</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-3.html">Home Care</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-2.html">Kesehatan</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-3.html">Kosmetik</a>
-                                            </li>
-                                            <li>
-                                                <a href="index-3.html">Skin Care</a>
-                                            </li>
+                                            @foreach ($categories as $category)
+                                                @if ($category->total_product > 0)
+                                                    <li class="{{ $category->sub_categories->count() > 0 ? 'has-dropdown has-dropdown--ul-left-100' : '' }}">
+                                                    <a href="{{ url('katalog/produk-nasa/' . $category->slug) }}">{{ $category->category }} {!! $category->sub_categories->count() > 0 ? "<i class='fas fa-angle-down i-state-right u-s-m-l-6'></i>" : '' !!}</a>
+                                                    <!--====== Dropdown ======-->
+                                                    <span class="js-menu-toggle"></span>
+                                                    <ul style="width:200px">
+                                                        @foreach ($subCategories as $subCategory)
+                                                            @if ($subCategory->categories_id == $category->id)
+                                                                <li>
+                                                                    <a href="{{ url('katalog/produk-nasa/' . $category->slug . '/' . $subCategory->slug) }}">{{ $subCategory->sub_category }}</a>
+                                                                </li>
+                                                            @endif
+                                                        @endforeach
+                                                    </ul>
+                                                    <!--====== End - Dropdown ======-->
+                                                </li>
+                                                @endif
+                                            @endforeach
                                         </ul>
                                         <!--====== End - Dropdown ======-->
                                     </li>
