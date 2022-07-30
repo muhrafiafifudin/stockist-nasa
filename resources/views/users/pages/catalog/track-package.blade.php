@@ -22,7 +22,7 @@
                                     <a href="#">Katalog</a>
                                 </li>
                                 <li class="is-marked">
-                                    <a href="{{ url('katalog/lacak-paket') }}">Lacak Paket</a>
+                                    <a href="#">Lacak Paket</a>
                                 </li>
                             </ul>
                         </div>

@@ -15,4 +15,9 @@ class CatalogController extends Controller
     {
         return view('users.pages.catalog.track-package');
     }
+
+    public function priceList()
+    {
+        return view('users.pages.catalog.price-list');
+    }
 }

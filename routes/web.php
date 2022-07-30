@@ -25,8 +25,9 @@ Route::get('/', 'DashboardController@index');
 // Contact Us
 Route::get('kontak-kami', 'ContactController@index')->name('kontak.index');
 // Catalog
-Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
+Route::get('katalog/daftar-harga', 'CatalogController@priceList');
 Route::get('katalog/cara-belanja', 'CatalogController@howOrderNasa');
+Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
 // Product
 Route::get('produk', 'ProductController@product');
 Route::get('produk/{categorySlug}/{productSlug}', 'ProductController@productDetail');

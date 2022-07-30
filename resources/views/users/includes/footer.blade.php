@@ -70,7 +70,7 @@
                                             <a href="{{ url('artikel') }}">Artikel</a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('katalog/cara-belanja/cara-order-mitra-nasa') }}">Cara Order Mitra Nasa</a>
+                                            <a href="{{ url('katalog/cara-belanja') }}">Cara Belanja</a>
                                         </li>
                                     </ul>
                                 </div>

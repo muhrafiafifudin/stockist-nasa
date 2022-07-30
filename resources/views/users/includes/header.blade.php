@@ -159,7 +159,7 @@
                                         <!--====== End - Dropdown ======-->
                                     </li>
                                     <li>
-                                        <a href="blog-right-sidebar.html">Daftar Harga</a>
+                                        <a href="{{ url('katalog/daftar-harga') }}">Daftar Harga</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('katalog/cara-belanja') }}">Cara Belanja</a>

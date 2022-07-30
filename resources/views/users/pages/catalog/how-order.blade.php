@@ -20,11 +20,8 @@
                                 <li class="has-separator">
                                     <a href="#">Katalog</a>
                                 </li>
-                                <li class="has-separator">
-                                    <a href="#">Cara Belanja</a>
-                                </li>
                                 <li class="is-marked">
-                                    <a href="{{ url('kemitraan/peluang-usaha') }}">Cara Order Mitra Nasa</a>
+                                    <a href="#">Cara Belanja</a>
                                 </li>
                             </ul>
                         </div>
@@ -111,7 +108,7 @@
                             Salam Sukses.. dan Semangat Pagi..!
                         </p>
 
-                        <h3 class="u-s-m-b-10">Info Terkait Pemesanan Produk Nasa</h3>
+                        <h3 class="u-s-m-b-20">Info Terkait Pemesanan Produk Nasa</h3>
 
                         <h5 class="u-s-m-b-5">1. Nomor Pelayanan</h5>
 
