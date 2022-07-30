@@ -26,7 +26,7 @@ Route::get('/', 'DashboardController@index');
 Route::get('kontak-kami', 'ContactController@index')->name('kontak.index');
 // Catalog
 Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
-Route::get('katalog/cara-belanja/cara-order-mitra-nasa', 'CatalogController@howOrderNasa');
+Route::get('katalog/cara-belanja', 'CatalogController@howOrderNasa');
 // Product
 Route::get('produk', 'ProductController@product');
 Route::get('produk/{categorySlug}/{productSlug}', 'ProductController@productDetail');

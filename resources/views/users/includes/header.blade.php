@@ -161,17 +161,8 @@
                                     <li>
                                         <a href="blog-right-sidebar.html">Daftar Harga</a>
                                     </li>
-                                    <li class="has-dropdown has-dropdown--ul-left-100">
-                                        <a>Cara Belanja<i class="fas fa-angle-down i-state-right u-s-m-l-6"></i></a>
-                                        <!--====== Dropdown ======-->
-                                        <span class="js-menu-toggle"></span>
-                                        <ul style="width:200px">
-                                            <li>
-                                                <a href="{{ url('katalog/cara-belanja/cara-order-mitra-nasa') }}">Cara
-                                                    Order Mitra NASA</a>
-                                            </li>
-                                        </ul>
-                                        <!--====== End - Dropdown ======-->
+                                    <li>
+                                        <a href="{{ url('katalog/cara-belanja') }}">Cara Belanja</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('keranjang') }}">Keranjang Belanja</a>
@@ -210,12 +201,12 @@
                                     <li>
                                         <a href="{{ url('kemitraan/peluang-usaha') }}">Peluang Usaha</a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('kemitraan/form-pendaftaran') }}">Form Pendaftaran</a>
                                     </li>
                                     <li>
                                         <a href="blog-sidebar-none.html">Ruang Member</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>

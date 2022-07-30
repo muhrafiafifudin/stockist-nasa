@@ -8,7 +8,7 @@ class CatalogController extends Controller
 {
     public function howOrderNasa()
     {
-        return view('users.pages.catalog.how-order-nasa');
+        return view('users.pages.catalog.how-order');
     }
 
     public function trackPackage()
