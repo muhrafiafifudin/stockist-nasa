@@ -79,13 +79,11 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="product-m">
                                             <div class="product-m__thumb">
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                    href="{{ url('produk/' . $product->categories->slug . '/' . $product->slug) }}">
-                                                    <img class="aspect__img" src="../admin/img/product/{{ $product->images }}"
-                                                        alt=""></a>
+                                                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}">
+                                                    <img class="aspect__img" src="{{ asset('admin/img/product/' . $product->images) }}" alt="">
+                                                </a>
                                                 <div class="product-m__add-cart">
-                                                    <a class="btn--e-brand" data-modal="modal"
-                                                        data-modal-id="#add-to-cart">Tambah ke Keranjang</a>
+                                                    <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Tambah ke Keranjang</a>
                                                 </div>
                                             </div>
                                             <div class="product-m__content">
@@ -93,7 +91,7 @@
                                                     <a href="shop-side-version-2.html">{{ $product->categories->category }}</a>
                                                 </div>
                                                 <div class="product-m__name">
-                                                    <a href="product-detail.html">{{ $product->name }}</a>
+                                                    <a href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}">{{ $product->name }}</a>
                                                 </div>
                                                 <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i
                                                         class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i

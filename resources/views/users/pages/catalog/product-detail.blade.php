@@ -46,8 +46,7 @@
                         <div class="slider-fouc pd-wrap">
                             <div id="pd-o-initiate">
                                 <div class="pd-o-img-wrap" data-src="{{ asset('admin/img/product/' . $products->images) }}">
-                                    <img class="u-img-fluid" src="{{ asset('admin/img/product/' . $products->images) }}"
-                                        alt="">
+                                    <img class="u-img-fluid" src="{{ asset('admin/img/product/' . $products->images) }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -101,7 +100,7 @@
                         <div class="u-s-m-b-15">
                             <div class="pd-detail__inline">
                                 <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
-                                    <a href="signin.html">Add to Wishlist</a>
+                                    <a href="#">Add to Wishlist</a>
                             </div>
                         </div>
                         <div class="u-s-m-b-15">
