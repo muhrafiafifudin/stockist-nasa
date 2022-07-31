@@ -70,7 +70,10 @@ class CatalogController extends Controller
 
     public function priceList()
     {
-        return view('users.pages.catalog.price-list');
+        $categories = Category::all();
+        $products = Product::all();
+
+        return view('users.pages.catalog.price-list', compact('categories', 'products'));
     }
 
     public function howOrderNasa()

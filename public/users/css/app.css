@@ -3487,6 +3487,9 @@ input::-ms-clear {
 .table-p td {
     padding: 20px;
 }
+.table-p th {
+    padding: 20px;
+}
 .table-p__box {
     display: -ms-flexbox;
     display: flex;
@@ -8077,6 +8080,14 @@ li.nav-item {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .btn--cart-empty {
     border: 1px solid #ff4500;
     box-shadow: 1px 2px 8px 0 rgb(36 37 38 / 8%);
@@ -8091,4 +8102,26 @@ li.nav-item {
 
 .list {
     font-size: 14px;
+}
+
+/* Table Price List */
+.table-price-list {
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.table-price-list tr {
+    position: relative;
+    border-top: 1px solid #eee;
+}
+.table-price-list td {
+    padding: 8px;
+}
+.table-price-list th {
+    padding: 8px;
+}
+
+.bg-gray {
+    background-color: #eee;
 }

@@ -43,13 +43,43 @@
                             Daftar Harga Produk Nasa  Terbaru dari PT Natural Nusantara untuk konsumen wilayah Jawa dan online ke seluruh Indonesia per {{ date('d M Y') }} (Updated).
                         </p>
 
-                        <table>
-                            <td>
-                                <th>Cek</th>
-                            </td>
+                        <table class="table-price-list">
+                            <thead>
+                                <tr>
+                                    <th>NO.</th>
+                                    <th>KODE</th>
+                                    <th>NAMA PRODUK</th>
+                                    <th>ISI</th>
+                                    <th>HARGA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($categories as $category)
+                                    @if ($category->total_product > 0)
+                                        <tr>
+                                            <td class="bg-gray"></td>
+                                            <td class="bg-gray" colspan="5">PRODUK {{ strtoupper($category->category) }}</td>
+                                        </tr>
+
+                                        @php $no = 1; @endphp
+
+                                        @foreach ($products as $product)
+                                            @if ($product->categories_id == $category->id)
+                                                <tr class="text-center">
+                                                    <td>{{ $no++ }}</td>
+                                                    <td>kode</td>
+                                                    <td>{{ $product->name }}</td>
+                                                    <td>{{ number_format($product->weight, 0, ',', '.') }} gram</td>
+                                                    <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                @endforeach
+                            </tbody>
                         </table>
 
-                        <p class="u-s-m-b-10">
+                        <p class="u-s-m-b-10 u-s-m-t-30">
                             Keterangan : Harga Produk Nasa  di atas merupakan harga minimal (Harga Eceran Ter-rendah) untuk
                             konsumen wilayah Jawa yang diputuskan secara resmi oleh PT Natural Nusantara. Wilayah Jawa meliputi
                             provinsi Banten, DKI Jakarta, Jawa Barat, Jawa Tengah, Daerah Istimewa Yogyakarta dan Jawa Timur.
