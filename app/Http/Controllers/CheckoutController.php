@@ -146,7 +146,7 @@ class CheckoutController extends Controller
     {
         $json = json_decode($request->get('json'));
         $payment = new Payment();
-        $payment->transactions_id = $request->id;
+        $payment->order_number = $request->id;
         $payment->order_id = $json->order_id;
         $payment->transaction_id = $json->transaction_id;
         $payment->gross_amount = $json->gross_amount;

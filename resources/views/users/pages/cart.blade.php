@@ -163,24 +163,24 @@
                                                 <span class="gl-text u-s-m-b-30">Masukkan alamat pengiriman dan kurir sesuai pilihan anda.</span>
                                                 <div class="u-s-m-b-30">
                                                     <!--====== Select Box ======-->
-                                                    <label class="gl-label" for="province">PROVINSI *</label>
-                                                    <select class="select-box select-box--primary-style" name="province" id="province">
+                                                    <label class="gl-label" for="province">PROVINSI</label>
+                                                    <select class="select-box select-box--primary-style" name="province" id="province" required>
                                                         <option selected="selected">Pilih Provinsi</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
                                                 <div class="u-s-m-b-30">
                                                     <!--====== Select Box ======-->
-                                                    <label class="gl-label" for="regency">KOTA / KABUPATEN *</label>
-                                                    <select class="select-box select-box--primary-style" name="regency" id="regency">
+                                                    <label class="gl-label" for="regency">KOTA / KABUPATEN</label>
+                                                    <select class="select-box select-box--primary-style" name="regency" id="regency" required>
                                                         <option selected="selected">Pilih Kota / Kabupaten</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
                                                 <div class="u-s-m-b-30">
                                                     <!--====== Select Box ======-->
-                                                    <label class="gl-label" for="courier">KURIR *</label>
-                                                    <select class="select-box select-box--primary-style" name="courier" id="courier">
+                                                    <label class="gl-label" for="courier">KURIR</label>
+                                                    <select class="select-box select-box--primary-style" name="courier" id="courier" required>
                                                         <option selected="selected">Pilih Kurir</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
@@ -188,16 +188,15 @@
                                                 <div class="u-s-m-b-30">
                                                     <input type="hidden" value="{{ $totalWeight }}" id="weight">
                                                     <!--====== Select Box ======-->
-                                                    <label class="gl-label" for="package">PAKET PENGIRIMAN *</label>
-                                                    <select class="select-box select-box--primary-style" name="package" id="package">
+                                                    <label class="gl-label" for="package">PAKET PENGIRIMAN</label>
+                                                    <select class="select-box select-box--primary-style" name="package" id="package" required>
                                                         <option selected="selected">Pilih Paket Pengiriman</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
                                                 <div class="u-s-m-b-30">
-                                                    <label class="gl-label" for="estimate">ESTIMASI PENGIRIMAN *</label>
-                                                    <input class="input-text read-only--primary-style" type="text" name="estimate"
-                                                        id="estimate" placeholder="Zip/Postal Code" name="estimate" readonly>
+                                                    <label class="gl-label" for="estimate">ESTIMASI PENGIRIMAN</label>
+                                                    <input class="input-text read-only--primary-style" type="text" name="estimate" id="estimate" placeholder="Zip/Postal Code" name="estimate" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,7 +264,7 @@
                                     <div class="empty__wrap">
                                         <span class="empty__big-text">KOSONG</span>
                                         <span class="empty__text-1 u-s-m-b-20">Tidak ada produk yang anda masukkan dalam keranjang.</span>
-                                        <a class="btn--cart-empty" href="{{ url('produk') }}">LANJUT BELANJA</a>
+                                        <a class="btn--cart-empty" href="{{ url('katalog/produk-nasa') }}">LANJUT BELANJA</a>
                                     </div>
                                 </div>
                             </div>
