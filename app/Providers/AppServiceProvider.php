@@ -30,5 +30,9 @@ class AppServiceProvider extends ServiceProvider
         $subCategories = SubCategory::all();
 
         View::share(compact('categories', 'subCategories'));
+
+        // view()->composer('*', function ($view) {
+        //     $view->with('categories', Category::all());
+        // });
     }
 }
