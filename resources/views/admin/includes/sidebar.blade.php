@@ -120,6 +120,18 @@
                         <p>Transaksi</p>
                     </a>
                 </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Laporan</h4>
+                </li>
+                <li class="nav-item {{ request()->is('admin/report-transaction') ? 'active' : '' }}">
+                    <a href="{{ route('admin.transaksi.report') }}">
+                        <i class="fas fa-clipboard-check"></i>
+                        <p>Laporan Transaksi</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
