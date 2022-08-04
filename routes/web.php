@@ -33,7 +33,9 @@ Route::get('katalog/daftar-harga', 'CatalogController@priceList');
 Route::get('katalog/cara-belanja', 'CatalogController@howOrderNasa');
 Route::get('katalog/lacak-paket', 'CatalogController@trackPackage');
 // Product
-
+Route::get('produk/produk-terbaru', 'ProductController@newProduct');
+Route::get('produk/produk-terlaris', 'ProductController@bestProduct');
+Route::get('produk/produk-pilihan', 'ProductController@selectionProduct');
 // Partnership
 Route::get('kemitraan/peluang-usaha', 'PartnershipController@opportunities');
 Route::get('kemitraan/form-pendaftaran', 'PartnershipController@registrationForm');

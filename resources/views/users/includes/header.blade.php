@@ -166,13 +166,13 @@
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">
                                     <li>
-                                        <a href="blog-right-sidebar.html">Produk Terbaru</a>
+                                        <a href="{{ url('produk/produk-terbaru') }}">Produk Terbaru</a>
                                     </li>
                                     <li>
-                                        <a href="blog-sidebar-none.html">Produk Terlaris</a>
+                                        <a href="{{ url('produk/produk-terlaris') }}">Produk Terlaris</a>
                                     </li>
                                     <li>
-                                        <a href="blog-masonry.html">Produk Pilihan</a>
+                                        <a href="{{ url('produk/produk-pilihan') }}">Produk Pilihan</a>
                                     </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
