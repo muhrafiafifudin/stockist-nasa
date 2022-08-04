@@ -20,7 +20,6 @@
 <body class="config">
     <div class="preloader is-active">
         <div class="preloader__wrap">
-
             <img class="preloader__img" src="images/preloader.png" alt="">
         </div>
     </div>
@@ -39,6 +38,12 @@
         <!--====== Main Footer ======-->
         @include('users.includes.footer')
         <!--====== End - Main Footer ======-->
+
+        <div class="wa-icon">
+            <a href="https://wa.me/6289649312293/?text=Apakah%20produk%20masih%20ada%20?">
+                <img src="{{ asset('users/img/whatsapp.png') }}" alt="" height="80px" width="80px">
+            </a>
+        </div>
 
     </div>
     <!--====== End - Main App ======-->

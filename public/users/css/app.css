@@ -8125,3 +8125,9 @@ li.nav-item {
 .bg-gray {
     background-color: #eee;
 }
+
+.wa-icon {
+    bottom: 2.25rem;
+    right: 6rem;
+    position: fixed;
+}
