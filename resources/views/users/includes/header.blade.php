@@ -49,10 +49,10 @@
                                     <ul style="width:120px">
                                         @auth
                                             <li>
-                                                <a href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                                        class="fas fa-lock-open u-s-m-r-6"></i>
-                                                    <span>Keluar</span></a>
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    <i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                    <span>Keluar</span>
+                                                </a>
                                             </li>
 
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST"

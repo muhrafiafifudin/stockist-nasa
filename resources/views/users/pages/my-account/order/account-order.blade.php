@@ -60,7 +60,7 @@
                                                 <a class="dash-active">Pesanan</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('logout') }}">Logout</a>
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                             </li>
                                         </ul>
                                     </div>

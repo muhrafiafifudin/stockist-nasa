@@ -130,168 +130,6 @@
         </div>
         <!--====== End - Section 9 ======-->
 
-
-        <!--====== Section 2 ======-->
-        <div class="u-s-p-y-60">
-
-            <!--====== Section Intro ======-->
-            <div class="section__intro u-s-m-b-16">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary u-s-m-b-12">PRODUK TERLARIS</h1>
-
-                                <span class="section__span u-c-silver">PILIH KATEGORI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Intro ======-->
-
-
-            <!--====== Section Content ======-->
-            <div class="section__content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="filter-category-container">
-                                <div class="filter__category-wrapper">
-                                    <button class="btn filter__btn filter__btn--style-1 js-checked" type="button" data-filter="*">ALL</button>
-                                </div>
-                                <div class="filter__category-wrapper">
-                                    <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".headphone">HEADPHONES</button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                        data-filter=".smartphone">SMARTPHONES</button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                        data-filter=".sportgadget">SPORT GADGETS</button>
-                                </div>
-                                <div class="filter__category-wrapper">
-
-                                    <button class="btn filter__btn filter__btn--style-1" type="button"
-                                        data-filter=".dslr">DSLR</button>
-                                </div>
-                            </div>
-                            <div class="filter__grid-wrapper u-s-m-t-30">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item headphone">
-                                        <div class="product-o product-o--hover-on product-o--radius">
-                                            <div class="product-o__wrap">
-
-                                                <a class="aspect aspect--bg-grey aspect--square u-d-block"
-                                                    href="product-detail.html">
-
-                                                    <img class="aspect__img" src="images/product/electronic/product2.jpg"
-                                                        alt=""></a>
-                                                <div class="product-o__action-wrap">
-                                                    <ul class="product-o__action-list">
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#quick-look"
-                                                                data-tooltip="tooltip" data-placement="top"
-                                                                title="Quick View"><i class="fas fa-search-plus"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a data-modal="modal" data-modal-id="#add-to-cart"
-                                                                data-tooltip="tooltip" data-placement="top"
-                                                                title="Add to Cart"><i class="fas fa-plus-circle"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                                data-placement="top" title="Add to Wishlist"><i
-                                                                    class="fas fa-heart"></i></a>
-                                                        </li>
-                                                        <li>
-
-                                                            <a href="signin.html" data-tooltip="tooltip"
-                                                                data-placement="top"
-                                                                title="Email me When the price drops"><i
-                                                                    class="fas fa-envelope"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <span class="product-o__category">
-
-                                                <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                            <span class="product-o__name">
-
-                                                <a href="product-detail.html">Red Wireless Headphone</a></span>
-                                            <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-
-                                                <span class="product-o__review">(23)</span>
-                                            </div>
-
-                                            <span class="product-o__price">$125.00
-
-                                                <span class="product-o__discount">$160.00</span></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Content ======-->
-        </div>
-        <!--====== End - Section 2 ======-->
-
-
-        <!--====== Section 3 ======-->
-        <div class="banner-bg">
-
-            <!--====== Section Content ======-->
-            <div class="section__content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="banner-bg__countdown">
-                                <div class="countdown countdown--style-banner" data-countdown="2020/05/01">
-                                </div>
-                            </div>
-                            <div class="banner-bg__wrap">
-                                <div class="banner-bg__text-1">
-
-                                    <span class="u-c-white">Global</span>
-
-                                    <span class="u-c-secondary">Offers</span>
-                                </div>
-                                <div class="banner-bg__text-2">
-
-                                    <span class="u-c-secondary">Official Launch</span>
-
-                                    <span class="u-c-white">Don't Miss!</span>
-                                </div>
-
-                                <span class="banner-bg__text-block banner-bg__text-3 u-c-secondary">Enjoy Free
-                                    Shipping when you buy 2 items and above!</span>
-
-                                <a class="banner-bg__shop-now btn--e-secondary" href="shop-side-version-2.html">Shop
-                                    Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Content ======-->
-        </div>
-        <!--====== End - Section 3 ======-->
-
-
         <!--====== Section 4 ======-->
         <div class="u-s-p-y-60">
 
@@ -311,67 +149,63 @@
             </div>
             <!--====== End - Section Intro ======-->
 
-
             <!--====== Section Content ======-->
             <div class="section__content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
-                            <div class="product-o product-o--hover-on u-h-100">
-                                <div class="product-o__wrap">
 
-                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                        @foreach ($products as $product)
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
+                                <div class="product-o product-o--hover-on u-h-100">
+                                    <div class="product-o__wrap">
+                                        <a class="aspect aspect--bg-grey aspect--square u-d-block" href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}">
+                                            <img class="aspect__img" src="{{ asset('admin/img/product/' . $product->images) }}" alt="">
+                                        </a>
 
-                                        <img class="aspect__img" src="images/product/electronic/product19.jpg"
-                                            alt=""></a>
-                                    <div class="product-o__action-wrap">
-                                        <ul class="product-o__action-list">
-                                            <li>
-
-                                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip"
-                                                    data-placement="top" title="Quick View"><i
-                                                        class="fas fa-search-plus"></i></a>
-                                            </li>
-                                            <li>
-
-                                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip"
-                                                    data-placement="top" title="Add to Cart"><i
-                                                        class="fas fa-plus-circle"></i></a>
-                                            </li>
-                                            <li>
-
-                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top"
-                                                    title="Add to Wishlist"><i class="fas fa-heart"></i></a>
-                                            </li>
-                                            <li>
-
-                                                <a href="signin.html" data-tooltip="tooltip" data-placement="top"
-                                                    title="Email me When the price drops"><i
-                                                        class="fas fa-envelope"></i></a>
-                                            </li>
-                                        </ul>
+                                        <div class="product-o__action-wrap">
+                                            <ul class="product-o__action-list">
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View">
+                                                        <i class="fas fa-search-plus"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart">
+                                                        <i class="fas fa-plus-circle"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
+
+                                    <span class="product-o__category">
+                                        <a href="#">{{ $product->categories->category }}</a>
+                                    </span>
+
+                                    <span class="product-o__name">
+                                        <a href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}">{{ $product->name }}</a>
+                                    </span>
+
+                                    <div class="product-o__rating gl-rating-style">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+
+                                        <span class="product-o__review">(23)</span>
+                                    </div>
+
+                                    <span class="product-o__price">Rp. {{ number_format($product->price, 2, ',', '.') }}</span>
                                 </div>
-
-                                <span class="product-o__category">
-
-                                    <a href="shop-side-version-2.html">Electronics</a></span>
-
-                                <span class="product-o__name">
-
-                                    <a href="product-detail.html">Tablet 14inch Screen</a></span>
-                                <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star-half-alt"></i>
-
-                                    <span class="product-o__review">(23)</span>
-                                </div>
-
-                                <span class="product-o__price">$125.00
-
-                                    <span class="product-o__discount">$160.00</span></span>
                             </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -379,99 +213,98 @@
         </div>
         <!--====== End - Section 4 ======-->
 
-
         <!--====== Section 5 ======-->
         <div class="u-s-p-b-60">
 
-            <!--====== Section Intro ======-->
-            <div class="section__intro u-s-m-b-46">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section__text-wrap">
-                                <h1 class="section__heading u-c-secondary u-s-m-b-12">POSTINGAN TERBARU</h1>
+            @if ($articles->count() > 0)
+                <!--====== Section Intro ======-->
+                <div class="section__intro u-s-m-b-46">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section__text-wrap">
+                                    <h1 class="section__heading u-c-secondary u-s-m-b-12">POSTINGAN TERBARU</h1>
 
-                                <span class="section__span u-c-silver">MULAI HARIMU DENGAN POSTINGAN YANG TERBARU</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== End - Section Intro ======-->
-
-
-            <!--====== Section Content ======-->
-            <div class="section__content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 u-s-m-b-30">
-                            <div class="bp-mini bp-mini--img u-h-100">
-                                <div class="bp-mini__thumbnail">
-
-                                    <!--====== Image Code ======-->
-
-                                    <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block"
-                                        href="blog-detail.html">
-
-                                        <img class="aspect__img" src="images/blog/post-2.jpg" alt=""></a>
-                                    <!--====== End - Image Code ======-->
-                                </div>
-                                <div class="bp-mini__content">
-                                    <div class="bp-mini__stat">
-
-                                        <span class="bp-mini__stat-wrap">
-
-                                            <span class="bp-mini__publish-date">
-
-                                                <a>
-
-                                                    <span>25 February 2018</span></a></span></span>
-
-                                        <span class="bp-mini__stat-wrap">
-
-                                            <span class="bp-mini__preposition">By</span>
-
-                                            <span class="bp-mini__author">
-
-                                                <a href="#">Dayle</a></span></span>
-
-                                        <span class="bp-mini__stat">
-
-                                            <span class="bp-mini__comment">
-
-                                                <a href="blog-detail.html"><i class="far fa-comments u-s-m-r-4"></i>
-
-                                                    <span>8</span></a></span></span>
-                                    </div>
-                                    <div class="bp-mini__category">
-
-                                        <a>Learning</a>
-
-                                        <a>News</a>
-
-                                        <a>Health</a>
-                                    </div>
-
-                                    <span class="bp-mini__h1">
-
-                                        <a href="blog-detail.html">Life is an extraordinary Adventure</a></span>
-                                    <p class="bp-mini__p">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry.</p>
-                                    <div class="blog-t-w">
-
-                                        <a class="gl-tag btn--e-transparent-hover-brand-b-2">Travel</a>
-
-                                        <a class="gl-tag btn--e-transparent-hover-brand-b-2">Culture</a>
-
-                                        <a class="gl-tag btn--e-transparent-hover-brand-b-2">Place</a>
-                                    </div>
+                                    <span class="section__span u-c-silver">MULAI HARIMU DENGAN POSTINGAN YANG TERBARU</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--====== End - Section Content ======-->
+                <!--====== End - Section Intro ======-->
+
+                <!--====== Section Content ======-->
+                <div class="section__content">
+                    <div class="container">
+                        <div class="row">
+
+                            @foreach ($articles as $article)
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="bp-mini bp-mini--img u-h-100">
+                                        <div class="bp-mini__thumbnail">
+                                            <!--====== Image Code ======-->
+                                            <a class="aspect aspect--bg-grey aspect--1366-768 u-d-block" href="{{ url('artikel/' . $article->slug) }}">
+                                                <img class="aspect__img" src="images/blog/post-2.jpg" alt="">
+                                            </a>
+                                            <!--====== End - Image Code ======-->
+                                        </div>
+                                        <div class="bp-mini__content">
+                                            <div class="bp-mini__stat">
+                                                <span class="bp-mini__stat-wrap">
+                                                    <span class="bp-mini__publish-date">
+                                                        <a>
+                                                            <span>{{ date('d M Y', strtotime($article->created_at)) }}</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+
+                                                <span class="bp-mini__stat-wrap">
+                                                    <span class="bp-mini__preposition">By</span>
+                                                    <span class="bp-mini__author">
+                                                        <a href="{{ url('artikel/' . $article->slug) }}">{{ $article->admins->name }}</a>
+                                                    </span>
+                                                </span>
+
+                                                <span class="bp-mini__stat">
+                                                    <span class="bp-mini__comment">
+                                                        <a href="{{ url('artikel/' . $article->slug) }}">
+                                                            <i class="far fa-comments u-s-m-r-4"></i>
+                                                            <span>8</span>
+                                                        </a>
+                                                    </span>
+                                                </span>
+                                            </div>
+
+                                            <div class="bp-mini__category">
+                                                <a>Learning</a>
+                                                <a>News</a>
+                                                <a>Health</a>
+                                            </div>
+
+                                            <span class="bp-mini__h1">
+                                                <a href="{{ url('artikel/' . $article->slug) }}">{{ $article->title }}</a>
+                                            </span>
+
+                                            <p class="bp-mini__p">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            </p>
+
+                                            <div class="blog-t-w">
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Travel</a>
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Culture</a>
+                                                <a class="gl-tag btn--e-transparent-hover-brand-b-2">Place</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+                <!--====== End - Section Content ======-->
+            @endif
+
         </div>
         <!--====== End - Section 5 ======-->
 

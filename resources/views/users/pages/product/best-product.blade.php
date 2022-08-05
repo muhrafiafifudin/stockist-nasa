@@ -68,8 +68,7 @@
                                                     <img class="aspect__img" src="{{ asset('admin/img/product/' . $product->images) }}" alt="">
                                                 </a>
                                                 <div class="product-m__add-cart">
-                                                    <a class="btn--e-brand" data-modal="modal"
-                                                        data-modal-id="#add-to-cart">Tambah ke Keranjang</a>
+                                                    <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Tambah ke Keranjang</a>
                                                 </div>
                                             </div>
                                             <div class="product-m__content">

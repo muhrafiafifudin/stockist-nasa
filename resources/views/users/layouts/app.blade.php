@@ -40,8 +40,8 @@
         <!--====== End - Main Footer ======-->
 
         <div class="wa-icon">
-            <a href="https://wa.me/6289649312293/?text=Apakah%20produk%20masih%20ada%20?">
-                <img src="{{ asset('users/img/whatsapp.png') }}" alt="" height="80px" width="80px">
+            <a href="https://wa.me/6289649312293/?text=Apakah%20produk%20masih%20ada%20?" target="_blank">
+                <img src="{{ asset('users/img/whatsapp.png') }}" alt="" height="70px" width="70px">
             </a>
         </div>
 
