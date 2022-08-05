@@ -43,7 +43,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->sub_categories_id == 'Sub Category Tidak Tersedia') {
+            $data['sub_categories_id'] = NULL;
+        }
+
         $data = $request->all();
+        dd($data);
 
         if ($image = $request->file('images')) {
             $destinationPath = 'admin/img/product/';

@@ -76,8 +76,8 @@
                                         <label for="categories_id">Kategori
                                         <span class="text-danger">*</span></label>
                                         <select class="form-control" name="categories_id" id="categories_id" required>
+                                            <option>Pilih Kategori</option>
                                             @foreach ($categories as $category)
-                                                <option>Pilih Kategori</option>
                                                 <option value="{{ $category->id }}">{{ $category->category }}</option>
                                             @endforeach
                                         </select>

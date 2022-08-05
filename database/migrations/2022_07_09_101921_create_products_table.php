@@ -28,8 +28,8 @@ class CreateProductsTable extends Migration
             $table->longText('method')->nullable();
             $table->string('slug');
             $table->integer('qty');
-            $table->tinyInteger('status')->comment('0 for View, 1 for Hidden')->nullable();
-            $table->tinyInteger('trending')->comment('0 for NOT Trending, 1 for Trending')->nullable();
+            $table->tinyInteger('status')->comment('0 for View, 1 for Hidden')->default(0);
+            $table->tinyInteger('trending')->comment('0 for NOT Trending, 1 for Trending')->default(0);
             $table->timestamps();
         });
     }

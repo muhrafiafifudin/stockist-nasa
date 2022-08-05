@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function newProduct()
     {
-        $products = Product::all();
+        $products = Product::all()->sortByDesc('created_at');
 
         return view('users.pages.product.new-product', compact('products'));
     }
@@ -26,7 +26,7 @@ class ProductController extends Controller
 
     public function selectionProduct()
     {
-        $products = Product::all();
+        $products = Product::where('trending', 1)->get();
 
         return view('users.pages.product.selection-product', compact('products'));
     }

@@ -694,7 +694,7 @@
         let users_id = $('#users_id').val();
         let products_id = $('#products_id').val();
         let users_review = $('#users_review').val();
-        let stars_rated = $('#stars_rated').val();
+        let stars_rated = $("#stars_rated:checked").val();
 
         $.ajaxSetup({
             headers: {

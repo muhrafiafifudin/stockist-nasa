@@ -8,10 +8,9 @@
             <div class="primary-nav">
 
                 <!--====== Main Logo ======-->
-
                 <a class="main-logo" href="index.html">
-
-                    <img src="images/logo/logo-1.png" alt=""></a>
+                    <img src="{{ asset('users/img/logo-nasa.png') }}" alt="" width="200px">
+                </a>
                 <!--====== End - Main Logo ======-->
 
 

@@ -23,7 +23,7 @@ class CategorySeeder extends Seeder
             array(
                 'category' => 'Body Care',
                 'slug' => 'body-care',
-                'total_product' => 1
+                'total_product' => 2
             ),
             array(
                 'category' => 'Home Care',
