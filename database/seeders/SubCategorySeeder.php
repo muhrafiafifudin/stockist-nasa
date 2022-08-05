@@ -36,19 +36,19 @@ class SubCategorySeeder extends Seeder
             array(
                 'categories_id' => 6,
                 'sub_category' => 'Moreskin',
-                'slug' => 'perikanan',
+                'slug' => 'moreskin',
                 'total_product' => 1
             ),
             array(
                 'categories_id' => 6,
                 'sub_category' => 'Lacoco',
-                'slug' => 'perikanan',
+                'slug' => 'lacoco',
                 'total_product' => 1
             ),
             array(
                 'categories_id' => 6,
                 'sub_category' => 'Ershali',
-                'slug' => 'perikanan',
+                'slug' => 'ershali',
                 'total_product' => 1
             ),
         ));

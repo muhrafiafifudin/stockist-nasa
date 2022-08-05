@@ -26,13 +26,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::all();
-        $subCategories = SubCategory::all();
+        // $categories = Category::all();
+        // $subCategories = SubCategory::all();
 
-        View::share(compact('categories', 'subCategories'));
+        // View::share(compact('categories', 'subCategories'));
 
-        // view()->composer('*', function ($view) {
-        //     $view->with('categories', Category::all());
-        // });
+        view()->composer('*', function ($view) {
+            $view->with([
+                'categories' => Category::all(),
+                'subCategories' => SubCategory::all()
+            ]);
+        });
     }
 }

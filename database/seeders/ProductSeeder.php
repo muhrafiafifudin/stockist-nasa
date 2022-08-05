@@ -46,6 +46,21 @@ class ProductSeeder extends Seeder
                 'trending' => 0
             ),
             array(
+                'product_code' => 'QMO',
+                'name' => 'Quwless Massage Oil',
+                'images' => 'quwless-message-oil.jpg',
+                'categories_id' => 2,
+                'sub_categories_id' => NULL,
+                'price' => 100000,
+                'weight' => 100.00,
+                'small_description' => 'Quwless Massage Oil, produk minyak pijat spray Nasa yang mengandung 16 minyak essensial, dapat menutrisi kulit, melancarkan peredaran darah dan merikeksasi stress.',
+                'description' => 'Quwless Massage Oil, produk minyak pijat spray Nasa yang mengandung 16 minyak essensial, dapat menutrisi kulit, melancarkan peredaran darah dan merikeksasi stress.',
+                'slug' => 'quwless-message-oil',
+                'qty' => 10,
+                'status' => 0,
+                'trending' => 1
+            ),
+            array(
                 'product_code' => 'SHANASPRO',
                 'name' => 'SHANAS Premium Touch Shampoo',
                 'images' => 'shanas-premium-touch-shampoo.jpg',
@@ -58,7 +73,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'shanas-premium-touch-shampoo',
                 'qty' => 10,
                 'status' => 0,
-                'trending' => 1
+                'trending' => 0
             ),
             array(
                 'product_code' => 'SCPIRING',
@@ -83,8 +98,8 @@ class ProductSeeder extends Seeder
                 'sub_categories_id' => 4,
                 'price' => 80000,
                 'weight' => 100.00,
-                'small_description' => 'Minskii, bedanya Facial Foam Glass Skin sama facial wash lainnya apa sih ? Moreskin Facial Foam Glass Skin mengandung: Citric Acid, Galactomyces Ferment Filtrate, Yogurt Extract, Olive Oil Yang diformulasikan khusus untuk mencerahkan, membersihkan, dan tetap menjaga kelembaban kulitmu.',
-                'description' => 'Minskii, bedanya Facial Foam Glass Skin sama facial wash lainnya apa sih ? Moreskin Facial Foam Glass Skin mengandung: Citric Acid, Galactomyces Ferment Filtrate, Yogurt Extract, Olive Oil Yang diformulasikan khusus untuk mencerahkan, membersihkan, dan tetap menjaga kelembaban kulitmu..',
+                'small_description' => 'Moreskin Aloe Vera Gel adalah produk NASA yang di buat dari ekstrak lidah buaya untuk menjadikan wajah anda lebih halus, terlihat glowing dan menghilangkan bekas noda.',
+                'description' => 'Moreskin Aloe Vera Gel adalah produk NASA yang di buat dari ekstrak lidah buaya untuk menjadikan wajah anda lebih halus, terlihat glowing dan menghilangkan bekas noda.',
                 'slug' => 'moreskin-aloe-vera-gel',
                 'qty' => 10,
                 'status' => 0,
@@ -107,18 +122,18 @@ class ProductSeeder extends Seeder
             ),
             array(
                 'product_code' => 'EBS',
-                'name' => 'Erhsali Brightening Soap',
+                'name' => 'Ershali Brightening Soap',
                 'images' => 'ershali-brightening-soap.jpg',
                 'categories_id' => 6,
                 'sub_categories_id' => 6,
                 'price' => 55000,
                 'weight' => 90.00,
-                'small_description' => 'Lacoco Sunscreen dapat Melindungi Kulit Dari Sinar Matahari, Mencegah Kulit Terbakar, Mencegah Penuaan Dini, Mencegah Terjadinya Kerusakan Kulit dan Memperkuat Skin Barrier.',
-                'description' => 'Lacoco Sunscreen dapat Melindungi Kulit Dari Sinar Matahari, Mencegah Kulit Terbakar, Mencegah Penuaan Dini, Mencegah Terjadinya Kerusakan Kulit dan Memperkuat Skin Barrier.',
+                'small_description' => 'Erhsali Brightening Soap merupakan produk perawatan tubuh NASA yang memiliki khasiat untuk mencerahkan kulit wajah secara merata dengan cara mengangkat sel-sel kulit mati dan kotoran.',
+                'description' => 'Erhsali Brightening Soap merupakan produk perawatan tubuh NASA yang memiliki khasiat untuk mencerahkan kulit wajah secara merata dengan cara mengangkat sel-sel kulit mati dan kotoran.',
                 'slug' => 'ershali-brightening-soap',
                 'qty' => 10,
                 'status' => 0,
-                'trending' => 1
+                'trending' => 0
             ),
         ));
     }

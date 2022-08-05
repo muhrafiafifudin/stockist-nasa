@@ -12,10 +12,12 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $transactions = DB::table('transactions')
-            ->rightJoin('payments', 'transactions.order_number', '=', 'payments.order_number')
-            ->where('payments.transaction_status', 'paid')
-            ->get();
+        $transactions = Transaction::all()->orderBy('created_at', 'asc');
+
+        // $transactions = DB::table('transactions')
+        //     ->rightJoin('payments', 'transactions.order_number', '=', 'payments.order_number')
+        //     ->where('payments.transaction_status', 'paid')
+        //     ->get();
 
         return view('admin.pages.transaction.transaction', compact('transactions'));
     }
