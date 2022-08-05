@@ -47,21 +47,26 @@
 
                                 <div class="card-body">
                                     <div class="form-group">
+                                        <label for="product_code">Kode Produk</label>
+                                        <input type="text" class="form-control" name="product_code" placeholder="Masukkan Kode Produk ..." required>
+                                        <small id="product_code" class="form-text text-muted">Kode produk untuk identitas setiap item.</small>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name">Nama Produk</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Produk ...">
+                                        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Produk ..." required>
                                         <small id="categoryText" class="form-text text-muted">Nama produk untuk identitas setiap item.</small>
                                     </div>
                                     <div class="form-group">
                                         <label>Gambar</label>
                                         <div></div>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="images" />
+                                            <input type="file" class="custom-file-input" name="images" required />
                                             <label class="custom-file-label">Pilih File</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="small_description">Deskripsi Singkat</label>
-                                        <textarea class="form-control" name="small_description" rows="3"></textarea>
+                                        <textarea class="form-control" name="small_description" rows="3" required></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="description">Deskripsi</label>
@@ -70,7 +75,7 @@
                                     <div class="form-group">
                                         <label for="categories_id">Kategori
                                         <span class="text-danger">*</span></label>
-                                        <select class="form-control" name="categories_id" id="categories_id">
+                                        <select class="form-control" name="categories_id" id="categories_id" required>
                                             @foreach ($categories as $category)
                                                 <option>Pilih Kategori</option>
                                                 <option value="{{ $category->id }}">{{ $category->category }}</option>
@@ -93,19 +98,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="price">Harga</label>
-                                        <input type="number" name="price" class="form-control" placeholder="Masukkan Harga Produk ..." />
+                                        <input type="number" name="price" class="form-control" placeholder="Masukkan Harga Produk ..." required />
                                     </div>
                                     <div class="form-group">
                                         <label for="weight">Berat</label>
-                                        <input type="number" name="weight" class="form-control" placeholder="Masukkan Berat Produk ..." />
+                                        <input type="number" name="weight" class="form-control" placeholder="Masukkan Berat Produk ..." required />
                                     </div>
                                     <div class="form-group">
                                         <label for="qty">Stok</label>
-                                        <input type="number" name="qty" class="form-control" placeholder="Masukkan Stok Produk ..." />
+                                        <input type="number" name="qty" class="form-control" placeholder="Masukkan Stok Produk ..." required />
                                     </div>
                                     <div class="form-group">
                                         <label for="slug">Slug</label>
-                                        <input type="text" name="slug" class="form-control" placeholder="Masukkan Slug / Link Produk ..." />
+                                        <input type="text" name="slug" class="form-control" placeholder="Masukkan Slug / Link Produk ..." required />
                                     </div>
                                 </div>
                                 <div class="card-action">

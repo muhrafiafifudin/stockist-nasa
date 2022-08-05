@@ -45,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="shop-p">
                         <div class="shop-p__meta-wrap u-s-m-b-20 u-s-m-t-10">
-                            <span class="shop-p__meta-text-1">Menemukan {{ $productCategories->total_product }} Hasil</span>
+                            <span class="shop-p__meta-text-1">Menemukan {{ $productSubCategories->total_product }} Hasil</span>
                             <div class="shop-p__meta-text-2 u-s-m-t-15">
                                 <span>Pencarian Terkait :</span>
 

@@ -41,7 +41,7 @@
 
         <div class="wa-icon">
             <a href="https://wa.me/6289649312293/?text=Apakah%20produk%20masih%20ada%20?" target="_blank">
-                <img src="{{ asset('users/img/whatsapp.png') }}" alt="" height="70px" width="70px">
+                <img src="{{ asset('users/img/whatsapp.png') }}" alt="" height="60px" width="60px">
             </a>
         </div>
 

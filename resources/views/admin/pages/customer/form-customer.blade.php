@@ -49,41 +49,41 @@
                                     <div class="form-group row">
                                         <div class="col-lg-6">
                                             <label for="name">Nama Lengkap</label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan nama pengguna ...">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan nama pengguna ..." required>
                                             <small id="nameText" class="form-text text-muted">Nama lengkap identitas user.</small>
                                         </div>
                                         <div class="col-lg-6">
                                             <label for="email">Email</label>
-                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan email pengguna ...">
+                                            <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan email pengguna ..." required>
                                             <small id="emailText" class="form-text text-muted">Password default : <strong>1234</strong>.</small>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-6">
                                             <label for="province">Provinsi</label>
-                                            <select class="form-control" name="provinces_id" id="province">
+                                            <select class="form-control" name="provinces_id" id="province" required>
                                                 <option selected="selected">Pilih Provinsi</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-6">
                                             <label for="regency">Kota / Kabupaten</label>
-                                            <select class="form-control" name="cities_id" id="regency">
+                                            <select class="form-control" name="cities_id" id="regency" required>
                                                 <option selected="selected">Pilih Kota / Kabupaten</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="address">Alamat</label>
-                                        <textarea class="form-control" name="address" rows="3"></textarea>
+                                        <textarea class="form-control" name="address" rows="3" required></textarea>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-6">
                                             <label for="postcode">Kode Pos</label>
-                                            <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Masukkan kodepos pengguna ...">
+                                            <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Masukkan kodepos pengguna ..." required>
                                         </div>
                                         <div class="col-lg-6">
                                             <label for="phone_number">Nomor Telepon</label>
-                                            <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Masukkan nomor telepon pengguna ...">
+                                            <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Masukkan nomor telepon pengguna ..." required>
                                         </div>
                                     </div>
                                 </div>
