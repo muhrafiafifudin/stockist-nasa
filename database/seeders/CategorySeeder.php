@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
             array(
                 'category' => 'Agrokompleks',
                 'slug' => 'agrokompleks',
-                'total_product' => 3
+                'total_product' => 2
             ),
             array(
                 'category' => 'Body Care',
@@ -33,17 +33,17 @@ class CategorySeeder extends Seeder
             array(
                 'category' => 'Kesehatan',
                 'slug' => 'kesehatan',
-                'total_product' => 1
+                'total_product' => 0
             ),
             array(
                 'category' => 'Kosmetik',
                 'slug' => 'kosmetik',
-                'total_product' => 1
+                'total_product' => 0
             ),
             array(
                 'category' => 'Skin Care',
                 'slug' => 'skin-care',
-                'total_product' => 1
+                'total_product' => 3
             )
         ));
     }

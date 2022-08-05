@@ -31,8 +31,26 @@ class SubCategorySeeder extends Seeder
                 'categories_id' => 1,
                 'sub_category' => 'Perikanan',
                 'slug' => 'perikanan',
+                'total_product' => 0
+            ),
+            array(
+                'categories_id' => 6,
+                'sub_category' => 'Moreskin',
+                'slug' => 'perikanan',
                 'total_product' => 1
-            )
+            ),
+            array(
+                'categories_id' => 6,
+                'sub_category' => 'Lacoco',
+                'slug' => 'perikanan',
+                'total_product' => 1
+            ),
+            array(
+                'categories_id' => 6,
+                'sub_category' => 'Ershali',
+                'slug' => 'perikanan',
+                'total_product' => 1
+            ),
         ));
     }
 }

@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('product_code');
             $table->string('name');
             $table->string('images');
             $table->tinyInteger('categories_id');
@@ -22,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('price');
             $table->decimal('weight', 10, 2);
             $table->text('small_description');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->longText('benefit')->nullable();
             $table->longText('method')->nullable();
             $table->string('slug');
