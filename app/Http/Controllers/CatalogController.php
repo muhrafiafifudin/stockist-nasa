@@ -21,6 +21,7 @@ class CatalogController extends Controller
     public function productDetail($productSlug)
     {
         if (Product::where('slug', $productSlug)->exists()) {
+            $all_products = Product::all();
             $products = Product::where('slug', $productSlug)->first();
             $categorySlug = $products->categories->slug;
             // Review
@@ -35,7 +36,7 @@ class CatalogController extends Controller
                 $rating_value = 0;
             }
 
-            return view('users.pages.catalog.product-detail', compact('products', 'reviews', 'rating_value', 'users_rating'));
+            return view('users.pages.catalog.product-detail', compact('products', 'reviews', 'rating_value', 'users_rating', 'all_products'));
         } else {
             return redirect('/katalog/produk-nasa')->with('view', 'The link was broken');
         }
