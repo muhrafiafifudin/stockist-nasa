@@ -132,9 +132,11 @@
                                                     <ul style="width:200px">
                                                         @foreach ($subCategories as $subCategory)
                                                             @if ($subCategory->categories_id == $category->id)
-                                                                <li>
-                                                                    <a href="{{ url('katalog/produk-nasa/' . $category->slug . '/' . $subCategory->slug) }}">{{ $subCategory->sub_category }}</a>
-                                                                </li>
+                                                                @if ($subCategory->total_product > 0)
+                                                                    <li>
+                                                                        <a href="{{ url('katalog/produk-nasa/' . $category->slug . '/' . $subCategory->slug) }}">{{ $subCategory->sub_category }}</a>
+                                                                    </li>
+                                                                @endif
                                                             @endif
                                                         @endforeach
                                                     </ul>
