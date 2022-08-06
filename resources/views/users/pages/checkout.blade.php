@@ -163,7 +163,7 @@
                                                             <td>Rp. {{ number_format($checkout['shipping'], 2, ',', '.') }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>PAJAK</td>
+                                                            <td>BIAYA PENANGANAN</td>
                                                             <td>Rp. 0,00</td>
                                                         </tr>
                                                         <tr>

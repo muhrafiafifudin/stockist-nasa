@@ -145,6 +145,7 @@ class CheckoutController extends Controller
     public function paymentPost(Request $request)
     {
         $json = json_decode($request->get('json'));
+        // dd($json);
         $payment = new Payment();
         $payment->order_number = $request->id;
         $payment->order_id = $json->order_id;
@@ -155,7 +156,7 @@ class CheckoutController extends Controller
         $payment->transaction_time = $json->transaction_time;
 
         $transaction_status = $json->transaction_status;
-        $fraud = $json->fraud_status;
+        $fraud = !empty($json->fraud_status) ? $json->fraud_status : '';
 
         if ($transaction_status == 'capture') {
             if ($fraud == 'challenge') {

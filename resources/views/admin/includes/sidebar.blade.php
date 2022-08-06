@@ -26,12 +26,12 @@
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Pengguna & Toko</h4>
+                    <h4 class="text-section">Pelanggan & Toko</h4>
                 </li>
-                <li class="nav-item {{ request()->is('admin/pengguna') ? 'active' : '' }}">
-                    <a href="{{ route('admin.pengguna.index') }}">
+                <li class="nav-item {{ request()->is('admin/pelanggan') ? 'active' : '' }}">
+                    <a href="{{ route('admin.pelanggan.index') }}">
                         <i class="fas fa-users"></i>
-                        <p>Pengguna</p>
+                        <p>Pelanggan</p>
                     </a>
                 </li>
                 <li class="nav-item {{ request()->is('admin/profil-toko') ? 'active' : '' }}">

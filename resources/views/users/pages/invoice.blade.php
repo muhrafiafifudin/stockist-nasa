@@ -133,7 +133,7 @@
                                                         <td>Rp. {{ number_format($transactions->shipping, 2, ',', '.') }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>PAJAK</td>
+                                                        <td>BIAYA PENANGANAN</td>
                                                         <td>Rp. 0,00</td>
                                                     </tr>
                                                     <tr>

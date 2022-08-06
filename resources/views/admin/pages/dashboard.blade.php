@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="col col-stats ml-3 ml-sm-0">
                                         <div class="numbers">
-                                            <p class="card-category">Pengguna</p>
+                                            <p class="card-category">Pelanggan</p>
                                             <h4 class="card-title">{{ $users }}</h4>
                                         </div>
                                     </div>

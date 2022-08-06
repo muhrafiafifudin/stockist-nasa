@@ -202,9 +202,9 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 u-s-m-b-30">
                                             <div class="f-cart__pad-box">
-                                                <h1 class="gl-h1">ESTIMASI BIAYA PENGIRIMAN DAN PAJAK</h1>
+                                                <h1 class="gl-h1">ESTIMASI BIAYA PENGIRIMAN DAN BIAYA PENANGANAN</h1>
 
-                                                <span class="gl-text u-s-m-b-30">Total harga estimasi biaya pengiriman dan pajak.</span>
+                                                <span class="gl-text u-s-m-b-30">Total harga estimasi biaya pengiriman dan biaya penanganan.</span>
                                                 <div class="u-s-m-b-30">
                                                     <table class="f-cart__table">
                                                         <tbody>
@@ -221,7 +221,7 @@
                                                                 <td id="shipping">Rp. 0,00</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>PAJAK</td>
+                                                                <td>BIAYA PENANGANAN</td>
                                                                 <td>Rp. 0,00</td>
                                                             </tr>
                                                             <tr>

@@ -81,8 +81,8 @@
                                                                     @csrf
                                                                     @method('PUT')
 
-                                                                    <button type="submit" class="btn btn-primary">Process</button>
-                                                                    <button class="btn btn-warning">View</button>
+                                                                    <button type="submit" class="btn btn-primary">Proses</button>
+                                                                    <a class="btn btn-warning">View</a>
                                                                 </form>
                                                             </td>
                                                         </tr>
@@ -114,8 +114,13 @@
                                                             <td>{{ $transaction->gross_amount }}</td>
                                                             <td>{{ $transaction->created_at }}</td>
                                                             <td>
-                                                                <button type="button" class="btn btn-primary" id="input_resi" value="{{ $transaction->id }}">Input Resi</button>
-                                                                <button class="btn btn-warning">View</button>
+                                                                <form action="{{ url('admin/transaction/update-delivery/' . $transaction->id) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('PUT')
+
+                                                                    <button type="submit" class="btn btn-primary">Kirim</button>
+                                                                    <a class="btn btn-warning">View</a>
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     @endif
@@ -194,50 +199,3 @@
         </div>
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        $('#input_resi').click(function(e){
-            let transactions_id = $('#input_resi').val();
-
-            swal({
-                title: 'Masukkan Nomor Resi',
-                html: '<br><input class="form-control" placeholder="Masukkan nomor resi ..." id="input-field">',
-                content: {
-                    element: "input",
-                    attributes: {
-                        placeholder: "Masukkan nomor resi ...",
-                        type: "text",
-                        id: "input-field",
-                        className: "form-control"
-                    },
-                },
-                buttons: {
-                    cancel: {
-                        visible: true,
-                        className: 'btn btn-danger'
-                    },
-                    confirm: {
-                        className : 'btn btn-success'
-                    }
-                },
-            }).then(
-                function() {
-                    let resi = $('#input-field').val();
-
-                    $.ajax({
-                        type: 'PUT',
-                        url: "/admin/transaction/update-delivery/" + transactions_id,
-                        data: {
-                            'transactions_id': transactions_id,
-                            'resi': resi
-                        },
-                        cache: false
-                    })
-
-                    location.reload()
-                }
-            );
-        });
-    </script>
-@endpush

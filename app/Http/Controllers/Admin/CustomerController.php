@@ -42,7 +42,7 @@ class CustomerController extends Controller
 
         User::create($data);
 
-        return redirect()->route('admin.pengguna.index');
+        return redirect()->route('admin.pelanggan.index');
     }
 
     /**
@@ -83,7 +83,7 @@ class CustomerController extends Controller
         $users = User::findOrFail($id);
         $users->update($data);
 
-        return redirect()->route('admin.pengguna.index');
+        return redirect()->route('admin.pelanggan.index');
     }
 
     /**
@@ -97,6 +97,6 @@ class CustomerController extends Controller
         $users = User::findOrFail($id);
         $users->delete();
 
-        return redirect()->route('admin.pengguna.index');
+        return redirect()->route('admin.pelanggan.index');
     }
 }

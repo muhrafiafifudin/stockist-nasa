@@ -100,7 +100,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         // Store
         Route::resource('profil-toko', 'StoreController');
         // Customer
-        Route::resource('pengguna', 'CustomerController');
+        Route::resource('pelanggan', 'CustomerController');
         // Category
         Route::resource('kategori', 'CategoryController');
         // Sub Category

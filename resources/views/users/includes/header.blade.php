@@ -122,14 +122,14 @@
                                         <!--====== Dropdown ======-->
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:200px">
-                                            @foreach ($categories as $category)
+                                            @foreach ($nav_categories as $category)
                                                 @if ($category->total_product > 0)
                                                     <li class="{{ $category->sub_categories->count() > 0 ? 'has-dropdown has-dropdown--ul-left-100' : '' }}">
                                                     <a href="{{ url('katalog/produk-nasa/' . $category->slug) }}">{{ $category->category }} {!! $category->sub_categories->count() > 0 ? "<i class='fas fa-angle-down i-state-right u-s-m-l-6'></i>" : '' !!}</a>
                                                     <!--====== Dropdown ======-->
                                                     <span class="js-menu-toggle"></span>
                                                     <ul style="width:200px">
-                                                        @foreach ($subCategories as $subCategory)
+                                                        @foreach ($nav_subCategories as $subCategory)
                                                             @if ($subCategory->categories_id == $category->id)
                                                                 @if ($subCategory->total_product > 0)
                                                                     <li>

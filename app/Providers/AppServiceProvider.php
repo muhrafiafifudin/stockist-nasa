@@ -33,8 +33,8 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function ($view) {
             $view->with([
-                'categories' => Category::all(),
-                'subCategories' => SubCategory::all()
+                'nav_categories' => Category::all(),
+                'nav_subCategories' => SubCategory::all()
             ]);
         });
     }

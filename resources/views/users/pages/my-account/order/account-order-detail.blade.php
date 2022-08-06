@@ -193,7 +193,7 @@
                                                     <div class="manage-o__text-2 u-c-secondary">Rp. {{ number_format($orders->shipping, 2, ',', '.') }}</div>
                                                 </div>
                                                 <div class="dash-l-r u-s-m-b-8">
-                                                    <div class="manage-o__text-2 u-c-secondary">Pajak</div>
+                                                    <div class="manage-o__text-2 u-c-secondary">Biaya Penanganan</div>
                                                     <div class="manage-o__text-2 u-c-secondary">Rp. 0,00</div>
                                                 </div>
                                                 <div class="dash-l-r u-s-m-b-20">

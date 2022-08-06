@@ -12,7 +12,7 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::all()->orderBy('created_at', 'asc');
+        $transactions = Transaction::all()->sortByDesc('created_at');
 
         // $transactions = DB::table('transactions')
         //     ->rightJoin('payments', 'transactions.order_number', '=', 'payments.order_number')
@@ -31,11 +31,11 @@ class TransactionController extends Controller
         return redirect()->route('admin.transaksi.index');
     }
 
-    public function updateDelivery(Request $request, $id)
+    public function updateDelivery($id)
     {
         $transactions = Transaction::findOrFail($id);
         $transactions->process = 2;
-        $transactions->resi = $request->resi;
+        $transactions->resi = rand(0000000000, 9999999999);
         $transactions->update();
 
         return redirect()->route('admin.transaksi.index');
