@@ -56,9 +56,6 @@
                                                 <a class="dash-active">Profil Saya</a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('akun/alamat') }}">Alamat</a>
-                                            </li>
-                                            <li>
                                                 <a href="{{ url('akun/pesanan') }}">Pesanan</a>
                                             </li>
                                             <li>
@@ -86,6 +83,18 @@
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Nomor Telepon</h2>
                                                 <span class="dash__text">{{ Auth::user()->phone_number }}</span>
+                                            </div>
+                                            <div class="col-lg-4 u-s-m-b-30">
+                                                <h2 class="dash__h2 u-s-m-b-8">Provinsi, Kota</h2>
+                                                <span class="dash__text">{{ $addresses['city_name'] }}, {{ $addresses['province'] }}</span>
+                                            </div>
+                                            <div class="col-lg-4 u-s-m-b-30">
+                                                <h2 class="dash__h2 u-s-m-b-8">Alamat</h2>
+                                                <span class="dash__text">{{ Auth::user()->address }}</span>
+                                            </div>
+                                            <div class="col-lg-4 u-s-m-b-30">
+                                                <h2 class="dash__h2 u-s-m-b-8">Kode Pos</h2>
+                                                <span class="dash__text">{{ Auth::user()->postcode }}</span>
                                             </div>
                                         </div>
                                         <div class="row u-s-m-t-30">

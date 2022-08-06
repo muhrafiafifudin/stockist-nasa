@@ -56,9 +56,6 @@
                                                 <a href="{{ url('akun/profil') }}">Profil Saya</a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('akun/alamat') }}">Alamat</a>
-                                            </li>
-                                            <li>
                                                 <a href="{{ url('akun/pesanan') }}" class="dash-active">Pesanan</a>
                                             </li>
                                             <li>

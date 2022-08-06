@@ -57,9 +57,6 @@
                                                 <a href="{{ url('akun/profil') }}" class="dash-active">Profil Saya</a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('akun/alamat') }}">Alamat</a>
-                                            </li>
-                                            <li>
                                                 <a href="{{ url('akun/pesanan') }}">Pesanan</a>
                                             </li>
                                             <li>
@@ -93,6 +90,32 @@
                                                         <div class="u-s-m-b-30">
                                                             <label class="gl-label" for="phone_number">Nomor Telepon</label>
                                                             <input class="input-text input-text--primary-style" name="phone_number" type="text" id="phone_number" value="{{ $users->phone_number }}" placeholder="Masukkan nomor telepon ...">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="gl-inline">
+                                                        <div class="u-s-m-b-30">
+                                                            <label class="gl-label" for="province">Provinsi</label>
+                                                            <select class="select-box select-box--primary-style u-w-100" name="provinces_id" id="province">
+                                                                <option selected>Pilih Provinsi</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="u-s-m-b-30">
+                                                            <label class="gl-label" for="regency">Kota / Kabupaten</label>
+                                                            <select class="select-box select-box--primary-style u-w-100" name="cities_id" id="regency">
+                                                                <option selected>Pilih Kota / Kabupaten</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="gl-inline">
+                                                        <div class="u-s-m-b-30">
+                                                            <label class="gl-label" for="address">Alamat</label>
+                                                            <input class="input-text input-text--primary-style" name="address" type="text" id="address" value="{{ $users->address }}" placeholder="Masukkan alamat ...">
+                                                        </div>
+                                                        <div class="u-s-m-b-30">
+                                                            <label class="gl-label" for="postcode">Kode Pos</label>
+                                                            <input class="input-text input-text--primary-style" name="postcode" type="text" id="postcode" value="{{ $users->postcode }}" placeholder="Masukkan kode pos ...">
                                                         </div>
                                                     </div>
 
