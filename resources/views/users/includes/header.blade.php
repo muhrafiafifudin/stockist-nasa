@@ -155,9 +155,9 @@
                                     <li>
                                         <a href="{{ url('keranjang') }}">Keranjang Belanja</a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ url('katalog/lacak-paket') }}">Lacak Paket</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>

@@ -58,11 +58,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Gambar</label>
-                                        <div></div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="images" required />
-                                            <label class="custom-file-label">Pilih File</label>
-                                        </div>
+                                        <input type="file" class="form-control-file" name="images" required />
                                     </div>
                                     <div class="form-group">
                                         <label for="small_description">Deskripsi Singkat</label>
@@ -73,10 +69,9 @@
                                         <textarea class="form-control markdown-input" name="description" rows="15"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="categories_id">Kategori
-                                        <span class="text-danger">*</span></label>
+                                        <label for="categories_id">Kategori</label>
                                         <select class="form-control" name="categories_id" id="categories_id" required>
-                                            <option>Pilih Kategori</option>
+                                            <option value="">Pilih Kategori</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->category }}</option>
                                             @endforeach
@@ -85,7 +80,7 @@
                                     <div class="form-group">
                                         <label for="sub_categories_id">Sub Kategori</label>
                                         <select class="form-control" name="sub_categories_id" id="sub_categories_id">
-                                            <option>Sub Kategori</option>
+                                            <option value="">Sub Kategori</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -112,6 +107,12 @@
                                         <label for="slug">Slug</label>
                                         <input type="text" name="slug" class="form-control" placeholder="Masukkan Slug / Link Produk ..." required />
                                     </div>
+                                    <div class="form-check mt-2">
+										<label class="form-check-label">
+											<input class="form-check-input" name="trending" type="checkbox" value="1">
+											<span class="form-check-sign">Ya, termasuk produk pilihan</span>
+										</label>
+									</div>
                                 </div>
                                 <div class="card-action">
                                     <button type="submit" class="btn btn-success">Simpan</button>

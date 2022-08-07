@@ -130,7 +130,7 @@
                             <div class="col-lg-12">
                                 <div class="route-box">
                                     <div class="route-box__g1">
-                                        <a class="route-box__link" href="{{ url('produk') }}"><i
+                                        <a class="route-box__link" href="{{ url('katalog/produk-nasa') }}"><i
                                                 class="fas fa-long-arrow-alt-left"></i>
                                             <span>LANJUT BELANJA</span></a>
                                     </div>

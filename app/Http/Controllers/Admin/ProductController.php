@@ -43,12 +43,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->sub_categories_id == 'Sub Category Tidak Tersedia') {
-            $data['sub_categories_id'] = NULL;
+        if (Category::where('id', $request->categories_id)) {
+            $categories = Category::where('id', $request->categories_id)->first();
+            $categories->total_product +=  1;
+            $categories->update();
+
+            if ($request->sub_categories_id !== NULL) {
+                $sub_categories = SubCategory::where('id', $request->sub_categories_id)->first();
+                $sub_categories->total_product += 1;
+                $sub_categories->update();
+            }
         }
 
         $data = $request->all();
-        dd($data);
 
         if ($image = $request->file('images')) {
             $destinationPath = 'admin/img/product/';
@@ -141,7 +148,7 @@ class ProductController extends Controller
                 echo "</option>";
             }
         } else {
-            echo "<option>Sub Category Tidak Tersedia</option>";
+            echo "<option value=''>Sub Category Tidak Tersedia</option>";
         }
     }
 }

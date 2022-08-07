@@ -48,12 +48,11 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="name">Nama Produk</label>
-                                        <input type="text" class="form-control" name="name" value="{{ $products->name }}" placeholder="Masukkan Nama Produk ...">
+                                        <input type="text" class="form-control" name="name" value="{{ $products->name }}" placeholder="Masukkan Nama Produk ..." required />
                                         <small id="categoryText" class="form-text text-muted">Nama produk untuk identitas setiap item.</small>
                                     </div>
                                     <div class="form-group">
                                         <label>Gambar</label>
-                                        <div></div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="images" />
                                             <label class="custom-file-label">{{ $products->images }}</label>
@@ -61,7 +60,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="small_description">Deskripsi Singkat</label>
-                                        <textarea class="form-control" name="small_description" rows="3">{{ $products->small_description }}</textarea>
+                                        <textarea class="form-control" name="small_description" rows="3" required>{{ $products->small_description }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="description">Deskripsi</label>
@@ -98,20 +97,26 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="price">Harga</label>
-                                        <input type="number" name="price" class="form-control" value="{{ $products->price }}" placeholder="Masukkan Harga Produk ..." />
+                                        <input type="number" name="price" class="form-control" value="{{ $products->price }}" placeholder="Masukkan Harga Produk ..." required />
                                     </div>
                                     <div class="form-group">
                                         <label for="weight">Berat</label>
-                                        <input type="number" name="weight" class="form-control" value="{{ (int)$products->weight }}" placeholder="Masukkan Berat Produk ..." />
+                                        <input type="number" name="weight" class="form-control" value="{{ (int)$products->weight }}" placeholder="Masukkan Berat Produk ..." required />
                                     </div>
                                     <div class="form-group">
                                         <label for="qty">Stok</label>
-                                        <input type="number" name="qty" class="form-control" value="{{ $products->qty }}" placeholder="Masukkan Stok Produk ..." />
+                                        <input type="number" name="qty" class="form-control" value="{{ $products->qty }}" placeholder="Masukkan Stok Produk ..." required />
                                     </div>
                                     <div class="form-group">
                                         <label for="slug">Slug</label>
-                                        <input type="text" name="slug" class="form-control" value="{{ $products->slug }}" placeholder="Masukkan Slug / Link Produk ..." />
+                                        <input type="text" name="slug" class="form-control" value="{{ $products->slug }}" placeholder="Masukkan Slug / Link Produk ..." required />
                                     </div>
+                                    <div class="form-check mt-2">
+										<label class="form-check-label">
+											<input class="form-check-input" name="trending" type="checkbox" value="1" {{ $products->trending == 1 ? 'checked' : '' }}>
+											<span class="form-check-sign">Ya, termasuk produk pilihan</span>
+										</label>
+									</div>
                                 </div>
                                 <div class="card-action">
                                     <button type="submit" class="btn btn-success">Simpan</button>
