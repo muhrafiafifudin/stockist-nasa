@@ -131,19 +131,177 @@
                                                         <div class="description__img-wrap">
                                                             <img class="u-img-fluid" src="{{ asset('admin/img/product/' . $order_detail->products->images) }}" alt="">
                                                         </div>
-                                                        <div class="description-title">{{ $order_detail->products->name }}</div>
-                                                    </div>
-                                                    <div class="description__info-wrap">
-                                                        <div>
+                                                        <div class="description-title">
+                                                            {{ $order_detail->products->name }} <br>
+
                                                             <span class="manage-o__text-2 u-c-silver">Quantity:
                                                                 <span class="manage-o__text-2 u-c-secondary">{{ $order_detail->qty }}</span>
                                                             </span>
                                                         </div>
+                                                    </div>
+                                                    <div class="description__info-wrap">
                                                         <div>
                                                             <span class="manage-o__text-2 u-c-silver">Total:
                                                                 <span class="manage-o__text-2 u-c-secondary">Rp. {{ number_format($order_detail->products->price * $order_detail->qty, 2, ',', '.') }}</span>
                                                             </span>
                                                         </div>
+
+                                                        @if ($orders->process == 3)
+                                                            @if (\App\Models\Review::where('users_id', Auth::id())->where('products_id', $order_detail->products_id)->count() == 0)
+                                                                <div class="f-cart u-s-m-t-5">
+                                                                    <center>
+                                                                        <button class="btn btn-main" data-toggle="modal" data-target="#newsletter-modal">NILAI</button>
+                                                                    </center>
+
+                                                                    <!--====== Modal ======-->
+                                                                    <div class="modal fade new-l" id="newsletter-modal">
+                                                                        <div class="modal-dialog modal-dialog-centered">
+                                                                            <div class="modal-content modal--shadow">
+
+                                                                                <button class="btn new-l__dismiss fas fa-times" type="button" data-dismiss="modal"></button>
+
+                                                                                <div class="modal-body">
+                                                                                    <div class="row u-s-m-x-0">
+                                                                                        <div class="col-lg-12 new-l__col-2">
+                                                                                            <div class="new-l__section u-s-m-t-30">
+                                                                                                <div class="u-s-m-b-8 new-l--center">
+                                                                                                    <h3 class="new-l__h3">Rating dan Review</h3>
+                                                                                                </div>
+                                                                                                <div class="u-s-m-b-30 new-l--center">
+                                                                                                    <p class="new-l__p1">Pilihlah rating dan masukkan review terhadap produk anda.</p>
+                                                                                                </div>
+                                                                                                <form action="{{ url('tambah-review') }}" class="new-l__form" method="POST">
+                                                                                                    @csrf
+                                                                                                    @method('POST')
+
+                                                                                                    <input type="hidden" name="order_number" value="{{ $orders->order_number }}">
+                                                                                                    <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">
+                                                                                                    <input type="hidden" name="products_id" value="{{ $order_detail->products_id }}">
+
+                                                                                                    <div class="u-s-m-b-15">
+                                                                                                        <div class="rev-f2__table-wrap gl-scroll">
+                                                                                                            <table class="rev-f2__table">
+                                                                                                                <thead>
+                                                                                                                    <tr>
+                                                                                                                        <th>
+                                                                                                                            <div class="gl-rating-style-2">
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <span>(1)</span>
+                                                                                                                            </div>
+                                                                                                                        </th>
+                                                                                                                        <th>
+                                                                                                                            <div class="gl-rating-style-2">
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <span>(2)</span>
+                                                                                                                            </div>
+                                                                                                                        </th>
+                                                                                                                        <th>
+                                                                                                                            <div class="gl-rating-style-2">
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <span>(3)</span>
+                                                                                                                            </div>
+                                                                                                                        </th>
+                                                                                                                        <th>
+                                                                                                                            <div class="gl-rating-style-2">
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <span>(4)</span>
+                                                                                                                            </div>
+                                                                                                                        </th>
+                                                                                                                        <th>
+                                                                                                                            <div class="gl-rating-style-2">
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <i class="fas fa-star"></i>
+                                                                                                                                <span>(5)</span>
+                                                                                                                            </div>
+                                                                                                                        </th>
+                                                                                                                    </tr>
+                                                                                                                </thead>
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <!--====== Radio Box ======-->
+                                                                                                                            <div class="radio-box">
+                                                                                                                                <input type="radio" id="stars_rated" name="stars_rated" value="1">
+                                                                                                                                <div class="radio-box__state radio-box__state--primary">
+                                                                                                                                    <label class="radio-box__label" for="star-1"></label>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!--====== End - Radio Box ======-->
+                                                                                                                        </td>
+                                                                                                                        <td>
+                                                                                                                            <!--====== Radio Box ======-->
+                                                                                                                            <div class="radio-box">
+                                                                                                                                <input type="radio" id="stars_rated" name="stars_rated" value="2">
+                                                                                                                                <div class="radio-box__state radio-box__state--primary">
+                                                                                                                                    <label class="radio-box__label" for="star-2"></label>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!--====== End - Radio Box ======-->
+                                                                                                                        </td>
+                                                                                                                        <td>
+                                                                                                                            <!--====== Radio Box ======-->
+                                                                                                                            <div class="radio-box">
+                                                                                                                                <input type="radio" id="stars_rated" name="stars_rated" value="3">
+                                                                                                                                <div class="radio-box__state radio-box__state--primary">
+                                                                                                                                    <label class="radio-box__label" for="star-3"></label>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!--====== End - Radio Box ======-->
+                                                                                                                        </td>
+                                                                                                                        <td>
+                                                                                                                            <!--====== Radio Box ======-->
+                                                                                                                            <div class="radio-box">
+                                                                                                                                <input type="radio" id="stars_rated" name="stars_rated" value="4">
+                                                                                                                                <div class="radio-box__state radio-box__state--primary">
+                                                                                                                                    <label class="radio-box__label" for="star-4"></label>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!--====== End - Radio Box ======-->
+                                                                                                                        </td>
+                                                                                                                        <td>
+                                                                                                                            <!--====== Radio Box ======-->
+                                                                                                                            <div class="radio-box">
+                                                                                                                                <input type="radio" id="stars_rated" name="stars_rated" value="5">
+                                                                                                                                <div class="radio-box__state radio-box__state--primary">
+                                                                                                                                    <label class="radio-box__label" for="star-5"></label>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <!--====== End - Radio Box ======-->
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="u-s-m-b-15">
+                                                                                                        <label class="gl-label" for="reviewer-text">Review Produk</label>
+                                                                                                        <textarea class="text-area text-area--primary-style" id="users_review" style="height:200px;" name="users_review"></textarea>
+                                                                                                    </div>
+                                                                                                    <div class="u-s-m-b-15">
+                                                                                                        <button class="btn btn--e-brand-b-2" type="submit">KIRIM</button>
+                                                                                                    </div>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--====== End - Modal ======-->
+                                                                </div>
+                                                            @endif
+                                                        @endif
+
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -204,13 +362,15 @@
                                                             @method('PUT')
 
                                                             <input type="hidden" name="order_number" value="{{ $orders->order_number }}" />
-
                                                             <button class="btn btn--e-brand-b-2" type="submit">PAKET DITERIMA</button>
                                                         </form>
                                                     </div>
                                                 @else
                                                     <div class="f-cart u-s-m-b-10">
                                                         <button class="btn btn--e-brand-b-disabled">PAKET DITERIMA</button>
+                                                    </div>
+                                                    <div class="f-cart u-s-m-b-10">
+                                                        <button class="btn btn--e-brand-b-disabled">BELI LAGI</button>
                                                     </div>
                                                 @endif
                                                 <span class="dash__text-2 text-center">Pembayaran menggunakan {{ strtoupper($orders->payments->payment_type) }}</span>

@@ -2322,6 +2322,8 @@ input::-ms-clear {
     border: 0;
     color: #515151;
     cursor: pointer;
+    display: grid;
+    justify-content: end;
 }
 
 #newsletter-modal .row {

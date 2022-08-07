@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function newProduct()
     {
-        $products = Product::all()->sortByDesc('created_at');
+        $products = Product::orderBy('created_at', 'asc')->limit(5)->get();
 
         return view('users.pages.product.new-product', compact('products'));
     }

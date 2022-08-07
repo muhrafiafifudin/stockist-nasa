@@ -643,7 +643,7 @@
                 $('#newsletter-modal').modal({
                     backdrop: 'static',
                     keyboard: false,
-                    show: true
+                    show: false
                 });
             }, 5000);
         }

@@ -12,17 +12,14 @@ class ReviewController extends Controller
 {
     public function addReview(Request $request)
     {
-        $verified_purchase = Transaction::where('transactions.users_id', Auth::id())
-                            ->join('transaction_details', 'transactions.id', 'transaction_details.transactions_id')
-                            ->where('transaction_details.products_id', $request->products_id)->get();
+        $reviews = new Review();
+        $reviews->users_id = $request->users_id;
+        $reviews->products_id = $request->products_id;
+        $reviews->users_review = $request->users_review;
+        $reviews->stars_rated = $request->stars_rated;
+        $reviews->save();
 
-        if ($verified_purchase->count() > 0) {
-            $data = $request->all();
-            Review::create($data);
-
-            return response()->json(['status' => "Terima Kasih Telah Memberikan Penilaian"]);
-        } else {
-            return response()->json(['status' => "Anda Harus Membeli Produk Terlebih Dahulu"]);
-        }
+        // return response()->json(['status' => "Terima Kasih Telah Memberikan Penilaian"]);
+        return redirect('akun/pesanan/' . $request->order_number);
     }
 }
