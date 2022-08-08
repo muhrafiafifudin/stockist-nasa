@@ -78,6 +78,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('akun/edit-profil/{id}', 'MyAccountController@updateMyAccount')->name('account.update-profile');
     Route::get('akun/pesanan', 'MyAccountController@order');
     Route::get('akun/pesanan/{order_number}', 'MyAccountController@orderDetail');
+    Route::post('akun/pesanan/beli-lagi', 'MyAccountController@addCartAgain')->name('buy-again');
     // Transaction Status
     Route::put('transaction/update-finish/{id}', 'MyAccountController@updateFinish');
 });

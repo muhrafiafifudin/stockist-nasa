@@ -367,10 +367,19 @@
                                                     </div>
                                                 @else
                                                     <div class="f-cart u-s-m-b-10">
-                                                        <button class="btn btn--e-brand-b-disabled">PAKET DITERIMA</button>
-                                                    </div>
-                                                    <div class="f-cart u-s-m-b-10">
-                                                        <button class="btn btn--e-brand-b-disabled">BELI LAGI</button>
+                                                        <form action="{{ route('buy-again') }}" method="POST">
+                                                            @csrf
+                                                            @method('POST')
+
+                                                            @foreach ($order_details as $order_detail)
+                                                                <input type="hidden" name="order_number" value="{{ $orders->order_number }}">
+                                                                <input type="hidden" name="users_id[]" value="{{ Auth::user()->id }}">
+                                                                <input type="hidden" name="products_id[]" value="{{ $order_detail->products_id }}">
+                                                                <input type="hidden" name="products_qty[]" value="{{ $order_detail->qty }}">
+                                                            @endforeach
+
+                                                            <button type="submit" class="btn btn-main">BELI LAGI</button>
+                                                        </form>
                                                     </div>
                                                 @endif
                                                 <span class="dash__text-2 text-center">Pembayaran menggunakan {{ strtoupper($orders->payments->payment_type) }}</span>

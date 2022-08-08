@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -73,6 +74,28 @@ class MyAccountController extends Controller
         $transactions->update();
 
         return redirect('akun/pesanan/' . $request->order_number);
+    }
+
+    public function addCartAgain(Request $request)
+    {
+        foreach ($request->input('products_id') as $product_id) {
+
+            foreach ($request->input('products_qty') as $product_qty) {}
+
+                if (Cart::where('products_id', $product_id)->where('users_id', Auth::id())->exists()) {
+                    $cartItems = Cart::where('products_id', $product_id)->where('users_id', Auth::id())->first();
+                    $cartItems->products_qty += $product_qty;
+                    $cartItems->update();
+                } else {
+                    $cartItems = new Cart();
+                    $cartItems->users_id = Auth::id();
+                    $cartItems->products_id = $product_id;
+                    $cartItems->products_qty = $product_qty;
+                    $cartItems->save();
+                }
+        }
+
+        return redirect('/keranjang');
     }
     // End My Account - Order / Transaction
 }
