@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->integer('users_id');
             $table->integer('products_id');
-            $table->text('users_review');
+            $table->text('users_review')->nullable();
             $table->tinyInteger('stars_rated');
             $table->timestamps();
         });

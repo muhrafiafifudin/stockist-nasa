@@ -4548,6 +4548,7 @@ input::-ms-clear {
     font-size: 14px;
     font-weight: 600;
     color: #333333;
+    line-height: 1.5rem;
 }
 
 .dash__address-header {

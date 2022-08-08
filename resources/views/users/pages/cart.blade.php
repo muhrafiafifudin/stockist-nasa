@@ -165,7 +165,7 @@
                                                     <!--====== Select Box ======-->
                                                     <label class="gl-label" for="province">PROVINSI</label>
                                                     <select class="select-box select-box--primary-style" name="province" id="province" required>
-                                                        <option selected="selected">Pilih Provinsi</option>
+                                                        <option value="" selected="selected">Pilih Provinsi</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
@@ -173,7 +173,7 @@
                                                     <!--====== Select Box ======-->
                                                     <label class="gl-label" for="regency">KOTA / KABUPATEN</label>
                                                     <select class="select-box select-box--primary-style" name="regency" id="regency" required>
-                                                        <option selected="selected">Pilih Kota / Kabupaten</option>
+                                                        <option value="" selected="selected">Pilih Kota / Kabupaten</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
@@ -181,7 +181,7 @@
                                                     <!--====== Select Box ======-->
                                                     <label class="gl-label" for="courier">KURIR</label>
                                                     <select class="select-box select-box--primary-style" name="courier" id="courier" required>
-                                                        <option selected="selected">Pilih Kurir</option>
+                                                        <option value="" selected="selected">Pilih Kurir</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
@@ -190,7 +190,7 @@
                                                     <!--====== Select Box ======-->
                                                     <label class="gl-label" for="package">PAKET PENGIRIMAN</label>
                                                     <select class="select-box select-box--primary-style" name="package" id="package" required>
-                                                        <option selected="selected">Pilih Paket Pengiriman</option>
+                                                        <option value="" selected="selected">Pilih Paket Pengiriman</option>
                                                     </select>
                                                     <!--====== End - Select Box ======-->
                                                 </div>
