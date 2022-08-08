@@ -82,7 +82,7 @@
                                                                     @method('PUT')
 
                                                                     <button type="submit" class="btn btn-primary">Proses</button>
-                                                                    <a class="btn btn-warning">View</a>
+                                                                    <a href="{{ url('admin/detail-transaksi', $transaction->id) }}" class="btn btn-warning">View</a>
                                                                 </form>
                                                             </td>
                                                         </tr>
@@ -119,7 +119,7 @@
                                                                     @method('PUT')
 
                                                                     <button type="submit" class="btn btn-primary">Kirim</button>
-                                                                    <a class="btn btn-warning">View</a>
+                                                                    <a href="{{ url('admin/detail-transaksi', $transaction->id) }}" class="btn btn-warning">View</a>
                                                                 </form>
                                                             </td>
                                                         </tr>
@@ -151,7 +151,7 @@
                                                             <td>{{ $transaction->gross_amount }}</td>
                                                             <td>{{ $transaction->created_at }}</td>
                                                             <td>
-                                                                <button class="btn btn-warning" onclick="return confirm('Are you sure ?')">View</button>
+                                                                <a href="{{ url('admin/detail-transaksi', $transaction->id) }}" class="btn btn-warning">View</a>
                                                             </td>
                                                         </tr>
                                                     @endif
@@ -181,7 +181,7 @@
                                                             <td>{{ $transaction->gross_amount }}</td>
                                                             <td>{{ $transaction->created_at }}</td>
                                                             <td>
-                                                                <button class="btn btn-warning" onclick="return confirm('Are you sure ?')">View</button>
+                                                                <a href="{{ url('admin/detail-transaksi', $transaction->id) }}" class="btn btn-warning">View</a>
                                                             </td>
                                                         </tr>
                                                     @endif

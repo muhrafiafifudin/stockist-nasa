@@ -108,6 +108,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('artikel', 'ArticleController');
         // Transaction
         Route::get('transaksi', 'TransactionController@index')->name('transaksi.index');
+        Route::get('riwayat-transaksi', 'TransactionController@transactionHistory')->name('transaksi.history');
+        Route::get('detail-transaksi/{id}', 'TransactionController@transactionDetail');
         // Report
         Route::get('report-transaction', 'TransactionController@reportTransaction')->name('transaksi.report');
         Route::get('print-pdf/{fromDate}/{toDate}', 'TransactionController@printPdf');

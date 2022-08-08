@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use PDF;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Models\TransactionDetail;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use PDF;
 
 class TransactionController extends Controller
 {
@@ -20,6 +21,21 @@ class TransactionController extends Controller
         //     ->get();
 
         return view('admin.pages.transaction.transaction', compact('transactions'));
+    }
+
+    public function transactionHistory()
+    {
+        $transactions = Transaction::where('process', 3)->orderBy('created_at', 'asc')->get();
+
+        return view('admin.pages.transaction.transaction-history', compact('transactions'));
+    }
+
+    public function transactionDetail($id)
+    {
+        $transactions = Transaction::findOrFail($id);
+        $transaction_details = TransactionDetail::where('transactions_id', $id)->get();
+
+        return view('admin.pages.transaction.transaction-detail', compact('transactions', 'transaction_details'));
     }
 
     public function updateProcess($id)

@@ -97,6 +97,12 @@
                         <p>Transaksi</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/riwayat-transaksi') ? 'active' : '' }}">
+                    <a href="{{ route('admin.transaksi.history') }}">
+                        <i class="fas fa-history"></i>
+                        <p>Riwayat Transaksi</p>
+                    </a>
+                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
