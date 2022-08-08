@@ -49,7 +49,7 @@
                                     <input type="hidden" name="json" id="json_callback">
                                 </form>
 
-                                <h1 class="checkout-f__h1">KONFIRMASI PEMBAYARAN</h1>
+                                <h1 class="checkout-f__h1">KONFIRMASI PENGIRIMAN</h1>
 
                                 <!--====== Order Summary ======-->
                                 <div class="o-summary">

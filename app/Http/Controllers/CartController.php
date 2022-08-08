@@ -108,7 +108,7 @@ class CartController extends Controller
             $arrayResponse = json_decode($response, true);
             $provinces = $arrayResponse['rajaongkir']['results'];
 
-            echo "<option>Pilih Provinsi</option>";
+            echo "<option value=''>Pilih Provinsi</option>";
 
             foreach ($provinces as $province) {
                 echo "<option value='" . $province['province_id'] . "' >" . $province['province'] . "</option>";
@@ -144,7 +144,7 @@ class CartController extends Controller
             $arrayResponse = json_decode($response, true);
             $cities = $arrayResponse['rajaongkir']['results'];
 
-            echo "<option>Pilih Kota / Kabupaten</option>";
+            echo "<option value=''>Pilih Kota / Kabupaten</option>";
 
             foreach ($cities as $city) {
                 echo "<option value='" . $city['city_id'] . "' >" . $city['city_name'] . "</option>";
@@ -155,7 +155,7 @@ class CartController extends Controller
     public function getCourier(Request $request)
     {
         if ($request) {
-            echo "<option>Pilih Kurir</option>";
+            echo "<option value=''>Pilih Kurir</option>";
             echo '<option value="jne" name="JNE">JNE</option>';
             echo '<option value="tiki" name="TIKI">TIKI</option>';
             echo '<option value="pos" name="POS Indonesia">POS Indonesia</option>';
@@ -199,7 +199,7 @@ class CartController extends Controller
             $arrayResponse = json_decode($response, true);
             $packages = $arrayResponse['rajaongkir']['results'][0]['costs'];
 
-            echo "<option>Pilih Paket Pengiriman</option>";
+            echo "<option value=''>Pilih Paket Pengiriman</option>";
 
             foreach ($packages as $package) {
                 echo "<option value='" . $package['service'] . "' ongkir='" . $package['cost'][0]['value'] . "' estimasi='" . $package['cost'][0]['etd'] . "'>";

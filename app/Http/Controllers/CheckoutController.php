@@ -20,9 +20,7 @@ class CheckoutController extends Controller
     public function index()
     {
         $checkout = Session::all();
-
-        $stores = Store::all()->first();
-        $address = RajaOngkir::kota()->dariProvinsi($stores->provinces_id)->find($stores->cities_id);
+        $address = RajaOngkir::kota()->dariProvinsi($checkout['province'])->find($checkout['regency']);
 
         $cartItems = Cart::where('users_id', Auth::id())->get();
 
