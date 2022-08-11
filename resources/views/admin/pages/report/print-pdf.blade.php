@@ -22,9 +22,20 @@
 </head>
 
 <body>
-    <h2 class="text-center">STOKIS NASA</h2>
-    <h3 class="text-center">Laporan Penjualan</h3>
-    <p class="text-center">Dari Tanggal : {{ date('d M Y', strtotime($fromDate)) }} Sampai Tanggal : {{ date('d M Y', strtotime($toDate)) }}</p>
+    <table width="100%" style="border: none">
+        <tr style="border: none">
+            <td width="30%" style="border: none">
+                <img src="users/img/logo-nasa.png" alt="navbar brand" width="300px">
+            </td>
+            <td width="70%" style="border: none; line-height:10px">
+                <h2 class="text-center">STOKIS NASA</h2>
+                <p class="text-center">Sidomulyo, Kel. Glagah Wangi, Kec. Polanharjo, 57456. Klaten, Jawa Tengah</p>
+            </td>
+        </tr>
+    </table>
+
+    <h3 class="text-center" style="line-height: 10px; margin-top: 5rem">Laporan Penjualan</h3>
+    <p class="text-center" style="line-height: 10px; margin-bottom: 3rem">Dari Tanggal : {{ date('d M Y', strtotime($fromDate)) }} Sampai Tanggal : {{ date('d M Y', strtotime($toDate)) }}</p>
 
     <table width="100%">
         <tr>
@@ -35,7 +46,7 @@
             <th>Total</th>
         </tr>
         @php $no=1; @endphp
-        @foreach ($transactions as $transaction)
+        @forelse ($transactions as $transaction)
             <tr class="text-center">
                 <td>{{ $no++ }}</td>
                 <td>{{ $transaction->order_number }}</td>
@@ -43,7 +54,27 @@
                 <td>{{ $transaction->name }}</td>
                 <td>IDR. {{ number_format($transaction->total, 2, ',', '.') }}</td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td class="text-center" colspan="5"><strong>Data Kosong</strong></td>
+            </tr>
+        @endforelse
+    </table>
+
+    <table width="100%" style="border: none; margin-top: 8rem">
+        <tr style="border: none">
+            <td width="25%" style="border: none">
+            </td>
+            <td width="25%" style="border: none">
+            </td>
+            <td width="25%" style="border: none">
+            </td>
+            <td width="25%" style="border: none; line-height:10px">
+                <h3 class="text-center">Owner,</h3>
+                <br><br><br><br>
+                <p class="text-center">Anggita Prasasti</p>
+            </td>
+        </tr>
     </table>
 </body>
 

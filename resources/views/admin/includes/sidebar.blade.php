@@ -73,7 +73,7 @@
                         <p>Produk</p>
                     </a>
                 </li>
-                <li class="nav-section">
+                {{-- <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
@@ -84,7 +84,7 @@
                         <i class="fas fa-newspaper"></i>
                         <p>Artikel</p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
