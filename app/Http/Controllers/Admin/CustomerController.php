@@ -81,6 +81,15 @@ class CustomerController extends Controller
         $data = $request->all();
 
         $users = User::findOrFail($id);
+        if (empty($request->is_member)) {
+            $users->is_member = 0;
+        }
+        if ($request->provinces_id == NULL) {
+            $users->provinces_id = $request->provinces_id;
+        }
+        if ($request->cities_id == NULL) {
+            $users->cities_id = $request->cities_id;
+        }
         $users->update($data);
 
         return redirect()->route('admin.pelanggan.index');

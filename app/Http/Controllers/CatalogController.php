@@ -14,8 +14,9 @@ class CatalogController extends Controller
     public function product()
     {
         $products = Product::all();
+        $users = Auth::user();
 
-        return view('users.pages.catalog.product', compact('products'));
+        return view('users.pages.catalog.product', compact('products','users'));
     }
 
     public function productDetail($productSlug)
@@ -24,6 +25,7 @@ class CatalogController extends Controller
             $all_products = Product::all();
             $products = Product::where('slug', $productSlug)->first();
             $categorySlug = $products->categories->slug;
+            $users = Auth::user();
             // Review
             $reviews = Review::where('products_id', $products->id)->get();
             // Rating
@@ -36,7 +38,7 @@ class CatalogController extends Controller
                 $rating_value = 0;
             }
 
-            return view('users.pages.catalog.product-detail', compact('products', 'reviews', 'rating_value', 'users_rating', 'all_products'));
+            return view('users.pages.catalog.product-detail', compact('products', 'reviews', 'rating_value', 'users_rating', 'all_products', 'users'));
         } else {
             return redirect('/katalog/produk-nasa')->with('view', 'The link was broken');
         }
@@ -45,11 +47,12 @@ class CatalogController extends Controller
     public function categoryNasa($categorySlug)
     {
         $productCategories = Category::where('slug', $categorySlug)->first();
+        $users = Auth::user();
 
         if (Product::where('categories_id', $productCategories->id)->exists()) {
             $products = Product::where('categories_id', $productCategories->id)->get();
 
-            return view('users.pages.catalog.product-category', compact('products', 'productCategories'));
+            return view('users.pages.catalog.product-category', compact('products', 'productCategories', 'users'));
         } else {
             return redirect('/katalog/produk-nasa')->with('view', 'The link was broken');
         }
@@ -59,11 +62,12 @@ class CatalogController extends Controller
     {
         $productCategories = Category::where('slug', $categorySlug)->first();
         $productSubCategories = SubCategory::where('slug', $subCategorySlug)->first();
+        $users = Auth::user();
 
         if (Product::where('categories_id', $productCategories->id)->where('sub_categories_id', $productSubCategories->id)->exists()) {
             $products = Product::where('categories_id', $productCategories->id)->where('sub_categories_id', $productSubCategories->id)->get();
 
-            return view('users.pages.catalog.product-subcategory', compact('products', 'productCategories', 'productSubCategories'));
+            return view('users.pages.catalog.product-subcategory', compact('products', 'productCategories', 'productSubCategories', 'users'));
         } else {
             return redirect('/katalog/produk-nasa')->with('view', 'The link was broken');
         }

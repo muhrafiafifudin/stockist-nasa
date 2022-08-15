@@ -26,6 +26,8 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('postcode')->nullable();
             $table->string('phone_number')->nullable();
+            $table->tinyInteger('is_member')->nullable()->comment('0 for No Member, 1 for Member')->default(0);
+            $table->integer('point')->nullable()->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

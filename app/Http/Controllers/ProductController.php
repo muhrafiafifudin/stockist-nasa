@@ -13,21 +13,24 @@ class ProductController extends Controller
     public function newProduct()
     {
         $products = Product::orderBy('created_at', 'asc')->limit(5)->get();
+        $users = Auth::user();
 
-        return view('users.pages.product.new-product', compact('products'));
+        return view('users.pages.product.new-product', compact('products', 'users'));
     }
 
     public function bestProduct()
     {
         $products = Product::all();
+        $users = Auth::user();
 
-        return view('users.pages.product.best-product', compact('products'));
+        return view('users.pages.product.best-product', compact('products', 'users'));
     }
 
     public function selectionProduct()
     {
         $products = Product::where('trending', 1)->get();
+        $users = Auth::user();
 
-        return view('users.pages.product.selection-product', compact('products'));
+        return view('users.pages.product.selection-product', compact('products', 'users'));
     }
 }

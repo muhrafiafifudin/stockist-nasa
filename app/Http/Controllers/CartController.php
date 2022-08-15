@@ -14,7 +14,9 @@ class CartController extends Controller
     public function index()
     {
         $cartItems = Cart::where('users_id', Auth::id())->get();
-        return view('users.pages.cart', compact('cartItems'));
+        $users = Auth::user();
+
+        return view('users.pages.cart', compact('cartItems', 'users'));
     }
 
     public function addCart(Request $request)
@@ -226,6 +228,7 @@ class CartController extends Controller
             'weight' => $request->weight,
             'subtotal' => $request->subtotal,
             'total' => $request->total,
+            'point' => $request->point,
             'order' => rand()
         ]);
 

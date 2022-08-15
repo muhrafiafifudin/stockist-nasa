@@ -71,7 +71,11 @@
                                     <div class="dash__pad-2">
                                         <h1 class="dash__h1 u-s-m-b-14">Beranda</h1>
 
-                                        <span class="dash__text u-s-m-b-30">Selamat Datang, User</span>
+                                        @if ($users->is_member === 1)
+                                            <h5 class="u-s-m-b-14">Point User : {{ $users->point }} Point</h5>
+                                        @endif
+
+                                        <span class="dash__text u-s-m-b-14">Selamat Datang, User</span>
                                     </div>
                                 </div>
                             </div>

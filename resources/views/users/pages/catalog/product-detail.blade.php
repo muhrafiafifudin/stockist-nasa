@@ -72,6 +72,13 @@
                         <div>
                             <div class="pd-detail__inline">
                                 <span class="pd-detail__price">Rp. {{ number_format($products->price, 2, ',', '.') }}</span>
+
+                                @auth
+                                    @if ($users->is_member === 1)
+                                        <span>HD = Rp. {{ number_format($products->distributor_price, 2, ',', '.') }}</span>
+                                    @endif
+                                @endauth
+
                             </div>
                         </div>
                         <div class="u-s-m-b-15">

@@ -94,7 +94,19 @@
                                                         class="far fa-star"></i><i class="far fa-star"></i>
                                                     <span class="product-m__review">(23)</span>
                                                 </div>
-                                                <div class="product-m__price">Rp. {{ number_format($product->price, 2, ',', '.') }}</div>
+
+                                                @guest
+                                                    <div class="product-m__price">Rp. {{ number_format($product->price, 2, ',', '.') }}</div>
+                                                @endguest
+
+                                                @auth
+                                                    @if ($users->is_member === 1)
+                                                        <div class="product-m__price">Rp. {{ number_format($product->price, 2, ',', '.') }}</div>
+                                                        <div class="product-m__price">HD = Rp. {{ number_format($product->distributor_price, 2, ',', '.') }}</div>
+                                                    @else
+                                                        <div class="product-m__price">Rp. {{ number_format($product->price, 2, ',', '.') }}</div>
+                                                    @endif
+                                                @endauth
                                             </div>
                                         </div>
                                     </div>

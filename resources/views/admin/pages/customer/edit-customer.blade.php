@@ -62,13 +62,13 @@
                                         <div class="col-lg-6">
                                             <label for="province">Provinsi</label>
                                             <select class="form-control" name="provinces_id" id="province">
-                                                <option selected="selected">Pilih Provinsi</option>
+                                                <option selected="selected" value="">Pilih Provinsi</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-6">
                                             <label for="regency">Kota / Kabupaten</label>
                                             <select class="form-control" name="cities_id" id="regency">
-                                                <option selected="selected">Pilih Kota / Kabupaten</option>
+                                                <option selected="selected" value="">Pilih Kota / Kabupaten</option>
                                             </select>
                                         </div>
                                     </div>
@@ -84,6 +84,12 @@
                                         <div class="col-lg-6">
                                             <label for="phone_number">Nomor Telepon</label>
                                             <input type="text" class="form-control" name="phone_number" id="phone_number" value="{{ $users->phone_number }}" placeholder="Masukkan nomor telepon pelanggan ...">
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="is_member" type="checkbox" value="1" {{ $users->is_member == 1 ? 'checked' : '' }}>
+                                                <span class="form-check-sign">Ya, termasuk member</span>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>

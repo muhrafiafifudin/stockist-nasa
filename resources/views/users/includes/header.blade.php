@@ -78,9 +78,9 @@
                             <li data-tooltip="tooltip" data-placement="left" title="Contact">
                                 <a href="{{ route('kontak.index') }}"><i class="fas fa-phone-volume"></i></a>
                             </li>
-                            <li data-tooltip="tooltip" data-placement="left" title="Mail">
+                            {{-- <li data-tooltip="tooltip" data-placement="left" title="Mail">
                                 <a href="mailto:stokisnaturalnusantaraad3043@gmail.com"><i class="far fa-envelope"></i></a>
-                            </li>
+                            </li> --}}
                         </ul>
                         <!--====== End - List ======-->
                     </div>

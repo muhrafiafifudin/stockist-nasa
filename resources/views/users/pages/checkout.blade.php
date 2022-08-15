@@ -124,7 +124,13 @@
                                                                     <a href="{{ url('produk/' . $cartItem->products->categories->slug . '/' . $cartItem->products->slug) }}">{{ $cartItem->products->name }}</a>
                                                                 </span>
                                                                 <span class="o-card__quantity">Jumlah x {{ $cartItem->products_qty }}</span>
-                                                                <span class="o-card__price">Rp. {{ number_format($cartItem->products->price, 2, ',', '.') }}</span>
+                                                                @auth
+                                                                    @if ($users->is_member === 1)
+                                                                        <span class="o-card__price">Rp. {{ number_format($cartItem->products->distributor_price, 2, ',', '.') }}</span>
+                                                                    @else
+                                                                        <span class="o-card__price">Rp. {{ number_format($cartItem->products->price, 2, ',', '.') }}</span>
+                                                                    @endif
+                                                                @endauth
                                                             </div>
                                                         </div>
                                                     </div>
@@ -181,6 +187,8 @@
                                     <!--====== End - Order Summary ======-->
                                 </div>
                             </div>
+
+                            <input type="hidden" name="point" value="{{ $checkout['point'] }}">
 
                             <input type="hidden" name="courier" value="{{ $checkout['courier'] }}">
                             <input type="hidden" name="weight" value="{{ $checkout['weight'] }}">

@@ -21,10 +21,11 @@ class CheckoutController extends Controller
     {
         $checkout = Session::all();
         $address = RajaOngkir::kota()->dariProvinsi($checkout['province'])->find($checkout['regency']);
+        $users = Auth::user();
 
         $cartItems = Cart::where('users_id', Auth::id())->get();
 
-        return view('users.pages.checkout', compact('checkout', 'address', 'cartItems'));
+        return view('users.pages.checkout', compact('checkout', 'address', 'cartItems', 'users'));
     }
 
     public function placeorder(Request $request)
@@ -44,6 +45,11 @@ class CheckoutController extends Controller
         $transaction->shipping = $request->input('shipping');
         $transaction->subtotal = $request->input('subtotal');
         $transaction->note = $request->input('note');
+
+        // Update Point User
+        $users = User::where('id', Auth::id())->first();
+        $users->point += $request->input('point');
+        $users->update();
 
         // To Calculate the Gross Amount
         $gross_amount = 0;
@@ -92,6 +98,7 @@ class CheckoutController extends Controller
     {
         $transactions = Transaction::where('order_number', $order_number)->where('users_id', Auth::id())->first();
         $addresses = RajaOngkir::kota()->dariProvinsi($transactions->provinces_id)->find($transactions->cities_id);
+        $users = Auth::user();
 
         foreach ($transactions->transactiondetails as $item) {
             $item_details[] = array(
@@ -137,7 +144,7 @@ class CheckoutController extends Controller
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view('users.pages.invoice', compact('transactions', 'addresses', 'snapToken'));
+        return view('users.pages.invoice', compact('transactions', 'addresses', 'snapToken', 'users'));
     }
 
     public function paymentPost(Request $request)

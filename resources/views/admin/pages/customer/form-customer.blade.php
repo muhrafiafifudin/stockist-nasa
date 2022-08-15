@@ -85,6 +85,12 @@
                                             <label for="phone_number">Nomor Telepon</label>
                                             <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Masukkan nomor telepon pelanggan ..." required>
                                         </div>
+                                        <div class="form-check mt-2">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" name="is_member" type="checkbox" value="1">
+                                                <span class="form-check-sign">Ya, termasuk member</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-action">

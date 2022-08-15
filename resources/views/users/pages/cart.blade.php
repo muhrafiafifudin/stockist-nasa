@@ -57,7 +57,7 @@
                                 <div class="table-responsive">
                                     <table class="table-p">
                                         <tbody>
-                                            @php $subTotal = 0; $totalItems = 0; $weight = 0; $totalWeight = 0; @endphp
+                                            @php $subTotal = 0; $totalItems = 0; $weight = 0; $totalWeight = 0; $product_points = 0; @endphp
                                             @foreach ($cartItems as $cartItem)
                                                 <!--====== Row ======-->
                                                 <tr class="product-data">
@@ -72,11 +72,11 @@
 
                                                                 <span class="table-p__name">
 
-                                                                    <a href="{{ url('produk/' . $cartItem->products->categories->slug . '/' . $cartItem->products->slug) }}">{{ $cartItem->products->name }}</a></span>
+                                                                    <a href="{{ url('katalog/produk-nasa/detail/' . $cartItem->products->slug) }}">{{ $cartItem->products->name }}</a></span>
 
                                                                 <span class="table-p__category">
 
-                                                                    <a href="shop-side-version-2.html">{{ $cartItem->products->categories->category }}</a></span>
+                                                                    <a href="{{ url('katalog/produk-nasa/' . $cartItem->products->categories->slug) }}">{{ $cartItem->products->categories->category }}</a></span>
                                                                 <ul class="table-p__variant-list">
                                                                     <li>
                                                                         <span>Berat : {{ number_format($cartItem->products->weight, 0, ',', '.') }} gram</span>
@@ -89,7 +89,14 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="table-p__price">Rp. {{ number_format($cartItem->products->price, 2, ',', '.') }}</span>
+
+                                                        @auth
+                                                            @if ($users->is_member === 1)
+                                                                <span class="table-p__price">Rp. {{ number_format($cartItem->products->distributor_price, 2, ',', '.') }}</span>
+                                                            @else
+                                                                <span class="table-p__price">Rp. {{ number_format($cartItem->products->price, 2, ',', '.') }}</span>
+                                                            @endif
+                                                        @endauth
                                                     </td>
                                                     <td>
                                                         <input type="hidden" class="product-id" value="{{ $cartItem->products_id }}">
@@ -105,8 +112,19 @@
                                                         </div>
 
                                                         @php
-                                                            $totalItem = $cartItem->products->price * $cartItem->products_qty;
-                                                            $subTotal += $cartItem->products->price * $cartItem->products_qty;
+                                                            if ($users->is_member === 1) {
+                                                                $totalItem = $cartItem->products->distributor_price * $cartItem->products_qty;
+                                                            } else {
+                                                                $totalItem = $cartItem->products->price * $cartItem->products_qty;
+                                                            }
+
+                                                            if ($users->is_member === 1) {
+                                                                $subTotal += $cartItem->products->distributor_price * $cartItem->products_qty;
+                                                                $product_points += $cartItem->products->product_points;
+                                                            } else {
+                                                                $subTotal += $cartItem->products->price * $cartItem->products_qty;
+                                                                $product_points = 0;
+                                                            }
 
                                                             $weight = $cartItem->products->weight * $cartItem->products_qty;
                                                             $totalWeight += $weight;
@@ -242,6 +260,7 @@
                                     <input type="hidden" name="subtotal" value="<?php echo $subTotal; ?>"/>
                                     <input type="hidden" name="total" />
                                     <input type="hidden" name="weight" value="<?php echo $totalWeight; ?>"/>
+                                    <input type="hidden" name="point" value="<?php echo $product_points; ?>" />
 
                                 </form>
                             </div>

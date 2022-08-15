@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('categories_id');
             $table->tinyInteger('sub_categories_id')->nullable();
             $table->bigInteger('price');
+            $table->bigInteger('distributor_price');
             $table->decimal('weight', 10, 2);
             $table->text('small_description');
             $table->longText('description')->nullable();
@@ -30,6 +31,7 @@ class CreateProductsTable extends Migration
             $table->integer('qty');
             $table->tinyInteger('status')->comment('0 for View, 1 for Hidden')->default(0);
             $table->tinyInteger('trending')->comment('0 for NOT Trending, 1 for Trending')->default(0);
+            $table->tinyInteger('product_points');
             $table->timestamps();
         });
     }

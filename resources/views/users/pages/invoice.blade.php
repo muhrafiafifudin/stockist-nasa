@@ -109,7 +109,13 @@
                                                             <span class="o-card__name">
                                                                 <a href="{{ url('produk/' . $item->products->categories->slug . '/' . $item->products->slug) }}">{{ $item->products->name }}</a></span>
                                                             <span class="o-card__quantity">Jumlah x {{ $item->qty }}</span>
-                                                            <span class="o-card__price">Rp. {{ number_format($item->products->price, 2, ',', '.') }}</span>
+                                                            @auth
+                                                                @if ($users->is_member === 1)
+                                                                    <span class="o-card__price">Rp. {{ number_format($item->products->distributor_price, 2, ',', '.') }}</span>
+                                                                @else
+                                                                    <span class="o-card__price">Rp. {{ number_format($item->products->price, 2, ',', '.') }}</span>
+                                                                @endif
+                                                            @endauth
                                                         </div>
                                                     </div>
                                                 </div>

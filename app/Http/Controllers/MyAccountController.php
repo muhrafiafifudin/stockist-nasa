@@ -15,7 +15,9 @@ class MyAccountController extends Controller
 {
     public function dashboard()
     {
-        return view('users.pages.my-account.account-dashboard');
+        $users = Auth::user();
+
+        return view('users.pages.my-account.account-dashboard', compact('users'));
     }
 
 

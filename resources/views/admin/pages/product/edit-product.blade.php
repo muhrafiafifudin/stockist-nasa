@@ -96,6 +96,10 @@
                                         <textarea class="form-control markdown-input" name="method" rows="15">{{ $products->method }}</textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label for="price">Harga Distributor</label>
+                                        <input type="number" name="distributor_price" class="form-control" value="{{ $products->distributor_price }}" placeholder="Masukkan Harga Distributor Produk ..." required />
+                                    </div>
+                                    <div class="form-group">
                                         <label for="price">Harga</label>
                                         <input type="number" name="price" class="form-control" value="{{ $products->price }}" placeholder="Masukkan Harga Produk ..." required />
                                     </div>
@@ -110,6 +114,10 @@
                                     <div class="form-group">
                                         <label for="slug">Slug</label>
                                         <input type="text" name="slug" class="form-control" value="{{ $products->slug }}" placeholder="Masukkan Slug / Link Produk ..." required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="slug">Point Produk</label>
+                                        <input type="text" name="product_points" class="form-control" value="{{ $products->product_points }}" placeholder="Masukkan Poin Produk ..." required />
                                     </div>
                                     <div class="form-check mt-2">
 										<label class="form-check-label">

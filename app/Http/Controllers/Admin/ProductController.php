@@ -116,6 +116,9 @@ class ProductController extends Controller
         }
 
         $products = Product::findOrFail($id);
+        if (empty($request->trending)) {
+            $products->trending = 0;
+        }
         $products->update($data);
 
         return redirect()->route('admin.produk.index');

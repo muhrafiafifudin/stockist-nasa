@@ -18,7 +18,16 @@ class UserSeeder extends Seeder
             array(
                 'name' => 'User',
                 'email' => 'user@example.com',
-                'password' => bcrypt('12345678')
+                'password' => bcrypt('12345678'),
+                'is_member' => 0,
+                'point' => 0
+            ),
+            array(
+                'name' => 'Member',
+                'email' => 'member@example.com',
+                'password' => bcrypt('12345678'),
+                'is_member' => 1,
+                'point' => 50
             )
         ));
     }
