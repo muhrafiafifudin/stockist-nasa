@@ -86,7 +86,7 @@
                                             </div>
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Provinsi, Kota</h2>
-                                                <span class="dash__text">{{ $addresses['city_name'] }}, {{ $addresses['province'] }}</span>
+                                                <span class="dash__text">{{ Auth::user()->cities_id == NULL ? '' : $addresses['city_name'] }}, {{ Auth::user()->provinces_id == NULL ? '' : $addresses['province'] }}</span>
                                             </div>
                                             <div class="col-lg-4 u-s-m-b-30">
                                                 <h2 class="dash__h2 u-s-m-b-8">Alamat</h2>

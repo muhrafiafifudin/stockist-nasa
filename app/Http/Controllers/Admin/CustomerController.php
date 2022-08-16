@@ -82,13 +82,13 @@ class CustomerController extends Controller
 
         $users = User::findOrFail($id);
         if (empty($request->is_member)) {
-            $users->is_member = 0;
+            $data['is_member'] = 0;
         }
         if ($request->provinces_id == NULL) {
-            $users->provinces_id = $request->provinces_id;
+            $data['provinces_id'] = $users->provinces_id;
         }
         if ($request->cities_id == NULL) {
-            $users->cities_id = $request->cities_id;
+            $data['cities_id'] = $users->cities_id;
         }
         $users->update($data);
 

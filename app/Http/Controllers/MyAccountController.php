@@ -42,6 +42,12 @@ class MyAccountController extends Controller
         $data = $request->all();
 
         $users = User::findOrFail($id);
+        if ($request->provinces_id == NULL) {
+            $data['provinces_id'] = $request->provinces_id;
+        }
+        if ($request->cities_id == NULL) {
+            $data['cities_id'] = $request->cities_id;
+        }
         $users->update($data);
 
         return redirect('akun/profil');

@@ -78,10 +78,10 @@ class StoreController extends Controller
         $data = $request->all();
         $stores = Store::findOrFail($id);
         if ($request->provinces_id == NULL) {
-            $stores->provinces_id = $request->provinces_id;
+            $data['provinces_id'] = $stores->provinces_id;
         }
         if ($request->cities_id == NULL) {
-            $stores->cities_id = $request->cities_id;
+            $data['cities_id'] = $stores->cities_id;
         }
         $stores->update($data);
 

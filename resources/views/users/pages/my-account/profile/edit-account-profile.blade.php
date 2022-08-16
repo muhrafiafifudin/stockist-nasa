@@ -97,13 +97,13 @@
                                                         <div class="u-s-m-b-30">
                                                             <label class="gl-label" for="province">Provinsi</label>
                                                             <select class="select-box select-box--primary-style u-w-100" name="provinces_id" id="province">
-                                                                <option selected>Pilih Provinsi</option>
+                                                                <option selected="selected" value="">Pilih Provinsi</option>
                                                             </select>
                                                         </div>
                                                         <div class="u-s-m-b-30">
                                                             <label class="gl-label" for="regency">Kota / Kabupaten</label>
                                                             <select class="select-box select-box--primary-style u-w-100" name="cities_id" id="regency">
-                                                                <option selected>Pilih Kota / Kabupaten</option>
+                                                                <option selected="selected" value="">Pilih Kota / Kabupaten</option>
                                                             </select>
                                                         </div>
                                                     </div>
