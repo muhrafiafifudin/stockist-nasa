@@ -45,6 +45,7 @@ class CheckoutController extends Controller
         $transaction->shipping = $request->input('shipping');
         $transaction->subtotal = $request->input('subtotal');
         $transaction->note = $request->input('note');
+        $transaction->created_at = date('Y-m-d H:i:s');
 
         // Update Point User
         $users = User::where('id', Auth::id())->first();

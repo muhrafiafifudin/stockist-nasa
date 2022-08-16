@@ -62,9 +62,8 @@ class StoreController extends Controller
     public function edit($id)
     {
         $stores = Store::findOrFail($id);
-        $addresses = RajaOngkir::kota()->dariProvinsi($stores->provinces_id)->find($stores->cities_id);
 
-        return view('admin.pages.store.edit-store', compact('stores', 'addresses'));
+        return view('admin.pages.store.edit-store', compact('stores'));
     }
 
     /**
@@ -78,6 +77,12 @@ class StoreController extends Controller
     {
         $data = $request->all();
         $stores = Store::findOrFail($id);
+        if ($request->provinces_id == NULL) {
+            $stores->provinces_id = $request->provinces_id;
+        }
+        if ($request->cities_id == NULL) {
+            $stores->cities_id = $request->cities_id;
+        }
         $stores->update($data);
 
         return redirect()->route('admin.profil-toko.index');

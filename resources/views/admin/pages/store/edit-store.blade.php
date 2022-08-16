@@ -62,13 +62,13 @@
                                         <div class="col-lg-6">
                                             <label for="province">Provinsi</label>
                                             <select class="form-control" name="provinces_id" id="province">
-                                                <option selected="selected">{{ $addresses['province'] }}</option>
+                                                <option selected="selected" value="">Pilih Provinsi</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-6">
                                             <label for="regency">Kota / Kabupaten</label>
                                             <select class="form-control" name="cities_id" id="regency">
-                                                <option selected="selected">{{ $addresses['city_name'] }}</option>
+                                                <option selected="selected" value="">Pilih Kota / Kabupaten</option>
                                             </select>
                                         </div>
                                     </div>

@@ -47,39 +47,90 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">No.</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php $no = 1 @endphp
-                                        @foreach ($users as $user)
-                                            <tr>
-                                                <td>{{ $no++ }}</td>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->address }}</td>
-                                                <td>{{ $user->phone_number }}</td>
-                                                <td>
-                                                    <form action="{{ route('admin.pelanggan.destroy', $user->id) }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
+                                <ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="non-member-tab" data-toggle="pill" href="#non-member" role="tab" aria-controls="non-member" aria-selected="true">Non Member</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="member-tab" data-toggle="pill" href="#member" role="tab" aria-controls="member" aria-selected="false">Member</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="non-member" role="tabpanel" aria-labelledby="non-member-tab">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No.</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">Phone</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 1 @endphp
+                                                @foreach ($users as $user)
+                                                    @if ($user->is_member == 0)
+                                                        <tr>
+                                                            <td>{{ $no++ }}</td>
+                                                            <td>{{ $user->name }}</td>
+                                                            <td>{{ $user->email }}</td>
+                                                            <td>{{ $user->address }}</td>
+                                                            <td>{{ $user->phone_number }}</td>
+                                                            <td>
+                                                                <form action="{{ route('admin.pelanggan.destroy', $user->id) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
 
-                                                        <a href="{{ route('admin.pelanggan.edit', $user->id) }}" class="btn btn-warning">Edit</a>
-                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                                                    <a href="{{ route('admin.pelanggan.edit', $user->id) }}" class="btn btn-warning">Edit</a>
+                                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="member" role="tabpanel" aria-labelledby="member-tab">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No.</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">Phone</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 1 @endphp
+                                                @foreach ($users as $user)
+                                                    @if ($user->is_member == 1)
+                                                        <tr>
+                                                            <td>{{ $no++ }}</td>
+                                                            <td>{{ $user->name }}</td>
+                                                            <td>{{ $user->email }}</td>
+                                                            <td>{{ $user->address }}</td>
+                                                            <td>{{ $user->phone_number }}</td>
+                                                            <td>
+                                                                <form action="{{ route('admin.pelanggan.destroy', $user->id) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+
+                                                                    <a href="{{ route('admin.pelanggan.edit', $user->id) }}" class="btn btn-warning">Edit</a>
+                                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

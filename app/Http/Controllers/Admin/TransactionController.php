@@ -67,7 +67,11 @@ class TransactionController extends Controller
         $fromDate = $fromDate;
         $toDate = $toDate;
 
-        $transactions = Transaction::whereBetween('created_at', [$fromDate, $toDate])->get();
+        // $transactions = Transaction::whereBetween('created_at', [$fromDate, $toDate])->get();
+
+        $transactions = Transaction::whereDate('created_at', '>=', $fromDate)
+                    ->whereDate('created_at', '<=', $toDate)
+                    ->get();
 
         $pdf = PDF::loadView('admin.pages.report.print-pdf', compact('transactions', 'fromDate', 'toDate'))->setPaper('a4', 'landscape');
 
