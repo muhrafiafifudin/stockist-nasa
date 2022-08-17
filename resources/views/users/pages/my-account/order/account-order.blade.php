@@ -81,7 +81,11 @@
                                                             </div>
                                                             <div>
                                                                 <div class="dash__link dash__link--brand text-center">
-                                                                    <a href="{{ url('akun/pesanan/' . $order->order_number) }}">KELOLA</a>
+                                                                    @if (\App\Models\Payment::where('order_number', $order->order_number)->exists())
+                                                                        <a href="{{ url('akun/pesanan/' . $order->order_number) }}">KELOLA</a>
+                                                                    @else
+                                                                        <a href="{{ url('invoice/' . $order->order_number) }}" class="u-s-m-r-14">BAYAR</a>
+                                                                    @endif
                                                                 </div>
                                                                 <div>
                                                                     <span class="manage-o__text-2 u-c-silver">Total:

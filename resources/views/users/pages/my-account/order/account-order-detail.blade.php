@@ -325,7 +325,7 @@
                                                 <h2 class="dash__h2 u-s-m-b-8">Alamat Pembayaran</h2>
                                                 <h2 class="dash__h2 u-s-m-b-8">{{ $orders->users->name }}</h2>
 
-                                                <span class="dash__text-2">{{ $orders->users->address }} - {{ $address_billing['city_name'] }} - {{ $address_billing['province'] }}</span>
+                                                <span class="dash__text-2">{{ $orders->users->address }} - {{ Auth::user()->cities_id == NULL ? '' : $address_billing['city_name'] }} - {{ Auth::user()->provinces_id == NULL ? '' : $address_billing['province'] }}</span>
 
                                                 <span class="dash__text-2">{{ $orders->users->phone_number }}</span>
                                             </div>

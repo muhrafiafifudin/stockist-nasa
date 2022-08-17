@@ -15,7 +15,7 @@
 
 
                 <!--====== Search Form ======-->
-                <form class="main-form">
+                {{-- <form class="main-form">
 
                     <label for="main-search"></label>
 
@@ -23,7 +23,7 @@
                         id="main-search" placeholder="Search">
 
                     <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
-                </form>
+                </form> --}}
                 <!--====== End - Search Form ======-->
 
 
