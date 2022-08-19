@@ -11,9 +11,7 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $fillable = [
-        'category'
-    ];
+    protected $guarded = [];
 
     public function products()
     {

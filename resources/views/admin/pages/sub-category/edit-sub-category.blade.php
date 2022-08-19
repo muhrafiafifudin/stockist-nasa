@@ -53,7 +53,7 @@
 
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="categories_id">Nama Kategori</label>
                                                 <select class="form-control" name="categories_id">
@@ -68,10 +68,15 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="sub_category">Nama Sub Kategori</label>
-                                                <input type="text" class="form-control" id="sub_category" name="sub_category"
-                                                    value="{{ $sub_categories->sub_category }}" placeholder="Masukkan Nama Kategori ...">
-                                                <small id="categoryText" class="form-text text-muted">Nama sub kategori untuk identitas
-                                                    setiap produk.</small>
+                                                <input type="text" class="form-control" id="sub_category" name="sub_category" value="{{ $sub_categories->sub_category }}" placeholder="Masukkan Nama Kategori ...">
+                                                <small id="categoryText" class="form-text text-muted">Nama sub kategori untuk identitas setiap produk.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="category">Slug Sub Kategori</label>
+                                                <input type="text" class="form-control" id="slug" name="slug" value="{{ $sub_categories->slug }}" placeholder="Masukkan Slug Kategori ..." required>
+                                                <small id="categoryText" class="form-text text-muted">Slug sub kategori untuk identitas setiap produk.</small>
                                             </div>
                                         </div>
                                     </div>

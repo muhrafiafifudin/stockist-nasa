@@ -22,7 +22,7 @@
                                 </li>
                                 <li class="is-marked">
 
-                                    <a href="checkout.html">Invoice</a>
+                                    <a href="#">Invoice</a>
                                 </li>
                             </ul>
                         </div>
@@ -107,7 +107,7 @@
                                                         </div>
                                                         <div class="o-card__info-wrap">
                                                             <span class="o-card__name">
-                                                                <a href="{{ url('produk/' . $item->products->categories->slug . '/' . $item->products->slug) }}">{{ $item->products->name }}</a></span>
+                                                                <a href="{{ url('katalog/produk-nasa/detail/' . $item->products->slug) }}">{{ $item->products->name }}</a></span>
                                                             <span class="o-card__quantity">Jumlah x {{ $item->qty }}</span>
                                                             @auth
                                                                 @if ($users->is_member === 1)

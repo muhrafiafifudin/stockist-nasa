@@ -121,7 +121,7 @@
                                                             </div>
                                                             <div class="o-card__info-wrap">
                                                                 <span class="o-card__name">
-                                                                    <a href="{{ url('produk/' . $cartItem->products->categories->slug . '/' . $cartItem->products->slug) }}">{{ $cartItem->products->name }}</a>
+                                                                    <a href="{{ url('katalog/produk-nasa/detail/' . $cartItem->products->slug) }}">{{ $cartItem->products->name }}</a>
                                                                 </span>
                                                                 <span class="o-card__quantity">Jumlah x {{ $cartItem->products_qty }}</span>
                                                                 @auth

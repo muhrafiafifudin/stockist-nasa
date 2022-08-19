@@ -54,8 +54,13 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="category">Nama Kategori</label>
-                                        <input type="text" class="form-control" name="category" id="category" placeholder="Masukkan Nama Kategori ...">
+                                        <input type="text" class="form-control" name="category" id="category" placeholder="Masukkan Nama Kategori ..." required>
                                         <small id="categoryText" class="form-text text-muted">Nama kategori untuk identitas setiap produk.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category">Slug</label>
+                                        <input type="text" class="form-control" name="slug" id="slug" placeholder="Masukkan Slug Kategori ..." required>
+                                        <small id="categoryText" class="form-text text-muted">Slug untuk identitas setiap produk.</small>
                                     </div>
                                 </div>
                                 <div class="card-action">
