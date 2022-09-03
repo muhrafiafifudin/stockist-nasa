@@ -63,7 +63,9 @@
                                         @foreach ($products as $product)
                                             <tr>
                                                 <td>{{ $no++ }}</td>
-                                                <td>{{ $product->images }}</td>
+                                                <td>
+                                                    <img src="{{ asset('admin/img/product/' . $product->images) }}" alt="" width="100px">
+                                                </td>
                                                 <td>{{ $product->name }}</td>
                                                 <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
                                                 <td>{{ $product->qty }}</td>

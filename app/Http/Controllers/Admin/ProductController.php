@@ -107,12 +107,10 @@ class ProductController extends Controller
         $data = $request->all();
 
         if ($image = $request->file('images')) {
-            $destinationPath = 'admin/assets/images/';
+            $destinationPath = 'admin/img/product/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $data['images'] = $profileImage;
-        } else {
-            unset($data['images']);
         }
 
         $products = Product::findOrFail($id);

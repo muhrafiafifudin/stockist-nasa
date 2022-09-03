@@ -70,7 +70,7 @@
             <td width="25%" style="border: none">
             </td>
             <td width="25%" style="border: none; line-height:10px">
-                <h3 class="text-center">Owner,</h3>
+                <h3 class="text-center">Admin,</h3>
                 <br><br><br><br>
                 <p class="text-center">Anggita Prasasti</p>
             </td>
