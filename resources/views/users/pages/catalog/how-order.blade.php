@@ -40,19 +40,10 @@
                         <h2 class="u-s-m-b-20">Cara Belanja</h2>
 
                         <p class="u-s-m-b-30">
-                            StockistNasa.com disiapkan sebagai tempat belanja online produk Nasa untuk Umum maupun Mitra Usaha Nasa dimanapun berada. Bagi Anda Mitra Distributor Nasa,
-                            kami sudah siapkan fitur khusus untuk Anda, Silahkan buka halaman Cara Order Mitra Distributor Nasa !
+                            StockistNasa.com disiapkan sebagai tempat belanja online produk Nasa untuk Umum maupun Mitra Usaha Nasa dimanapun berada.
                         </p>
-
                         <h3 class="u-s-m-b-20">Cara Belanja Produk Nasa</h3>
-
                         <h5 class="u-s-m-b-5">1. Order Produk Nasa Sistem Online</h5>
-
-                        <p class="u-s-m-b-5">
-                            Nikmati kemudahan dan keuntungan belanja produk Nasa dengan sistem online di Stockist Nasa. Anda akan mendapatkan Kupon Diskon ketika Anda mendaftar akun dan login.
-                            Silahkan Login / Buat Akun sekarang !
-                        </p>
-
                         <p class="u-s-m-b-5">Untuk melakukan pemesanan menggunakan sistem toko online, Langkahnya adalah:</p>
 
                         <ol class="list u-s-m-b-20">
@@ -99,15 +90,6 @@
                                 <strong>+62 896 4931 2293</strong> – Telp / SMS / WA
                             </li>
                         </ul>
-
-                        <p class="u-s-m-b-5">
-                            Selamat Berbelanja..
-                        </p>
-
-                        <p class="u-s-m-b-30">
-                            Salam Sukses.. dan Semangat Pagi..!
-                        </p>
-
                         <h3 class="u-s-m-b-20">Info Terkait Pemesanan Produk Nasa</h3>
 
                         <h5 class="u-s-m-b-5">1. Nomor Pelayanan</h5>
@@ -130,7 +112,7 @@
 
                         <ul class="list u-s-m-b-20">
                             <li>
-                                <strong>+62 896 4931 2293</strong> – Telp / SMS / WA
+                                <strong>9010 2395 7295</strong> – Bank Seabank a/n Anggita Prasasti
                             </li>
                         </ul>
 
@@ -142,6 +124,12 @@
 
                         <p>
                             Atas kerjasama dan kepercayaan Anda terhadap Produk Natural Nusantara dan kami ucapkan terima kasih.
+                        </p>
+                        <p class="u-s-m-b-5">
+                            Selamat Berbelanja..
+                        </p>
+                        <p class="u-s-m-b-30">
+                            Salam Sukses.. dan Semangat Pagi..!
                         </p>
                     </div>
                 </div>

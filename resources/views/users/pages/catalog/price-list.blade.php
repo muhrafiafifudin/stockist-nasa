@@ -67,7 +67,7 @@
                                             @if ($product->categories_id == $category->id)
                                                 <tr class="text-center">
                                                     <td>{{ $no++ }}</td>
-                                                    <td>kode</td>
+                                                    <td>{{ $product->product_code }}</td>
                                                     <td>{{ $product->name }}</td>
                                                     <td>{{ number_format($product->weight, 0, ',', '.') }} gram</td>
                                                     <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
@@ -78,15 +78,10 @@
                                 @endforeach
                             </tbody>
                         </table>
-
                         <p class="u-s-m-b-10 u-s-m-t-30">
                             Keterangan : Harga Produk Nasa  di atas merupakan harga minimal (Harga Eceran Ter-rendah) untuk
                             konsumen wilayah Jawa yang diputuskan secara resmi oleh PT Natural Nusantara. Wilayah Jawa meliputi
                             provinsi Banten, DKI Jakarta, Jawa Barat, Jawa Tengah, Daerah Istimewa Yogyakarta dan Jawa Timur.
-                        </p>
-
-                        <p>
-                            Harga diatas juga berlaku untuk pembelanjaan online via pengiriman ke seluruh wilayah Indonesia.
                         </p>
                     </div>
                 </div>

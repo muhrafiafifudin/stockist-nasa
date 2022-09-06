@@ -47,6 +47,11 @@
 
                                 <div class="card-body">
                                     <div class="form-group">
+                                        <label for="product_code">Kode Produk</label>
+                                        <input type="text" class="form-control" name="product_code" value="{{ $products->product_code }}" placeholder="Masukkan Kode Produk ..." required>
+                                        <small id="product_code" class="form-text text-muted">Kode produk untuk identitas setiap item.</small>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name">Nama Produk</label>
                                         <input type="text" class="form-control" name="name" value="{{ $products->name }}" placeholder="Masukkan Nama Produk ..." required />
                                         <small id="categoryText" class="form-text text-muted">Nama produk untuk identitas setiap item.</small>

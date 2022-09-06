@@ -152,9 +152,6 @@
                                     <li>
                                         <a href="{{ url('katalog/cara-belanja') }}">Cara Belanja</a>
                                     </li>
-                                    <li>
-                                        <a href="{{ url('keranjang') }}">Keranjang Belanja</a>
-                                    </li>
                                     {{-- <li>
                                         <a href="{{ url('katalog/lacak-paket') }}">Lacak Paket</a>
                                     </li> --}}
@@ -180,7 +177,7 @@
                             </li>
                             {{-- <li>
                                 <a href="{{ url('artikel') }}">ARTIKEL</a>
-                            </li> --}}
+                            </li>
                             <li class="has-dropdown">
                                 <a>KEMITRAAN<i class="fas fa-angle-down u-s-m-l-6"></i></a>
                                 <!--====== Dropdown ======-->
@@ -189,15 +186,15 @@
                                     <li>
                                         <a href="{{ url('kemitraan/peluang-usaha') }}">Peluang Usaha</a>
                                     </li>
-                                    {{-- <li>
+                                    <li>
                                         <a href="{{ url('kemitraan/form-pendaftaran') }}">Form Pendaftaran</a>
                                     </li>
                                     <li>
                                         <a href="blog-sidebar-none.html">Ruang Member</a>
-                                    </li> --}}
+                                    </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
-                            </li>
+                            </li> --}}
                         </ul>
                         <!--====== End - List ======-->
                     </div>
