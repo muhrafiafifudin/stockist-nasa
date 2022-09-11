@@ -28,7 +28,7 @@
                 <img src="users/img/logo-nasa.png" alt="navbar brand" width="300px">
             </td>
             <td width="70%" style="border: none; line-height:10px">
-                <h2 class="text-center">STOKIS NASA</h2>
+                <h2 class="text-center">STOKIST NASA</h2>
                 <p class="text-center">Sidomulyo, Kel. Glagah Wangi, Kec. Polanharjo, 57456. Klaten, Jawa Tengah</p>
             </td>
         </tr>
@@ -43,22 +43,36 @@
             <th>Nomor Transaksi</th>
             <th>Tanggal</th>
             <th>Pembeli</th>
-            <th>Total</th>
+            <th colspan="2">Total</th>
         </tr>
-        @php $no=1; @endphp
-        @forelse ($transactions as $transaction)
+        @php $no = 1; $gross_amount = 0; @endphp
+        @foreach ($transactions as $transaction)
+            @php
+                $gross_amount += $transaction->total
+            @endphp
+
             <tr class="text-center">
                 <td>{{ $no++ }}</td>
                 <td>{{ $transaction->order_number }}</td>
                 <td>{{ date('d M Y', strtotime($transaction->created_at)) }}</td>
                 <td>{{ $transaction->name }}</td>
-                <td>IDR. {{ number_format($transaction->total, 2, ',', '.') }}</td>
+                <td style="border-right-color: white">IDR.</td>
+                <td style="text-align: right; padding-right: 20px">{{ number_format($transaction->total, 2, ',', '.') }}</td>
             </tr>
-        @empty
+        @endforeach
+
+        @if ($transactions->count() > 0)
             <tr>
-                <td class="text-center" colspan="5"><strong>Data Kosong</strong></td>
+                <td colspan="3"></td>
+                <td class="text-center"><strong>Total</strong></td>
+                <td class="text-center" style="border-right-color: white"><strong>IDR.</strong></td>
+                <td style="text-align: right; padding-right: 20px"><strong>{{ number_format($gross_amount, 2, ',', '.') }}</strong></td>
             </tr>
-        @endforelse
+        @else
+            <tr>
+                <td class="text-center" colspan="6"><strong>Data Kosong</strong></td>
+            </tr>
+        @endif
     </table>
 
     <table width="100%" style="border: none; margin-top: 8rem">
@@ -70,7 +84,8 @@
             <td width="25%" style="border: none">
             </td>
             <td width="25%" style="border: none; line-height:10px">
-                <h3 class="text-center">Admin,</h3>
+                <p class="text-center">Klaten, {{ $today }}</p>
+                <p class="text-center">Admin,</p>
                 <br><br><br><br>
                 <p class="text-center">Anggita Prasasti</p>
             </td>

@@ -109,6 +109,12 @@
                     </span>
                     <h4 class="text-section">Laporan</h4>
                 </li>
+                <li class="nav-item {{ request()->is('admin/report-product') ? 'active' : '' }}">
+                    <a href="{{ route('admin.product.report') }}">
+                        <i class="fas fa-clipboard-check"></i>
+                        <p>Laporan Produk</p>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('admin/report-transaction') ? 'active' : '' }}">
                     <a href="{{ route('admin.transaksi.report') }}">
                         <i class="fas fa-clipboard-check"></i>

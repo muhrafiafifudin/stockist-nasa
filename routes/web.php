@@ -114,6 +114,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         // Report
         Route::get('report-transaction', 'TransactionController@reportTransaction')->name('transaksi.report');
         Route::get('print-pdf/{fromDate}/{toDate}', 'TransactionController@printPdf');
+        Route::get('report-product', 'TransactionController@reportProduct')->name('product.report');
     });
 
     // Update Transaction
