@@ -8134,3 +8134,11 @@ li.nav-item {
     right: 6rem;
     position: fixed;
 }
+
+.best-seller {
+    position: relative;
+    z-index: 1;
+    float: right;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+}

@@ -63,7 +63,7 @@ class TransactionController extends Controller
         return view('admin.pages.report.transaction');
     }
 
-    public function printPdf($fromDate, $toDate)
+    public function printPdfTransaction($fromDate, $toDate)
     {
         $fromDate = $fromDate;
         $toDate = $toDate;
@@ -74,7 +74,7 @@ class TransactionController extends Controller
                     ->whereDate('created_at', '<=', $toDate)
                     ->get();
 
-        $pdf = PDF::loadView('admin.pages.report.print-pdf', compact('transactions', 'fromDate', 'toDate', 'today'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('admin.pages.report.print-pdf-transaction', compact('transactions', 'fromDate', 'toDate', 'today'))->setPaper('a4', 'landscape');
 
         return $pdf->download('Stokis NASA.pdf');
     }
@@ -82,5 +82,25 @@ class TransactionController extends Controller
     public function reportProduct()
     {
         return view('admin.pages.report.product');
+    }
+
+    public function printPdfProduct($fromDate, $toDate)
+    {
+        $fromDate = $fromDate;
+        $toDate = $toDate;
+
+        $today = Carbon::now()->isoFormat('D MMMM Y');
+
+        $transactionDetails = TransactionDetail::whereDate('created_at', '>=', $fromDate)
+            ->whereDate('created_at', '<=', $toDate)
+            ->get();
+
+        foreach ($transactionDetails as $key => $value) {
+            # code...
+        }
+
+        $pdf = PDF::loadView('admin.pages.report.print-pdf-product', compact('transactionDetails', 'fromDate', 'toDate', 'today'))->setPaper('a4', 'landscape');
+
+        return $pdf->download('Stokis NASA.pdf');
     }
 }

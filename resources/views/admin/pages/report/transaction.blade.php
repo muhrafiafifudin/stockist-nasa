@@ -54,12 +54,12 @@
                                     <div class="col-lg-6">
                                         <label for="toDate">Sampai Tanggal</label>
                                         <input type="date" class="form-control" name="toDate" id="toDate" >
-                                        <small id="categoryText" class="form-text text-muted">masukkan tanggal akhir.</small>
+                                        <small id="categoryText" class="form-text text-muted">Masukkan tanggal akhir.</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-action">
-                                <a href="" onclick="this.href='/admin/print-pdf/' + document.getElementById('fromDate').value + '/' + document.getElementById('toDate').value" target="_blank" class="btn btn-success">Cetak PDF</a>
+                                <a href="" onclick="this.href='/admin/print-pdf-transaksi/' + document.getElementById('fromDate').value + '/' + document.getElementById('toDate').value" target="_blank" class="btn btn-success">Cetak PDF</a>
                             </div>
                         </div>
                     </div>

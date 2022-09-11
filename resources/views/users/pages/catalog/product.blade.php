@@ -62,14 +62,20 @@
                             <div class="row is-grid-active">
                                 @foreach ($products as $product)
                                     <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                        @if ($product->trending == 1)
+                                            <div class="best-seller">
+                                                <img src="{{ asset('users/img/best-seller.png') }}" alt="" width="60px">
+                                            </div>
+                                        @endif
+
                                         <div class="product-m">
                                             <div class="product-m__thumb">
                                                 <a href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}" class="aspect aspect--bg-grey aspect--square u-d-block">
                                                     <img class="aspect__img" src="{{ asset('admin/img/product/' . $product->images) }}" alt="">
                                                 </a>
                                                 <div class="product-m__add-cart">
-                                                    <a class="btn--e-brand" data-modal="modal"
-                                                        data-modal-id="#add-to-cart">Tambah ke Keranjang</a>
+                                                    <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Tambah ke Keranjang</a>
                                                 </div>
                                             </div>
                                             <div class="product-m__content">

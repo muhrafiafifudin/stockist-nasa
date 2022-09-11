@@ -91,6 +91,13 @@
                         @foreach ($products as $product)
                             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
                                 <div class="product-o product-o--hover-on u-h-100">
+
+                                    @if ($product->trending == 1)
+                                        <div class="best-seller">
+                                            <img src="{{ asset('users/img/best-seller.png') }}" alt="" width="60px">
+                                        </div>
+                                    @endif
+
                                     <div class="product-o__wrap">
                                         <a class="aspect aspect--bg-grey aspect--square u-d-block" href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}">
                                             <img class="aspect__img" src="{{ asset('admin/img/product/' . $product->images) }}" alt="">

@@ -59,6 +59,7 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
+                                                    <th scope="col">Gambar</th>
                                                     <th scope="col">Order Number</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Total</th>
@@ -69,9 +70,17 @@
                                             <tbody>
                                                 @php $no = 1 @endphp
                                                 @foreach ($transactions as $transaction)
+
+                                                    @php
+                                                        $images = App\Models\TransactionDetail::where('transactions_id', $transaction->id)->first('products_id');
+                                                    @endphp
+
                                                     @if ($transaction->process == 0)
                                                         <tr>
                                                             <td>{{ $no++ }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('admin/img/product/' . $images->products->images) }}" alt="" width="100px">
+                                                            </td>
                                                             <td>{{ $transaction->order_number }}</td>
                                                             <td>{{ $transaction->name }}</td>
                                                             <td>{{ $transaction->gross_amount }}</td>
@@ -96,6 +105,7 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
+                                                    <th scope="col">Gambar</th>
                                                     <th scope="col">Order Number</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Total</th>
@@ -106,9 +116,17 @@
                                             <tbody>
                                                 @php $no = 1 @endphp
                                                 @foreach ($transactions as $transaction)
+
+                                                    @php
+                                                        $images = App\Models\TransactionDetail::where('transactions_id', $transaction->id)->first('products_id');
+                                                    @endphp
+
                                                     @if ($transaction->process == 1)
                                                         <tr>
                                                             <td>{{ $no++ }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('admin/img/product/' . $images->products->images) }}" alt="" width="100px">
+                                                            </td>
                                                             <td>{{ $transaction->order_number }}</td>
                                                             <td>{{ $transaction->name }}</td>
                                                             <td>{{ $transaction->gross_amount }}</td>
@@ -133,6 +151,7 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
+                                                    <th scope="col">Gambar</th>
                                                     <th scope="col">Order Number</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Total</th>
@@ -143,9 +162,17 @@
                                             <tbody>
                                                 @php $no = 1 @endphp
                                                 @foreach ($transactions as $transaction)
+
+                                                    @php
+                                                        $images = App\Models\TransactionDetail::where('transactions_id', $transaction->id)->first('products_id');
+                                                    @endphp
+
                                                     @if ($transaction->process == 2)
                                                         <tr>
                                                             <td>{{ $no++ }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('admin/img/product/' . $images->products->images) }}" alt="" width="100px">
+                                                            </td>
                                                             <td>{{ $transaction->order_number }}</td>
                                                             <td>{{ $transaction->name }}</td>
                                                             <td>{{ $transaction->gross_amount }}</td>
@@ -164,6 +191,7 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
+                                                    <th scope="col">Gambar</th>
                                                     <th scope="col">Order Number</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Total</th>
@@ -173,9 +201,17 @@
                                             <tbody>
                                                 @php $no = 1 @endphp
                                                 @foreach ($transactions as $transaction)
+
+                                                    @php
+                                                        $images = App\Models\TransactionDetail::where('transactions_id', $transaction->id)->first('products_id');
+                                                    @endphp
+
                                                     @if ($transaction->process == 3)
                                                         <tr>
                                                             <td>{{ $no++ }}</td>
+                                                            <td>
+                                                                <img src="{{ asset('admin/img/product/' . $images->products->images) }}" alt="" width="100px">
+                                                            </td>
                                                             <td>{{ $transaction->order_number }}</td>
                                                             <td>{{ $transaction->name }}</td>
                                                             <td>{{ $transaction->gross_amount }}</td>

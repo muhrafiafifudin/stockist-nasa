@@ -77,6 +77,13 @@
                             <div class="row is-grid-active">
                                 @foreach ($products as $product)
                                     <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                        @if ($product->trending == 1)
+                                            <div class="best-seller">
+                                                <img src="{{ asset('users/img/best-seller.png') }}" alt="" width="60px">
+                                            </div>
+                                        @endif
+
                                         <div class="product-m">
                                             <div class="product-m__thumb">
                                                 <a class="aspect aspect--bg-grey aspect--square u-d-block" href="{{ url('katalog/produk-nasa/detail/' . $product->slug) }}">

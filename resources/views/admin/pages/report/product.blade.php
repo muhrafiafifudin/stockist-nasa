@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="card-action">
-                                <a href="" onclick="this.href='/admin/print-pdf/' + document.getElementById('fromDate').value + '/' + document.getElementById('toDate').value" target="_blank" class="btn btn-success">Cetak PDF</a>
+                                <a href="" onclick="this.href='/admin/print-pdf-produk/' + document.getElementById('fromDate').value + '/' + document.getElementById('toDate').value" target="_blank" class="btn btn-success">Cetak PDF</a>
                             </div>
                         </div>
                     </div>
