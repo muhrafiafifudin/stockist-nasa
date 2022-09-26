@@ -8,14 +8,14 @@
             <div class="primary-nav">
 
                 <!--====== Main Logo ======-->
-                <a class="main-logo" href="index.html">
+                <a class="main-logo" href="{{ url('/') }}">
                     <img src="{{ asset('users/img/logo-nasa.png') }}" alt="" width="200px">
                 </a>
                 <!--====== End - Main Logo ======-->
 
 
                 <!--====== Search Form ======-->
-                {{-- <form class="main-form">
+                <form class="main-form">
 
                     <label for="main-search"></label>
 
@@ -23,7 +23,7 @@
                         id="main-search" placeholder="Search">
 
                     <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
-                </form> --}}
+                </form>
                 <!--====== End - Search Form ======-->
 
 
@@ -35,8 +35,6 @@
 
                     <!--====== Menu ======-->
                     <div class="ah-lg-mode">
-
-                        <span class="ah-close">✕ Close</span>
 
                         <!--====== List ======-->
                         <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
@@ -78,9 +76,9 @@
                             <li data-tooltip="tooltip" data-placement="left" title="Contact">
                                 <a href="{{ route('kontak.index') }}"><i class="fas fa-phone-volume"></i></a>
                             </li>
-                            {{-- <li data-tooltip="tooltip" data-placement="left" title="Mail">
+                            <li data-tooltip="tooltip" data-placement="left" title="Mail">
                                 <a href="mailto:stokisnaturalnusantaraad3043@gmail.com"><i class="far fa-envelope"></i></a>
-                            </li> --}}
+                            </li>
                         </ul>
                         <!--====== End - List ======-->
                     </div>
@@ -152,14 +150,14 @@
                                     <li>
                                         <a href="{{ url('katalog/cara-belanja') }}">Cara Belanja</a>
                                     </li>
-                                    {{-- <li>
+                                    <li>
                                         <a href="{{ url('katalog/lacak-paket') }}">Lacak Paket</a>
-                                    </li> --}}
+                                    </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>
                             <li class="has-dropdown">
-                                <a href="#">PRODUK<i class="fas fa-angle-down u-s-m-l-6"></i></a>
+                                <a href="{{ url('katalog/produk-nasa') }}">PRODUK<i class="fas fa-angle-down u-s-m-l-6"></i></a>
                                 <!--====== Dropdown ======-->
                                 <span class="js-menu-toggle"></span>
                                 <ul style="width:200px">
@@ -175,7 +173,7 @@
                                 </ul>
                                 <!--====== End - Dropdown ======-->
                             </li>
-                            {{-- <li>
+                            <li>
                                 <a href="{{ url('artikel') }}">ARTIKEL</a>
                             </li>
                             <li class="has-dropdown">
@@ -194,7 +192,7 @@
                                     </li>
                                 </ul>
                                 <!--====== End - Dropdown ======-->
-                            </li> --}}
+                            </li>
                         </ul>
                         <!--====== End - List ======-->
                     </div>

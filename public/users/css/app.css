@@ -8042,7 +8042,7 @@ input::-ms-clear {
 }
 
 div#navigation1 {
-    margin-right: 15.5rem;
+    margin-right: 12.5rem;
 }
 
 
@@ -8141,4 +8141,9 @@ li.nav-item {
     float: right;
     padding-top: 0.5em;
     padding-right: 0.5em;
+}
+
+.logo {
+    color: #333333;
+    font-weight: 800;
 }
