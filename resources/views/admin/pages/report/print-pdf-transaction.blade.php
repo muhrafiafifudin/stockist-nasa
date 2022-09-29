@@ -43,7 +43,7 @@
             <th>Nomor Transaksi</th>
             <th>Tanggal</th>
             <th>Pembeli</th>
-            <th colspan="2">Total</th>
+            <th>Total</th>
         </tr>
         @php $no = 1; $gross_amount = 0; @endphp
         @foreach ($transactions as $transaction)
